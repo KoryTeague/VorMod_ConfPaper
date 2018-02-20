@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2018.2.13)  20 FEB 2018 13:26
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2018.2.13)  20 FEB 2018 16:08
 entering extended mode
 **./GenAlg_VWN-KTeag.tex
 (GenAlg_VWN-KTeag.tex
@@ -21,11 +21,10 @@ LaTeX Font Info:    No file TUptm.fd. on input line 503.
 LaTeX Font Warning: Font shape `TU/ptm/m/n' undefined
 (Font)              using `TU/lmr/m/n' instead on input line 503.
 
-** ATTENTION: Single column mode is not typically used with IEEE publications.
 -- Using 8.5in x 11in (letter) paper.
 -- Using DVI output.
 \@IEEEnormalsizeunitybaselineskip=\dimen105
--- This is a 12 point document.
+-- This is a 10 point document.
 \CLASSINFOnormalsizebaselineskip=\dimen106
 \CLASSINFOnormalsizeunitybaselineskip=\dimen107
 \IEEEnormaljot=\dimen108
@@ -619,7 +618,7 @@ LaTeX Font Info:    ... okay on input line 321.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 321.
 LaTeX Font Info:    ... okay on input line 321.
 
--- Lines per column: 50 (exact).
+-- Lines per column: 37 (exact).
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 321.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
@@ -657,16 +656,16 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 . 
 . Font family 'latinmodern-math.otf(1)' created for font
 . 'latinmodern-math.otf' with options
-. [BoldItalicFont={},ItalicFont={},Script=Math,SizeFeatures={{Size=10-},{Size=7
--10,Font=latinmodern-math.otf,Style=MathScript},{Size=-7,Font=latinmodern-math.
-otf,Style=MathScriptScript}},BoldFont={latinmodern-math.otf}].
+. [BoldItalicFont={},ItalicFont={},Script=Math,SizeFeatures={{Size=8.5-},{Size=
+6-8.5,Font=latinmodern-math.otf,Style=MathScript},{Size=-6,Font=latinmodern-mat
+h.otf,Style=MathScriptScript}},BoldFont={latinmodern-math.otf}].
 .  
 .  This font family consists of the following NFSS series/shapes:
 .  
 . - 'normal' (m/n) with NFSS spec.:
-. <10->"[latinmodern-math.otf]/OT:script=math;language=DFLT;"<7-10>"[latinmoder
-n-math.otf]/OT:script=math;language=DFLT;+ssty=0;"<-7>"[latinmodern-math.otf]/O
-T:script=math;language=DFLT;+ssty=1;"
+. <8.5->"[latinmodern-math.otf]/OT:script=math;language=DFLT;"<6-8.5>"[latinmod
+ern-math.otf]/OT:script=math;language=DFLT;+ssty=0;"<-6>"[latinmodern-math.otf]
+/OT:script=math;language=DFLT;+ssty=1;"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 . - 'bold' (bx/n) with NFSS spec.:
 . <->"[latinmodern-math.otf]/OT:script=math;language=DFLT;"
@@ -688,43 +687,43 @@ ut line 321.
 . 
 . Font family 'latinmodern-math.otf(2)' created for font
 . 'latinmodern-math.otf' with options
-. [BoldItalicFont={},ItalicFont={},Script=Math,SizeFeatures={{Size=10-},{Size=7
--10,Font=latinmodern-math.otf,Style=MathScript},{Size=-7,Font=latinmodern-math.
-otf,Style=MathScriptScript}},BoldFont={latinmodern-math.otf},Scale=1.00001,Font
-Adjustment={\fontdimen
-. 8\font =8.124pt\relax \fontdimen 9\font =4.728pt\relax \fontdimen 10\font
-. =5.328pt\relax \fontdimen 11\font =8.232pt\relax \fontdimen 12\font
-. =4.14pt\relax \fontdimen 13\font =4.356pt\relax \fontdimen 14\font
-. =4.356pt\relax \fontdimen 15\font =3.468pt\relax \fontdimen 16\font
-. =2.964pt\relax \fontdimen 17\font =2.964pt\relax \fontdimen 18\font
-. =3.0pt\relax \fontdimen 19\font =2.4pt\relax \fontdimen 22\font =3.0pt\relax
+. [BoldItalicFont={},ItalicFont={},Script=Math,SizeFeatures={{Size=8.5-},{Size=
+6-8.5,Font=latinmodern-math.otf,Style=MathScript},{Size=-6,Font=latinmodern-mat
+h.otf,Style=MathScriptScript}},BoldFont={latinmodern-math.otf},Scale=1.00001,Fo
+ntAdjustment={\fontdimen
+. 8\font =6.77pt\relax \fontdimen 9\font =3.94pt\relax \fontdimen 10\font
+. =4.44pt\relax \fontdimen 11\font =6.86pt\relax \fontdimen 12\font
+. =3.45pt\relax \fontdimen 13\font =3.63pt\relax \fontdimen 14\font
+. =3.63pt\relax \fontdimen 15\font =2.89pt\relax \fontdimen 16\font
+. =2.47pt\relax \fontdimen 17\font =2.47pt\relax \fontdimen 18\font
+. =2.5pt\relax \fontdimen 19\font =2.0pt\relax \fontdimen 22\font =2.5pt\relax
 . \fontdimen 20\font =0pt\relax \fontdimen 21\font =0pt\relax }].
 .  
 .  This font family consists of the following NFSS series/shapes:
 .  
 . - 'normal' (m/n) with NFSS spec.:
-. <10->s*[1.00001]"[latinmodern-math.otf]/OT:script=math;language=DFLT;"<7-10>s
-*[1.00001]"[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=0;"<-7>s*[
-1.00001]"[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=1;"
+. <8.5->s*[1.00001]"[latinmodern-math.otf]/OT:script=math;language=DFLT;"<6-8.5
+>s*[1.00001]"[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=0;"<-6>s
+*[1.00001]"[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=1;"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 . and font adjustment code:
-. \fontdimen 8\font =8.124pt\relax \fontdimen 9\font =4.728pt\relax \fontdimen
-. 10\font =5.328pt\relax \fontdimen 11\font =8.232pt\relax \fontdimen 12\font
-. =4.14pt\relax \fontdimen 13\font =4.356pt\relax \fontdimen 14\font
-. =4.356pt\relax \fontdimen 15\font =3.468pt\relax \fontdimen 16\font
-. =2.964pt\relax \fontdimen 17\font =2.964pt\relax \fontdimen 18\font
-. =3.0pt\relax \fontdimen 19\font =2.4pt\relax \fontdimen 22\font =3.0pt\relax
+. \fontdimen 8\font =6.77pt\relax \fontdimen 9\font =3.94pt\relax \fontdimen
+. 10\font =4.44pt\relax \fontdimen 11\font =6.86pt\relax \fontdimen 12\font
+. =3.45pt\relax \fontdimen 13\font =3.63pt\relax \fontdimen 14\font
+. =3.63pt\relax \fontdimen 15\font =2.89pt\relax \fontdimen 16\font
+. =2.47pt\relax \fontdimen 17\font =2.47pt\relax \fontdimen 18\font
+. =2.5pt\relax \fontdimen 19\font =2.0pt\relax \fontdimen 22\font =2.5pt\relax
 . \fontdimen 20\font =0pt\relax \fontdimen 21\font =0pt\relax 
 . - 'bold' (bx/n) with NFSS spec.:
 . <->s*[1.00001]"[latinmodern-math.otf]/OT:script=math;language=DFLT;"
 . - 'bold small caps'  (bx/sc) with NFSS spec.: 
 . and font adjustment code:
-. \fontdimen 8\font =8.124pt\relax \fontdimen 9\font =4.728pt\relax \fontdimen
-. 10\font =5.328pt\relax \fontdimen 11\font =8.232pt\relax \fontdimen 12\font
-. =4.14pt\relax \fontdimen 13\font =4.356pt\relax \fontdimen 14\font
-. =4.356pt\relax \fontdimen 15\font =3.468pt\relax \fontdimen 16\font
-. =2.964pt\relax \fontdimen 17\font =2.964pt\relax \fontdimen 18\font
-. =3.0pt\relax \fontdimen 19\font =2.4pt\relax \fontdimen 22\font =3.0pt\relax
+. \fontdimen 8\font =6.77pt\relax \fontdimen 9\font =3.94pt\relax \fontdimen
+. 10\font =4.44pt\relax \fontdimen 11\font =6.86pt\relax \fontdimen 12\font
+. =3.45pt\relax \fontdimen 13\font =3.63pt\relax \fontdimen 14\font
+. =3.63pt\relax \fontdimen 15\font =2.89pt\relax \fontdimen 16\font
+. =2.47pt\relax \fontdimen 17\font =2.47pt\relax \fontdimen 18\font
+. =2.5pt\relax \fontdimen 19\font =2.0pt\relax \fontdimen 22\font =2.5pt\relax
 . \fontdimen 20\font =0pt\relax \fontdimen 21\font =0pt\relax 
 .................................................
 LaTeX Font Info:    Encoding `OMS' has changed to `TU' for symbol font
@@ -742,32 +741,32 @@ ut line 321.
 . 
 . Font family 'latinmodern-math.otf(3)' created for font
 . 'latinmodern-math.otf' with options
-. [BoldItalicFont={},ItalicFont={},Script=Math,SizeFeatures={{Size=10-},{Size=7
--10,Font=latinmodern-math.otf,Style=MathScript},{Size=-7,Font=latinmodern-math.
-otf,Style=MathScriptScript}},BoldFont={latinmodern-math.otf},Scale=0.99999,Font
-Adjustment={\fontdimen
-. 8\font =0.48pt\relax \fontdimen 9\font =2.4pt\relax \fontdimen 10\font
-. =2.004pt\relax \fontdimen 11\font =1.332pt\relax \fontdimen 12\font
-. =7.2pt\relax \fontdimen 13\font =0pt\relax }].
+. [BoldItalicFont={},ItalicFont={},Script=Math,SizeFeatures={{Size=8.5-},{Size=
+6-8.5,Font=latinmodern-math.otf,Style=MathScript},{Size=-6,Font=latinmodern-mat
+h.otf,Style=MathScriptScript}},BoldFont={latinmodern-math.otf},Scale=0.99999,Fo
+ntAdjustment={\fontdimen
+. 8\font =0.4pt\relax \fontdimen 9\font =2.0pt\relax \fontdimen 10\font
+. =1.67pt\relax \fontdimen 11\font =1.11pt\relax \fontdimen 12\font
+. =6.0pt\relax \fontdimen 13\font =0pt\relax }].
 .  
 .  This font family consists of the following NFSS series/shapes:
 .  
 . - 'normal' (m/n) with NFSS spec.:
-. <10->s*[0.99999]"[latinmodern-math.otf]/OT:script=math;language=DFLT;"<7-10>s
-*[0.99999]"[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=0;"<-7>s*[
-0.99999]"[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=1;"
+. <8.5->s*[0.99999]"[latinmodern-math.otf]/OT:script=math;language=DFLT;"<6-8.5
+>s*[0.99999]"[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=0;"<-6>s
+*[0.99999]"[latinmodern-math.otf]/OT:script=math;language=DFLT;+ssty=1;"
 . - 'small caps'  (m/sc) with NFSS spec.: 
 . and font adjustment code:
-. \fontdimen 8\font =0.48pt\relax \fontdimen 9\font =2.4pt\relax \fontdimen
-. 10\font =2.004pt\relax \fontdimen 11\font =1.332pt\relax \fontdimen 12\font
-. =7.2pt\relax \fontdimen 13\font =0pt\relax 
+. \fontdimen 8\font =0.4pt\relax \fontdimen 9\font =2.0pt\relax \fontdimen
+. 10\font =1.67pt\relax \fontdimen 11\font =1.11pt\relax \fontdimen 12\font
+. =6.0pt\relax \fontdimen 13\font =0pt\relax 
 . - 'bold' (bx/n) with NFSS spec.:
 . <->s*[0.99999]"[latinmodern-math.otf]/OT:script=math;language=DFLT;"
 . - 'bold small caps'  (bx/sc) with NFSS spec.: 
 . and font adjustment code:
-. \fontdimen 8\font =0.48pt\relax \fontdimen 9\font =2.4pt\relax \fontdimen
-. 10\font =2.004pt\relax \fontdimen 11\font =1.332pt\relax \fontdimen 12\font
-. =7.2pt\relax \fontdimen 13\font =0pt\relax 
+. \fontdimen 8\font =0.4pt\relax \fontdimen 9\font =2.0pt\relax \fontdimen
+. 10\font =1.67pt\relax \fontdimen 11\font =1.11pt\relax \fontdimen 12\font
+. =6.0pt\relax \fontdimen 13\font =0pt\relax 
 .................................................
 LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `normal' on input line 3
@@ -783,50 +782,57 @@ LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 ut line 321.
 ** WARNING: \and is valid only when in conference or peerreviewca
 modes (line 386).
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 12.00018pt on input line 532.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.41495pt on input line 532.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.97696pt on input line 532.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 11.99982pt on input line 532.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 8.41469pt on input line 532.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.97679pt on input line 532.
 [1]
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 10.00015pt on input line 532.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 7.01247pt on input line 532.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 4.9808pt on input line 532.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 9.99985pt on input line 532.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 7.01224pt on input line 532.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.98067pt on input line 532.
+
 
 LaTeX Warning: Command \textasciitilde invalid in math mode on input line 545.
 
 
 LaTeX Warning: Command \textasciitilde invalid in math mode on input line 545.
 
-[2] [3] [4] [5]
+
+Underfull \hbox (badness 3826) in paragraph at lines 545--546
+\TU/ptm/bx/it/10 where $[] [] []$ is a set of the products of two cosines with 
+angular frequencies
+ []
+
+[2] [3] [4] [5] [6]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 9.00014pt on input line 809.
+(Font)              scaled to size 8.00012pt on input line 810.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00009pt on input line 809.
+(Font)              scaled to size 6.00009pt on input line 810.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00008pt on input line 809.
+(Font)              scaled to size 5.00008pt on input line 810.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 8.99986pt on input line 809.
+(Font)              scaled to size 7.99988pt on input line 810.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99991pt on input line 809.
+(Font)              scaled to size 5.99991pt on input line 810.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99992pt on input line 809.
- [6] (GenAlg_VWN-KTeag.aux)
+(Font)              scaled to size 4.99992pt on input line 810.
+ [7] (GenAlg_VWN-KTeag.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 16002 strings out of 427839
- 327117 string characters out of 3152538
- 505389 words of memory out of 3000000
- 19868 multiletter control sequences out of 15000+200000
- 535845 words of font info for 107 fonts, out of 3000000 for 9000
+ 16015 strings out of 427839
+ 327452 string characters out of 3152538
+ 503447 words of memory out of 3000000
+ 19876 multiletter control sequences out of 15000+200000
+ 535528 words of font info for 111 fonts, out of 3000000 for 9000
  1329 hyphenation exceptions out of 8191
  50i,12n,68p,10387b,298s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on GenAlg_VWN-KTeag.pdf (6 pages).
+Output written on GenAlg_VWN-KTeag.pdf (7 pages).
