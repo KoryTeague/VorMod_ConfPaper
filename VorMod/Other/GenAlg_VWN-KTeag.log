@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2018.2.13)  20 FEB 2018 01:12
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2018.2.13)  20 FEB 2018 13:26
 entering extended mode
 **./GenAlg_VWN-KTeag.tex
 (GenAlg_VWN-KTeag.tex
@@ -802,31 +802,31 @@ LaTeX Warning: Command \textasciitilde invalid in math mode on input line 545.
 
 LaTeX Warning: Command \textasciitilde invalid in math mode on input line 545.
 
-[2] [3] [4]
+[2] [3] [4] [5]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 9.00014pt on input line 762.
+(Font)              scaled to size 9.00014pt on input line 809.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00009pt on input line 762.
+(Font)              scaled to size 6.00009pt on input line 809.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00008pt on input line 762.
+(Font)              scaled to size 5.00008pt on input line 809.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 8.99986pt on input line 762.
+(Font)              scaled to size 8.99986pt on input line 809.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99991pt on input line 762.
+(Font)              scaled to size 5.99991pt on input line 809.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99992pt on input line 762.
- [5] (GenAlg_VWN-KTeag.aux)
+(Font)              scaled to size 4.99992pt on input line 809.
+ [6] (GenAlg_VWN-KTeag.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 16000 strings out of 427839
- 327096 string characters out of 3152538
- 503371 words of memory out of 3000000
- 19866 multiletter control sequences out of 15000+200000
+ 16002 strings out of 427839
+ 327117 string characters out of 3152538
+ 505389 words of memory out of 3000000
+ 19868 multiletter control sequences out of 15000+200000
  535845 words of font info for 107 fonts, out of 3000000 for 9000
  1329 hyphenation exceptions out of 8191
  50i,12n,68p,10387b,298s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on GenAlg_VWN-KTeag.pdf (5 pages).
+Output written on GenAlg_VWN-KTeag.pdf (6 pages).
