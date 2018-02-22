@@ -92,7 +92,7 @@
 
 % *** CITATION PACKAGES ***
 %
-%\usepackage{cite}
+\usepackage{cite}
 % cite.sty was written by Donald Arseneau
 % V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
 % \cite{} output to follow that of the IEEE. Loading the cite package will
@@ -159,7 +159,7 @@
 
 % *** MATH PACKAGES ***
 %
-%\usepackage{amsmath}
+\usepackage{amsmath}
 % A popular package from the American Mathematical Society that provides
 % many useful and powerful commands for dealing with mathematics.
 %
@@ -308,14 +308,10 @@
 % to submit to, of course. )
 \usepackage{unicode-math}
 \usepackage{color}
-\usepackage{amsmath}
 
 
 % correct bad hyphenation here
 \hyphenation{net-works}
-
-% amsmath defines
-\DeclareMathOperator*{\minimize}{minimize}
 
 
 \begin{document}
@@ -339,12 +335,14 @@ Virginia Tech\\
 Blacksburg, VA\\
 Email: koryt@vt.edu}
 \and
+\\
 \IEEEauthorblockN{Mohammad Abdel-Rahman}
 \IEEEauthorblockA{School of Electrical and\\Computer Engineering\\
 Virginia Tech\\
 Blacksburg, VA\\
 Email: mo7ammad@vt.edu}
 \and
+\\
 \IEEEauthorblockN{Allen MacKenzie}
 \IEEEauthorblockA{School of Electrical and\\Computer Engineering\\
 Virginia Tech\\
@@ -408,11 +406,13 @@ Email: mackenab@vt.edu}}
 
 
 
-\section{Introduction}\textit{In this section we include interesting and necessary background information.  Detail virtualized wireless networks, the problem being investigated, and setup the ``story'' behind the paper.  Motivations and ``why'' in a few paragraphs.}
+\section{Introduction} \label{intro}
+
+\textit{In this section we include interesting and necessary background information.  Detail virtualized wireless networks, the problem being investigated, and setup the ``story'' behind the paper.  Motivations and ``why'' in a few paragraphs.}
 
 \textit{As it stands, the problem has been simplified such that the story may not include VWN in its implementation.  Only a single network is being created from a larger pool of resources, and no resource slicing occurs.  However, this might be utilized as a foundation for further VWN research by expanding the methods with slicing and multiple derived networks.}
 
-The rest of this paper is organized as follows.  In section II, we detail and define the system model assumed for our resource allocation methods.  In section III, we consider our resource selection and demand allocation approaches.  In section IV, we simulate the described approaches and evaluate their performance.  Finally, in section V, we discuss our conclusions and possible future extensions.
+The rest of this paper is organized as follows.  In section \ref{model}, we detail and define the system model assumed for our resource allocation methods.  In section \ref{approach}, we consider our resource selection and demand allocation approaches.  In section \ref{sim}, we simulate the described approaches and evaluate their performance.  Finally, in section \ref{conclusion}, we discuss our conclusions and possible future extensions.
 % no \IEEEPARstart
 %This demo file is intended to serve as a ``starter file''
 %for IEEE conference papers produced under \LaTeX\ using
@@ -528,12 +528,11 @@ The rest of this paper is organized as follows.  In section II, we detail and de
 % \fnbelowfloat command of the stfloats package.
 
 
-\section{System Model}
+\section{System Model} \label{model}
 We consider a geographical area of width $X$ and length $Y$ that contains a set $\mathcal{S} = \left\{1,\, 2,\, \ldots,\, S\right\}$ of base stations (BS).  The rate capacity of BS $s \in \mathcal{S}$ is denoted by $r_s$ and its cost is denoted by $c_s$.
 
-%\textit{\textcolor{blue}{Here I will talk about the log-normal demand distribution model.}}
-
-Within this area is a continuous spatial distribution indicating the overall traffic demand.  Traffic demand in real-world cellular networks can be approximated using a spatial log-normal distribution (\textit{\textcolor{blue}{cite}}).  We model this spatial traffic demand using a similar, continuous form of the SSLT (Scalable, Spatially-correlated, and Log-normally distributed Traffic) model as proposed by Lee, Zhou, and Niu (\textit{\textcolor{blue}{cite : F - Spatial Modeling SSLT}}).
+% Double check citations of the following paragraph.  Read the cited papers over.  Lee has similar sentence structure for the early citations, and I need to cite to be authoratative with the citation.
+Within this area is a continuous spatial distribution indicating the overall traffic demand.  It has been shown that a log-normal distribution or a mixture of log-normal distributions can approximate traffic demand in real-world cellular networks \cite{686105}, \cite{5936263}.  It has also been shown that traffic distribution is spatially correlated \cite{5936263}, \cite{eigenplaces}.  We model this spatial traffic demand using a similar, continuous form of the SSLT (Scalable, Spatially-correlated, and Log-normally distributed Traffic) model as proposed by Lee, Zhou, and Niu \cite{6554749}.
 
 To generate this spatial distribution over the area of consideration, an initial Gaussian field, $\rho^G = \rho^G\left(x,\, y\right),\, x \in \left[0,\, X\right],\, y \in \left[0,\, Y\right]$, is generated by:
 
@@ -550,9 +549,7 @@ The approximate Gaussian distribution $\rho^G$ is then normalized to $\rho^S = \
 \rho\left(x,\, y\right) = \exp\left(\sigma\rho^S\left(x,\, y\right)+\mu\right)
 \end{equation}
 
-This can be sampled over individual pixels as per Lee (\textit{\textcolor{blue}{cite : F - Spatial Modeling SSLT}}) with each pixel's value indicating the number of homogeneous demand points within the pixel.  In contrast, we allow it to provide a continuous, spatially-correlated log-normal distribution depicting the demand density over the region.
-
-%\textit{\textcolor{blue}{End log-normal SSLT model discussion}}
+$\rho\left(x,\, y\right)$ can be sampled over the space into individual pixels as per Lee with each pixel's value indicating the number of homogeneous demand points within the pixel \cite{6554749}.  In contrast, we allow it to provide a continuous, spatially-correlated log-normal distribution depicting the demand density over the region.
 
 Let $ \mathcal{M} \eqdef \{1,\, 2,\, \ldots,\, M\} $ be the set of demand points within the region; the value of total traffic demand at each point is denoted by $d_m$.  Further let $ u_{ms} \in [0,\, 1],\, m \in \mathcal{M},\, s \in \mathcal{S} $ represent the normalized capacity (with respect to $r_s$) of BS $s$ at point $m$, i.e., the normalized maximum rate that a user can receive at point $m$ from BS $s$.  $u_{ms} = 0$ when $m$ is outside the coverage area of $s$ and $u_{ms} = 1$ when $m$ is within a small distance of $s$.%  The specific position of point $m$, and therefore $u_{ms}$, is determined stochastically by the demand field $\rho$.
 
@@ -586,14 +583,14 @@ Throughout this paper, stochastic variables will be differentiated from determin
 \textit{When discrete points are needed - such as set M for the optimization problem - the continuous model is sampled via a non-stationary PPP.  Each point in the nsPPP is generated by creating a PPP of iid points, and randomly keeping each point with probability equivalent to the log-normal demand field at that point's location.}
 \fi
 
-\section{Solution Approach}
+\section{Solution Approach} \label{approach}
 %\textit{\textcolor{blue}{This might be a good place to discuss more context as a lead up to the problem being solved.}}
 
-In this section, we detail our approaches for optimally selecting the subset of resources within $\mathcal{S}$ to create a network with the minimum cost while allocating the demand within the region to the selected resources such that it maximizes demand satisfaction.  First, we formulate the problem as a capacitated set cover problem solved optimally via a two-stage stochastic optimization problem.  Second, the optimization problem is approximated to a more computationally solvable form as a deterministic equivalent program.  Finally, a genetic algorithm is used to further approximate the original problem to a more tractable form.
+In this section, we detail our approaches for optimally selecting the subset of resources within $\mathcal{S}$ to create a network with the minimum cost while allocating the demand within the region to the selected resources such that it maximizes demand satisfaction.  First, we formulate the problem as a capacitated set cover problem solved optimally via a two-stage stochastic optimization problem.  Second, the optimization problem is approximated to a more computationally solvable form as a deterministic equivalent program.  Finally, a genetic algorithm is used to further approximate the original problem to a more tractable form.  In section \ref{sim}, we will consider the efficacy of these latter two approaches.
 
 %In this section, we detail the two methods for trying to optimally allocate demand to available resources.  Each subsection will include a separate implementation: the optimization problem as formulated by Mohammad and implemented in CPLEX, and the genetic algorithm approximation as developed by Kory and implemented in MATLAB.
 
-\subsection{Problem Formulation}
+\subsection{Problem Formulation} \label{stoch}
 %\textit{In this subsection, we consider the initial stochastic optimization problem, which is the basis of the following reformulations and approximations.}
 
 %\textit{\textcolor{blue}{Mohammad will need to help write or look over this section.}}
@@ -636,7 +633,7 @@ z_s = \mathbb{1}_{\left\{\sum_{m \in \mathcal{M}} \delta_{ms} > 0 \right\}},\, \
 \sum_{m \in \mathcal{M}} \delta_{ms} \leq r_s,\, \forall s \in \mathcal{S}
 \end{equation}
 
-The first stage objective function (\ref{eq:P1S1}) minimizes the total cost of the selected network in context to that network's ability to satisfy the demand contained within the region, as determined by $\rho$.  The second stage objective function (\ref{eq:P1S2}) maximizes the total demand allocated to the resources comprising the network, as specified by $\sigma_{ms}$ as the decision variable of the second stage, which maximizes demand satisfaction.  In this context, we define demand satisfaction as the ratio between the total demand allocated to the selected network to the total demand contained within the region.
+The first stage objective function (\ref{eq:P1S1}) minimizes the total cost of the selected network in context to that network's ability to satisfy the demand contained within the region, as determined by $\rho$.  The second stage objective function (\ref{eq:P1S2}) maximizes the total demand allocated to the resources comprising the network, as specified by $\sigma_{ms}$ as the decision variable of the second stage, which maximizes demand satisfaction.  In this context, we define demand satisfaction as the ratio of the total demand allocated to the selected network to the total demand contained within the region.
 
 Constraints (\ref{eq:P1S1C1}), (\ref{eq:P1S2C1}), and (\ref{eq:P1S2C3}) implement the defined ranges and values of the decision variables $z_s$ and $\delta_{ms}$, with (\ref{eq:P1S2C1}) ensuring that demand is allocated only to selected resources.  For constraint (\ref{eq:P1S2C1}), $\mathbb{1}_{\{*\}}$ is defined by:
 
@@ -653,16 +650,16 @@ Constraint (\ref{eq:P1S2C2}) ensures a demand point $m \in \mathcal{M}$ is not a
 
 %Introduce the stochastic optimization problem, building off the previously defined system model, with support from Mohammad's sources.
 
-\subsection{Deterministic Equivalent Reformulation}
+\subsection{Deterministic Equivalent Reformulation} \label{dep}
 %\textit{In this subsection, we consider the reformulation of the initial stochastic optimization problem with a deterministic equivalent program (DEP).}
 
 %\textit{\textcolor{blue}{Mohammad will need to help provide citations for, write, or look over this reformulation.}}
 
-One major obstacle with solving Problem 1 is that stochastic equations are difficult to impossible to solve with typical computational libraries.  In order to be practical, Problem 1 must be reformulated such that it does not contain any stochastic variables.
+One major obstacle with solving Problem 1 is that stochastic equations are difficult to solve with typical computational libraries.  In order to be practical, Problem 1 may be reformulated such that it does not contain any stochastic variables.
 
-Our approach for solving the proposed stochastic optimization formulation is to derive their deterministic equivalent programs (DEPs).  The DEP is an equivalent reformulation of the original stochastic program, but only contains deterministic variables (\textit{\textcolor{blue}{cite - old paper Stochastic Programming}}).
+Our approach for solving the proposed stochastic optimization formulation is to derive their deterministic equivalent programs (DEPs).  The DEP is an equivalent reformulation of the original stochastic program, but only contains deterministic variables \cite{stochprogramming}.
 
-Let $ \Omega \eqdef \{1,\, 2,\, \ldots,\, O\} $ be defined as the set of discrete scenarios, each of which contains a sampled version of the stochastic variables within Problem 1.  As \textit{O} approaches infinity, $\Omega$ contains the entire scope of the stochastic variables.  With sufficiently large \textit{O}, $\Omega$ approximates the stochastic variables of Problem 1 with deterministic variables.  The probability of a given scenario $\omega \in \Omega$ occurs is given by $p^{\{\omega\}},\, \omega \in \Omega$, where $\sum_{\omega \in \Omega} p^{\{\omega\}} = 1$.  Variables that are dependent on $\Omega$ are shown with a superscript \{$\omega$\} with the specific scenario it is dependent on indicated by $\omega$.
+Let $ \Omega \eqdef \{1,\, 2,\, \ldots,\, O\} $ be defined as the set of discrete scenarios, each of which contains a sampled version of the stochastic variables within Problem 1.  As \textit{O} approaches infinity, $\Omega$ contains the entire scope of the stochastic variables.  With sufficiently large \textit{O}, $\Omega$ approximates the stochastic variables of Problem 1 with deterministic variables.  The probability a given scenario $\omega \in \Omega$ occurs is denoted by $p^{\{\omega\}},\, \omega \in \Omega$, where $\sum_{\omega \in \Omega} p^{\{\omega\}} = 1$.  Variables that are dependent on $\Omega$ are shown with a superscript \{$\omega$\} with the specific scenario it is dependent on indicated by $\omega$.
 
 \vspace{5mm}
 \noindent \textbf{Problem 2 (DEP of Problem 1)}
@@ -691,13 +688,12 @@ z_s \in \{0,\, 1\},\, \forall s \in \mathcal{S}
 
 The objective function (\ref{eq:P2}) combines both objective functions (\ref{eq:P1S1}) and (\ref{eq:P1S2}) of the initial formulation into a deterministic form.  Constraints (\ref{eq:P2C1}) and (\ref{eq:P2C2})	ensure demand is not overallocated and is only allocated to selected resources and within capacity for all scenarios.
 
-Within each scenario $\omega$, the log-normal demand field $\rho$ is sampled to provide a set of \textit{M} discrete demand points.  Each sampling of $\rho$ is generated by creating a non-stationary 2D Poisson point process (PPP) with \textit{M} points over the region using $\rho$ as the spatial intensity function.  To generate this non-stationary PPP, we use an acceptance-rejection method.  That is, each point of a stationary PPP with an intensity of $\rho_{max} = \max_i\rho\left(x_i,\, y_i\right)$ is retained with a probability of $\frac{\rho\,\left(x_i,\, y_i\right)}{\rho_{max}}$, where $x_i$ and $y_i$ are the x- and y-coordinates of the $i^{th}$ point of the stationary PPP.
+Within each scenario $\omega$, the log-normal demand field $\rho$ is sampled to provide a set of \textit{M} discrete demand points.  Each sampling of $\rho$ is generated by creating a non-stationary 2D Poisson point process (PPP) with \textit{M} points over the region using $\rho$ as the spatial intensity function.  To generate this non-stationary PPP, we use an acceptance-rejection method.  That is, each point of a stationary PPP with an intensity of $\rho_{max} = \max_i\rho\left(x_i,\, y_i\right)$ is retained with probability $\frac{\rho\,\left(x_i,\, y_i\right)}{\rho_{max}}$, where $x_i$ and $y_i$ are the x- and y-coordinates of the $i^{th}$ point of the stationary PPP.
 
 %Expound on the program by introducing sampling methodology used to create the set of scenarios.  The full problem space is infinite, as it lies in the continuous domain; by sufficiently sampling the problem space, the DEP will arrive to a sufficiently close solution.
 
-\subsection{Genetic Algorithm}
-
-The DEP formulation is notably intractable as its components increase in size.  Most importantly, the accuracy of the DEP is directly dependent on the size of $\Omega$, directly causing a tradeoff between the accuracy of the DEP and its computability in a reasonable amount of time.  In this subsection, we reformulate the original problem as a genetic algorithm, circumventing the need to discretize demand or to establish $\Omega$, thereby simplifying the original problem into a more scalable form.
+\subsection{Genetic Algorithm Approach} \label{ga}
+The DEP formulation is notably intractable as its components increase in size.  Most importantly, the accuracy of the DEP is directly dependent on the size of $\Omega$, directly causing a trade off between the accuracy of the DEP and its computability in a reasonable amount of time.  In this subsection, we reformulate the original problem as a genetic algorithm, circumventing the need to discretize demand or to establish $\Omega$, thereby simplifying the original problem into a more scalable form.
 
 A genetic algorithm is an iterative metaheuristic in which an approximate solution to a given optimization problem is arrived at via a series of progressive generations.  Each generation contains a number of candidate solutions, called individuals, each of which is defined by a chromosome.  During a given generation, each individual is assessed a fitness heuristic based on its chromosome.  Then individuals are selected at random, with more fit individuals being more probable to be selected.  Pairs of selected individuals will crossover with a probability of $p_{xov}$, a process similar to genetic recombination in biology.  The resulting chromosomes then have a probability $p_{mut}$ to mutate, altering the chromosome slightly.  Once enough new individual chromosomes have been selected and possibly undergone crossover and mutation, this set of new individuals, called children, forms the next generation to repeat the process.  %(\textcolor{blue}{\textit{Trim paragraph and cite someone else?}})
 
@@ -727,7 +723,9 @@ cost\left(z^{\{ig\}}\right) = \sum_{s \in \mathcal{S}} \left( c_s z_s^{\{ig\}} +
 
 The cost function (\ref{eq:GACost}) indicates cost increases not only based on the cost of the resources selected, but also with imperfection costs $c_{cov}$ and $c_{cap}$, the costs of a selected resource being overcoverage or overcapacity, respectively.  The overcapacity cost also grows with each successive generation.  For early generations, this allows for imperfect solutions to temporarily exist to seed later generations and improve diversity to increase the probability of finding a better final approximate solution.  %\textcolor{blue}{\textit{Computationally, the integral is evaluated as a summation of the value of all of the discretized pixels of $\rho$ within $R_s$.}}
 
-Elitism is used, where a number of the most fit individuals of a given generation are automatically selected without crossover or mutation to be the first children of the next generation.  Selection occurs via the roulette wheel selection method (\textcolor{blue}{\textit{cite}}).  Every individual \textit{i} of a given generation \textit{g} has a probability of being selected of:
+Elitism is used, where a number of the most fit individuals of a given generation are automatically selected without crossover or mutation to be the first children of the next generation.  Selection occurs via the roulette wheel selection method.  Every individual \textit{i} of a given generation \textit{g} has a probability of being selected of:
+
+% Might need citation or reasoning for roulette-wheel selection method
 
 \[
 \frac{fitness\left( z^{\{ig\}} \right)}{\sum_{i \in \mathcal{I}} fitness\left( z^{\{ig\}} \right)}
@@ -749,7 +747,7 @@ Introduce the approximation, accepting suboptimal results for an improvement in 
 Introduce the GA fitness function, formulated to correspond to the stochastic optimization problem and its DEP.  Due to correspondence to optimization problem formulation, include important differences, if any.  Perhaps how, in calculating fitness, this uses a grid-/mesh-based grid to emulate the continuous model instead of discrete points; to calculate fitness, it sums the pixels (instead of demand points) within BS coverage.  Also need to introduce the considerations for overdraft - might want to look into a different term - and overcapacity and why it can happen for the algorithm.
 \fi
 
-\section{Simulation Results}
+\section{Simulation Results} \label{sim}
 \noindent {\color{red} \rule{\linewidth}{0.5mm}}
 
 \textit{The following are draft notes for this section:}
@@ -758,7 +756,7 @@ In this section, we detail the simulation procedures.  This includes data genera
 
 Most of this section cannot be worked on until the appropriate data is generated via simulations.  Need optimization and approximation results to compare/contrast against each other.  Approximation data currently seems good, but need optimization results to ensure satisfactory results, especially over a larger data set.
 
-\section{Conclusion}
+\section{Conclusion} \label{conclusion}
 
 \noindent {\color{red} \rule{\linewidth}{0.5mm}}
 
@@ -804,15 +802,21 @@ The conclusion goes here.  Look back on results and reiterate main takeaways.  I
 % <OR> manually copy in the resultant .bbl file
 % set second argument of \begin to the number of references
 % (used to reserve space for the reference number labels box)
-\begin{thebibliography}{1}
+\iffalse
+\begin{thebibliography}{2}
 
 \bibitem{IEEEhowto:kopka}
 H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
   0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.  Sample bib from template.
+  
+\bibitem{test:teague}
+K.~Teague
 
 \end{thebibliography}
+\fi
 
-
+\bibliography{GenAlg_VWN-KTeag}
+\bibliographystyle{IEEEtran}
 
 
 % that's all folks
