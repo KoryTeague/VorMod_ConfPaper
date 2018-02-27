@@ -386,7 +386,7 @@ Email: mackenab@vt.edu}}
 % As a general rule, do not put math, special symbols or citations
 % in the abstract
 \begin{abstract}
-\textit{The abstract goes here once written.}
+\textcolor{blue}{\textit{The abstract goes here once written.}}
 \end{abstract}
 
 % no keywords
@@ -696,9 +696,9 @@ Within each scenario $\omega$, the log-normal demand field $\rho$ is sampled to 
 %Expound on the program by introducing sampling methodology used to create the set of scenarios.  The full problem space is infinite, as it lies in the continuous domain; by sufficiently sampling the problem space, the DEP will arrive to a sufficiently close solution.
 
 \subsection{Genetic Algorithm Approach} \label{ga}
-The DEP formulation is notably intractable as its components increase in size.  Most importantly, the accuracy of the DEP is directly dependent on the size of $\Omega$, directly causing a trade off between the accuracy of the DEP and its computability in a reasonable amount of time.  In this subsection, we reformulate the original problem as a genetic algorithm, circumventing the need to discretize demand or to establish $\Omega$, thereby simplifying the original problem into a more scalable form.
+The DEP formulation is notably intractable as its components increase in size.  Most importantly, the accuracy of the DEP is directly dependent on the size of $\Omega$, directly causing a trade off between the accuracy of the DEP and its computability in a reasonable amount of time.  In this subsection, we reformulate the first stage of the original problem as a genetic algorithm, circumventing the need to discretize demand or to establish $\Omega$, thereby simplifying the original problem into a more scalable form.
 
-A genetic algorithm is an iterative metaheuristic in which an approximate solution to a given optimization problem is arrived at via a series of progressive generations.  Each generation contains a number of candidate solutions, called individuals, each of which is defined by a chromosome.  During a given generation, each individual is assessed a fitness heuristic based on its chromosome.  Then individuals are selected at random, with more fit individuals being more probable to be selected.  Pairs of selected individuals will crossover with a probability of $p_{xov}$, a process similar to genetic recombination in biology.  The resulting chromosomes then have a probability $p_{mut}$ to mutate, altering the chromosome slightly.  Once enough new individual chromosomes have been selected and possibly undergone crossover and mutation, this set of new individuals, called children, forms the next generation to repeat the process.  %(\textcolor{blue}{\textit{Trim paragraph and cite someone else?}})
+A genetic algorithm is an iterative metaheuristic in which an approximate solution to a given optimization problem is arrived at via a series of progressive generations.  Each generation contains a number of candidate solutions, called individuals, each of which is defined by a chromosome.  During a given generation, each individual is assessed a fitness heuristic based on its chromosome.  Then individuals are selected at random, with more fit individuals being more probable to be selected.  Pairs of selected individuals will crossover with probability $p_{xov}$, a process similar to genetic recombination in biology.  The resulting chromosomes then have probability $p_{mut}$ to mutate, altering the chromosome slightly.  Once enough new individual chromosomes have been selected and possibly undergone crossover and mutation, this set of new individuals, called children, forms the next generation to repeat the process.  %(\textcolor{blue}{\textit{Trim paragraph and cite someone else?}})
 
 For the genetic algorithm, $\rho$ is not sampled for discrete demand points.  Instead, we assume that all demand over the region is allocated to the closest resource.  The subset of $\mathcal{S}$, $\mathcal{S}'$, that is selected for a given network forms a Voronoi tessellation from the point locations of the selected resources.  The total demand allocated to a selected resource $s \in \mathcal{S}' \subseteq \mathcal{S}$ is $\iint_{V_s} \rho\left(x,\, y\right) \,dx \,dy$, where $V_s$ is the region bounded by the cell of resource \textit{s} in the Voronoi tessellation.  If the total demand allocated to \textit{s} exceeds $r_s$, \textit{s} is considered to be \textit{overcapacity}.  If $V_s$ is not wholly contained within the coverage area of resource \textit{s}, \textit{s} is considered to be \textit{overcoverage}.
 
@@ -724,7 +724,7 @@ cost\left(z^{\{ig\}}\right) = \sum_{s \in \mathcal{S}} \left( c_s z_s^{\{ig\}} +
 
 %\textcolor{blue}{\textit{Find a way to mathematically convey that resource \textit{s} is overcoverage.  How do you indicate `if region $R_s$ is not wholly contained within the Voronoi cell'?  Need to at least define a term for the Voronoi cell's region.}}
 
-The cost function (\ref{eq:GACost}) indicates cost increases not only based on the cost of the resources selected, but also with imperfection costs $c_{cov}$ and $c_{cap}$, the costs of a selected resource being overcoverage or overcapacity, respectively.  The overcapacity cost also grows with each successive generation.  For early generations, this allows for imperfect solutions to temporarily exist to seed later generations and improve diversity to increase the probability of finding a better final approximate solution.  %\textcolor{blue}{\textit{Computationally, the integral is evaluated as a summation of the value of all of the discretized pixels of $\rho$ within $R_s$.}}
+The cost function (\ref{eq:GACost}) indicates cost increases not only based on the cost of the resources selected, but also with imperfection costs $c_{cov}$ and $c_{cap}$, the costs of a selected resource being overcoverage or overcapacity, respectively.  The overcapacity cost grows with each successive generation.  For early generations, this allows for imperfect solutions to temporarily exist to seed later generations and improve diversity to increase the probability of finding a better final approximate solution.  %\textcolor{blue}{\textit{Computationally, the integral is evaluated as a summation of the value of all of the discretized pixels of $\rho$ within $R_s$.}}
 
 Elitism is used, where a number of the most fit individuals of a given generation are automatically selected without crossover or mutation to be the first children of the next generation.  Selection occurs via the roulette wheel selection method.  Every individual \textit{i} of a given generation \textit{g} has a probability of being selected of:
 
@@ -734,9 +734,11 @@ Elitism is used, where a number of the most fit individuals of a given generatio
 \frac{fitness\left( z^{\{ig\}} \right)}{\sum_{i \in \mathcal{I}} fitness\left( z^{\{ig\}} \right)}
 \]
 
-When crossover is performed on selected individuals, it is via the uniform crossover method with a mixing ratio of 0.5.  That is, each equivalent bit in the selected parent individuals will swap with a probability of 50\%.  It has been suggested that uniform crossover is more exploratory than \textit{n}-point crossover (\textcolor{blue}{\textit{cite}}).  Mutation occurs on a bit-by-bit level, with each bit mutating (i.e., flipping) with probability $\frac{1}{S}$.  The uniqueness property is then enforced on the resulting children to ensure diversity; if a child chromosome is identical to another child chromosome in the next generation, the child is discarded and a new child generated, ensuring that each individual of any given generation is unique within that generation.
+When crossover is performed on selected individuals, it is via the uniform crossover method with a mixing ratio of 0.5.  That is, each equivalent bit in the selected parent individuals will swap with a probability of 50\%.  It has been suggested that uniform crossover is more exploratory than \textit{n}-point crossover \textcolor{blue}{\textit{(cite)}}.  Mutation occurs on a bit-by-bit level, with each bit mutating (i.e., flipping) with probability $\frac{1}{S}$.  The uniqueness property is then enforced on the resulting children to ensure diversity; if a child chromosome is identical to another child chromosome in the next generation, the child is discarded and a new child generated, ensuring that each individual of any given generation is unique within that generation.
 
-The genetic algorithm iterates for a number of generations \textit{G}.  If the genetic algorithm settles on a single individual chromosome for a number of continuous generations, it will halt and present that individual chromosome as the final approximate solution.
+%The genetic algorithm iterates for a number of generations \textit{G}.  If the genetic algorithm settles on a single individual, $i'$, for a number of continuous generations, it will halt and present that individual's chromosome as the final approximate solution for $z_s$, $z_s^* \eqdef z_s^{\{i'g_{halt}\}}$.  Otherwise, the chromosome of the fittest individual, $i'$, of generation \textit{G} determines $z_s^* \eqdef z_s^{\{i'G\}}$.
+
+The genetic algorithm iterates for a number of generations \textit{G}.  If the genetic algorithm settles on a single individual, $i'$, for a number of continuous generations, it will halt and present that individual's chromosome as the final approximate solution for $z_s$.  Otherwise, the chromosome of the fittest individual, $i'$, of generation \textit{G} determines $z_s$.
 
 \iffalse
 \noindent {\color{red} \rule{\linewidth}{0.5mm}}
@@ -750,8 +752,17 @@ Introduce the approximation, accepting suboptimal results for an improvement in 
 Introduce the GA fitness function, formulated to correspond to the stochastic optimization problem and its DEP.  Due to correspondence to optimization problem formulation, include important differences, if any.  Perhaps how, in calculating fitness, this uses a grid-/mesh-based grid to emulate the continuous model instead of discrete points; to calculate fitness, it sums the pixels (instead of demand points) within BS coverage.  Also need to introduce the considerations for overdraft - might want to look into a different term - and overcapacity and why it can happen for the algorithm.
 \fi
 
-\section{Simulation Results} \label{sim}
-In this section, we evaluate the 
+\section{Simulation and Evaluation} \label{sim}
+In this section, we evaluate the DEP and genetic algorithm approaches as approximations of Problem 1.  We will compare the cost, demand satisfaction, and time to generate of the resultant networks.
+
+\subsection{Setup} \label{setup}
+
+
+
+% Mohammad cited CPLEX when he provided the original problem.  Should I, and should I consequently cite MATLAB?
+We ran our experiments on an Intel Core i7-4790K 4.00 GHz CPU with 16 GB of DDR3 RAM.  We used CPLEX \iffalse\textcolor{blue}{\textit{(Mohammad provides a citation for what CPLEX is here, should I?)}}\fi to solve the DEP optimization problems and we used MATLAB \iffalse\textcolor{blue}{\textit{(then should I cite MATLAB here, as well?)}}\fi to simulate the genetic algorithm and to generate the problem data set (e.g., $\rho\left(x,\, y\right)$, $u_{ms}$, $c_s$, etc.).
+
+\subsection{Results} \label{results}
 
 \noindent {\color{red} \rule{\linewidth}{0.5mm}}
 
