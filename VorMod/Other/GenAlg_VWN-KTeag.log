@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2018.2.13)  2 MAR 2018 03:20
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2018.2.13)  2 MAR 2018 04:59
 entering extended mode
 **./GenAlg_VWN-KTeag.tex
 (GenAlg_VWN-KTeag.tex
@@ -1092,17 +1092,30 @@ Underfull \hbox (badness 3826) in paragraph at lines 556--557
 angular frequencies
  []
 
-[1] [2] [3] [4] [5] [6] (GenAlg_VWN-KTeag.bbl [7]) [8] (GenAlg_VWN-KTeag.aux)
+[1] [2] [3] [4] [5] [6]
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 8.00012pt on input line 845.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 6.00009pt on input line 845.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.00008pt on input line 845.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 7.99988pt on input line 845.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 5.99991pt on input line 845.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.99992pt on input line 845.
+ [7] (GenAlg_VWN-KTeag.bbl) [8] (GenAlg_VWN-KTeag.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 25740 strings out of 427839
- 527323 string characters out of 3152538
- 694294 words of memory out of 3000000
- 29415 multiletter control sequences out of 15000+200000
- 534239 words of font info for 101 fonts, out of 3000000 for 9000
+ 25769 strings out of 427839
+ 528400 string characters out of 3152538
+ 693302 words of memory out of 3000000
+ 29430 multiletter control sequences out of 15000+200000
+ 535552 words of font info for 114 fonts, out of 3000000 for 9000
  1329 hyphenation exceptions out of 8191
  65i,18n,75p,10387b,547s stack positions out of 5000i,500n,10000p,200000b,50000s
 
