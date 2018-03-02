@@ -541,7 +541,7 @@ The rest of this paper is organized as follows.  In Section \ref{sec:model}, we 
 
 
 \section{System Model} \label{sec:model}
-We consider a geographical area of width $X$ km and length $Y$ km that contains a set $\mathcal{S} = \left\{1,\, 2,\, \ldots,\, S\right\}$ of base stations (BSs).  The rate capacity of BS $s \in \mathcal{S}$ is denoted by $r_s$, its cost is denoted by $c_s$, and its range is denoted by $ $.
+We consider a geographical area of width $X$ km and length $Y$ km that contains a set $\mathcal{S} = \left\{1,\, 2,\, \ldots,\, S\right\}$ of base stations (BSs).  The rate capacity of BS $s \in \mathcal{S}$ is denoted by $r_s$, its cost is denoted by $c_s$, and its broadcasting range is denoted by $b_s$.
 
 % Double check citations of the following paragraph.  Read the cited papers over.  Lee has similar sentence structure for the early citations, and I need to cite to be authoratative with the citation.
 Within this area is a continuous spatial distribution indicating the overall traffic demand.  It has been shown that a log-normal distribution or a mixture of log-normal distributions can approximate traffic demand in real-world cellular networks \cite{686105}, \cite{5936263}.  It has also been shown that traffic distribution is spatially correlated \cite{5936263}, \cite{eigenplaces}.  We model this spatial traffic demand using a similar, continuous form of the SSLT (Scalable, Spatially-correlated, and Log-normally distributed Traffic) model as proposed by Lee, Zhou, and Niu \cite{6554749}.
@@ -861,7 +861,7 @@ BS cost ($c_s, \forall s \in \mathcal{S}$) & 1 \\
 \hline 
 BS capacity ($r_s, \forall s \in \mathcal{S})$ & 1.50e6 \\ 
 \hline
-BS range & 500 \\
+BS range ($b_s, \forall s \in \mathcal{S}$) & 500 \\
 \hline 
 Demand Point Demand ($d_m, \forall m \in \mathcal{M}$) & 1.78e5 \\ 
 \hline 
@@ -876,14 +876,18 @@ SSLT Location Parameter ($\sigma$) & 0 \\
 \hline 
 SSLT Scale Parameter ($\mu$) & 1 \\ 
 \hline
-Number of Pixels & 100 x 100 \\
+Pixel Grid Size & 100 x 100, 20 m side\\
 \hline 
 \hline
 Maximum Number of Generations ($G$) & 3000 \\ 
 \hline
+Minimum Number of Generations & 300 \\
+\hline
 Number of Unchanged Generations Before Halt ($G_\text{halt}$) & 150 \\
 \hline 
 Number of Individuals per Generation ($I$) & 80 \\ 
+\hline
+Number of Elite Individuals per Generation & 4 \\
 \hline 
 Probability of Crossover ($p_\text{xov}$) & 0.7 \\ 
 \hline 
@@ -895,14 +899,19 @@ Overcapacity Cost ($c_\text{cap}$) & 0.015 \\
 \label{tab:simval}
 \end{table}
 
-Unless stated otherwise, we use the default parameter vales shown in Table \ref{tab:simval}.  BS locations are determined as a stationary PPP.  Demand point locations are generated independently for each scenario as a non-stationary PPP using $\rho\left(x,\, y\right),\, x \in [0,\, X],\, y \in [0,\, Y]$, as the spatial intensity function, as described in Section \ref{sec:model}.  To compute $u_{ms}^{\{\omega\}}$, it is assumed that there is perfect propagation between the demand points and BSs.  Unlike as described in Section \ref{sec:model}, $u_{ms}^{\{\omega\}} = 1$ if the distance between demand point $m \in \mathcal{M}$ of scenario $\omega \in \Omega$ and BS $s \in \mathcal{S}$ is less than the range of BS $s$, and 0 otherwise.  To compute the integral of the fitness function (\ref{eq:GACost}), $\rho\left(x,\, y\right)$ is discretized into a grid of congruent pixels, and the demands of all pixels within a Voronoi cell of interest are summed together.
+Unless stated otherwise, we use the default parameter vales shown in Table \ref{tab:simval}.  BS locations are determined as a stationary PPP.  Demand point locations are generated independently for each scenario as a non-stationary PPP using $\rho\left(x,\, y\right),\, x \in [0,\, X],\, y \in [0,\, Y]$, as the spatial intensity function, as described in Section \ref{sec:model}.  To compute $u_{ms}^{\{\omega\}}$, it is assumed that there is perfect propagation between the demand points and BSs.  Unlike as described in Section \ref{sec:model}, $u_{ms}^{\{\omega\}} = 1$ if the distance between demand point $m \in \mathcal{M}$ of scenario $\omega \in \Omega$ and BS $s \in \mathcal{S}$ is less than $b_s$, and 0 otherwise.  To compute the integral of the fitness function (\ref{eq:GACost}), $\rho\left(x,\, y\right)$ is discretized into a grid of congruent pixels, and the demands of all pixels within a Voronoi cell of interest are summed together.
 
 % Mohammad cited CPLEX when he provided the original problem.  Should I, and should I consequently cite MATLAB?
 We ran our simulations on an Intel Core i7-4790K 4.00 GHz CPU with 16 GB of DDR3 RAM.  We used CPLEX \iffalse\textcolor{blue}{\textit{(Mohammad provides a citation for what CPLEX is here, should I?)}}\fi to solve the DEP optimization problems and we used MATLAB \iffalse\textcolor{blue}{\textit{(then should I cite MATLAB here, as well?)}}\fi to simulate the genetic algorithm and to generate the demand field and stochastic data (i.e., $\rho\left(x,\, y\right)$ and $u_{ms}^{\{\omega\}}$).
 
 \subsection{Results} \label{subsec:results}
 
+
+
 % Runtime comparison, cost comparison, comment on scalability (increase S, M, or O, and cplex very quickly takes a long time to solve, but the GA is only impacted by S; GA is impacted by I and G_halt and capped in runtime by G, none of which affect DEP, but scale linearly in execution.  GA is further impacted by pixel resolution that DEP is not, but doesn't seem bad considering.
+% Should run the GA multiple times for a single value of beta, and see the average results...  That would provide a more solid picture of the consistency of the solutions.
+% Should have a figure for rho, a figure of the complete set of demand points as allocated via rho, a figures of selected solutions.
+% Should I use a data set that cplex cannot terminate within a reasonable time to solve that the GA easily solves within just a couple minutes?
 
 \noindent {\color{red} \rule{\linewidth}{0.5mm}}
 
