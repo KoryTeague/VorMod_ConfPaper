@@ -335,6 +335,7 @@
 \IEEEauthorblockA{Department of Electrical and Computer Engineering, Virginia Tech, USA \\
 \{koryt, mo7ammad, mackenab\}@vt.edu
 }}
+
 \iffalse
 \author{\IEEEauthorblockN{Kory Teague}
 \IEEEauthorblockA{School of Electrical and\\Computer Engineering\\
@@ -701,7 +702,7 @@ Let $ \Omega \eqdef \{1,\, 2,\, \ldots,\, O\} $ be defined as the set of discret
 	\omega \in \Omega} \right\}} {\text{minimize}}
 \sum_{s \in \mathcal{S}} c_s z_s - \alpha \sum_{\omega \in \Omega} p^{\{\omega\}} \left( \sum_{m \in \mathcal{M}} \sum_{s \in \mathcal{S}} \delta_{ms}^{\{\omega\}} u_{ms}^{\{\omega\}} \right) \label{eq:P2}\\
 & \text{subject to:}  \nonumber \\
-& \sum_{s \in \mathcal{S}} u_{ms}^{\{\omega\}} \delta_{ms}^{\{\omega\}} \leq d_m,\, \forall m \in \mathcal{M},\, \forall \omega \in \Omega \label{eq:P2C1}\\
+& \sum_{s \in \mathcal{S}} \delta_{ms}^{\{\omega\}} u_{ms}^{\{\omega\}} \leq d_m,\, \forall m \in \mathcal{M},\, \forall \omega \in \Omega \label{eq:P2C1}\\
 & \sum_{m \in \mathcal{M}} \delta_{ms}^{\{\omega\}} \leq r_s z_s,\, \forall s \in \mathcal{S},\, \forall \omega \in \Omega \label{eq:P2C2}\\
 & z_s \in \{0,\, 1\},\, \forall s \in \mathcal{S} \label{eq:P2C3}
 \end{align}
@@ -749,7 +750,7 @@ After a solution to the DEP has found, it can be of interest to investigate the 
 	m \in \mathcal{M},\, \omega \in \Omega'} \right\}} {\text{minimize}}
 - \sum_{\omega \in \Omega'} p^{\{\omega\}} \left( \sum_{m \in \mathcal{M}} \sum_{s \in \mathcal{S}} \delta_{ms}^{\{\omega\}} u_{ms}^{\{\omega\}} \right) \label{eq:P3}\\
 & \text{subject to:}  \nonumber \\
-& \sum_{s \in \mathcal{S}} u_{ms}^{\{\omega\}} \delta_{ms}^{\{\omega\}} \leq d_m,\, \forall m \in \mathcal{M},\, \forall \omega \in \Omega' \label{eq:P3C1}\\
+& \sum_{s \in \mathcal{S}} \delta_{ms}^{\{\omega\}} u_{ms}^{\{\omega\}} \leq d_m,\, \forall m \in \mathcal{M},\, \forall \omega \in \Omega' \label{eq:P3C1}\\
 & \sum_{m \in \mathcal{M}} \delta_{ms}^{\{\omega\}} \leq r_s z_s,\, \forall s \in \mathcal{S},\, \forall \omega \in \Omega' \label{eq:P3C2}
 \end{align}
 \end{tcolorbox}
