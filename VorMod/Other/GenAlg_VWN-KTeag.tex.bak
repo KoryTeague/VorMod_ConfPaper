@@ -890,6 +890,8 @@ Number of Individuals per Generation ($I$) & 80 \\
 Number of Elite Individuals per Generation & 4 \\
 \hline 
 Probability of Crossover ($p_\text{xov}$) & 0.7 \\ 
+\hline
+Probability of Mutation per bit ($p_\text{mut}$) & $\frac{1}{S} = 0.0167$ \\
 \hline 
 Overcoverage Cost ($c_\text{cov}$) & 3 \\
 \hline
@@ -902,7 +904,7 @@ Overcapacity Cost ($c_\text{cap}$) & 0.015 \\
 Unless stated otherwise, we use the default parameter vales shown in Table \ref{tab:simval}.  BS locations are determined as a stationary PPP.  Demand point locations are generated independently for each scenario as a non-stationary PPP using $\rho\left(x,\, y\right),\, x \in [0,\, X],\, y \in [0,\, Y]$, as the spatial intensity function, as described in Section \ref{sec:model}.  To compute $u_{ms}^{\{\omega\}}$, it is assumed that there is perfect propagation between the demand points and BSs.  Unlike as described in Section \ref{sec:model}, $u_{ms}^{\{\omega\}} = 1$ if the distance between demand point $m \in \mathcal{M}$ of scenario $\omega \in \Omega$ and BS $s \in \mathcal{S}$ is less than $b_s$, and 0 otherwise.  To compute the integral of the fitness function (\ref{eq:GACost}), $\rho\left(x,\, y\right)$ is discretized into a grid of congruent pixels, and the demands of all pixels within a Voronoi cell of interest are summed together.
 
 % Mohammad cited CPLEX when he provided the original problem.  Should I, and should I consequently cite MATLAB?
-We ran our simulations on an Intel Core i7-4790K 4.00 GHz CPU with 16 GB of DDR3 RAM.  We used CPLEX \iffalse\textcolor{blue}{\textit{(Mohammad provides a citation for what CPLEX is here, should I?)}}\fi to solve the DEP optimization problems and we used MATLAB \iffalse\textcolor{blue}{\textit{(then should I cite MATLAB here, as well?)}}\fi to simulate the genetic algorithm and to generate the demand field and stochastic data (i.e., $\rho\left(x,\, y\right)$ and $u_{ms}^{\{\omega\}}$).
+We ran our simulations on an Intel Core i7-4790K 4.00 GHz CPU with 16 GB of DDR3 RAM.  We used CPLEX \iffalse\textcolor{blue}{\textit{(Mohammad provides a citation for what CPLEX is here, should I?)}}\fi to solve the DEP optimization problems and we used MATLAB \iffalse\textcolor{blue}{\textit{(then should I cite MATLAB here, as well?)}}\fi to simulate the genetic algorithm and to generate the demand field and stochastic data (i.e., $\rho\left(x,\, y\right)$ and $u_{ms}^{\{\omega\}}$).  Average values for the performance of the genetic algorithm are provided from 50 independent runs using the exact same data set except for the set of initial individuals.
 
 \subsection{Results} \label{subsec:results}
 

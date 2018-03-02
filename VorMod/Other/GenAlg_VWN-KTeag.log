@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2018.2.13)  2 MAR 2018 10:25
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2018.2.13)  2 MAR 2018 13:08
 entering extended mode
 **./GenAlg_VWN-KTeag.tex
 (GenAlg_VWN-KTeag.tex
@@ -1105,7 +1105,8 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 5.99991pt on input line 845.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 4.99992pt on input line 845.
- [7] (GenAlg_VWN-KTeag.bbl) [8] (GenAlg_VWN-KTeag.aux)
+ [7] (GenAlg_VWN-KTeag.bbl [8]) [9]
+(GenAlg_VWN-KTeag.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -1119,4 +1120,4 @@ Here is how much of TeX's memory you used:
  1329 hyphenation exceptions out of 8191
  65i,18n,75p,10387b,547s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on GenAlg_VWN-KTeag.pdf (8 pages).
+Output written on GenAlg_VWN-KTeag.pdf (9 pages).
