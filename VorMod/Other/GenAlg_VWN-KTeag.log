@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2018.2.13)  27 FEB 2018 11:46
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2018.2.13)  2 MAR 2018 01:21
 entering extended mode
 **./GenAlg_VWN-KTeag.tex
 (GenAlg_VWN-KTeag.tex
@@ -808,18 +808,18 @@ Underfull \hbox (badness 3826) in paragraph at lines 547--548
 angular frequencies
  []
 
-[2] [3] [4] [5] [6] (GenAlg_VWN-KTeag.bbl) [7] (GenAlg_VWN-KTeag.aux)
+[2] [3] [4] [5] [6] (GenAlg_VWN-KTeag.bbl [7]) [8] (GenAlg_VWN-KTeag.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 16106 strings out of 427839
- 328030 string characters out of 3152538
- 504269 words of memory out of 3000000
- 19970 multiletter control sequences out of 15000+200000
+ 16109 strings out of 427839
+ 328055 string characters out of 3152538
+ 504296 words of memory out of 3000000
+ 19973 multiletter control sequences out of 15000+200000
  534255 words of font info for 103 fonts, out of 3000000 for 9000
  1329 hyphenation exceptions out of 8191
  50i,12n,68p,10387b,314s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on GenAlg_VWN-KTeag.pdf (7 pages).
+Output written on GenAlg_VWN-KTeag.pdf (8 pages).
