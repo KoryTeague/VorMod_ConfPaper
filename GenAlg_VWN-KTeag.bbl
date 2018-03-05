@@ -47,4 +47,9 @@ D.~Lee, S.~Zhou, and Z.~Niu, ``Spatial modeling of scalable
 P.~Kall and S.~W. Wallace, \emph{Stochastic Programming}.\hskip 1em plus 0.5em
   minus 0.4em\relax John Wiley and Sons, 1994.
 
+\bibitem{Cplex}
+IBM, ``Optimization model development toolkit for mathematical and constraint
+  programming {(CPLEX)},''
+  \url{http://www-03.ibm.com/software/products/en/ibmilogcpleoptistud}, 2012.
+
 \end{thebibliography}
