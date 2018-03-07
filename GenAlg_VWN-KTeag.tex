@@ -543,7 +543,7 @@ The rest of this paper is organized as follows.  In Section \ref{sec:model}, we 
 
 
 \section{System Model} \label{sec:model}
-We consider a geographical area of width $X$ m and length $Y$ m that contains a set $\mathcal{S} = \left\{1,\, 2,\, \ldots,\, S\right\}$ of base stations (BSs) available to the Virtual Network Builder (VNB) as provided by the Resource Providers (RPs).  The rate capacity of BS $s \in \mathcal{S}$ is denoted by $r_s$, its cost is denoted by $c_s$, and its broadcasting range is denoted by $b_s$.
+We consider a geographical area of width $X$ (m) and length $Y$ (m) that contains a set $\mathcal{S} = \left\{1,\, 2,\, \ldots,\, S\right\}$ of base stations (BSs) available to the Virtual Network Builder (VNB) as provided by the Resource Providers (RPs).  The rate capacity of BS $s \in \mathcal{S}$ is denoted by $r_s$, its cost is denoted by $c_s$, and its broadcasting range is denoted by $b_s$.
 
 % Double check citations of the following paragraph.  Read the cited papers over.  Lee has similar sentence structure for the early citations, and I need to cite to be authoratative with the citation.
 %Within this area is a continuous spatial distribution indicating the overall traffic demand.  It has been shown that a log-normal distribution or a mixture of log-normal distributions can approximate traffic demand in real-world cellular networks \cite{686105}, \cite{5936263}.  It has also been shown that traffic distribution is spatially correlated \cite{5936263}, \cite{eigenplaces}.  We model this spatial traffic demand using a similar, continuous form of the SSLT (Scalable, Spatially-correlated, and Log-normally distributed Traffic) model as proposed by Lee, Zhou, and Niu \cite{6554749}.
@@ -565,7 +565,7 @@ The approximate Gaussian distribution $\rho^G$ is then normalized to $\rho^S = \
 \rho\left(x,\, y\right) = \exp\left(\sigma \; \rho^S\left(x,\, y\right)+\mu\right)
 \end{equation}
 
-$\rho\left(x,\, y\right)$ can be sampled over the space into individual pixels as per Lee with each pixel's value indicating the number of homogeneous demand points within the pixel \cite{6554749}.  In contrast, we allow it to provide a continuous, spatially-correlated log-normal distribution depicting the demand density over the region for the SP.
+$\rho\left(x,\, y\right)$ can be sampled over the space into individual pixels as per Lee with each pixel's value indicating the number of homogeneous demand points within the pixel \cite{6554749}.  In contrast, we allow $\rho(x,\, y)$ to provide a continuous, spatially-correlated log-normal distribution depicting the demand density over the region for the SP.
 
 Let $\mathcal{M} \eqdef \{1,\, 2,\, \ldots,\, M\}$ be the set of the SP's demand points seeking to connect to the VWN; the value of total traffic demand at each point is denoted by $d_m$.  Further let $u_{ms} \in [0,\, 1],\, m \in \mathcal{M},\, s \in \mathcal{S}$, represent the normalized capacity (with respect to $r_s$) of BS $s$ at point $m$, i.e., the normalized maximum rate that a user can receive at point $m$ from BS $s$.  $u_{ms} = 0$ when $m$ is outside the coverage area of $s$ and $u_{ms} = 1$ when $m$ is within a small distance of $s$.  The specific position of point $m$, and therefore the value of $u_{ms}$, is determined stochastically by the demand field $\rho$.
 
@@ -604,7 +604,7 @@ Throughout this paper, stochastic variables will be differentiated from determin
 
 %In this section, we detail our approaches for optimally selecting the subset of resources within $\mathcal{S}$ to create a network with the minimum cost while allocating the demand within the region to the selected resources such that it maximizes demand satisfaction.  First, we formulate the problem as a capacitated set cover problem solved optimally via a two-stage stochastic optimization problem.  Second, the optimization problem is approximated to a more computationally solvable form as a deterministic equivalent program.  Finally, a genetic algorithm is used to further approximate the original problem to a more tractable form.  In Section \ref{sec:sim}, we will consider the efficacy of these latter two approaches.
 
-In this section, we detail our approaches for selecting the subset of resources within $\mathcal{S}$ to create a network with the minimum cost while allocating the the selected resources to the demand points within the region such that it maximizes demand satisfaction.  First, we formulate the problem of BS selection and their allocation to individual demand points as a two-stage stochastic optimization problem.  Second, the optimization problem is approximated to a computationally solvable form as a deterministic equivalent program.  Finally, a genetic algorithm is used as a separate approximation to the BS selection portion of the problem.  In Section \ref{sec:sim}, we will consider the efficacy of these latter two approaches.
+In this section, we detail our approaches for selecting the subset of resources within $\mathcal{S}$ to create a network with the minimum cost while allocating the selected resources to the demand points within the region such that it maximizes demand satisfaction.  First, we formulate the problem of BS selection and their allocation to individual demand points as a two-stage stochastic optimization problem.  Second, the optimization problem is approximated to a computationally solvable form as a deterministic equivalent program.  Finally, a genetic algorithm is used as a separate approximation to the BS selection portion of the problem.  In Section \ref{sec:sim}, we will consider the efficacy of these latter two approaches.
 
 %In this section, we detail the two methods for trying to optimally allocate demand to available resources.  Each subsection will include a separate implementation: the optimization problem as formulated by Mohammad and implemented in CPLEX, and the genetic algorithm approximation as developed by Kory and implemented in MATLAB.
 
@@ -786,7 +786,7 @@ subject to:
 
 \noindent where $\Omega' \eqdef \{1,\, 2,\, \ldots,\, O'\}$ is the set of $O'$ scenarios independent of the original set $\Omega$.  In practice, $O' = 1$ with $p^{\{1\}} = 1$, as only the currently existing scenario of the network is of interest for slicing the resources at that moment.  Higher values of $O'$ are useful for simulating multiple scenarios with a homogeneous $\mathcal{M}'$.  It is worth noting that Problem 3 is more tractable than Problem 2 as it only contains one decision variable for resource slicing, simplifying the objective function (\ref{eq:P3}) and constraint (\ref{eq:P3C2}).
 
-\textit{\textcolor{blue}{Note: It just occurred to me that this problem can be further simplified such that the set $\mathcal{S}$ is trimmed to remove all BSs $s \in \mathcal{S}$ where $z_s = 0$, creating a new set $\mathcal{S}'$ with no $z_s$ present (as $z_s = 1, \forall s \in \mathcal{S}'$). This would decrease the size of the problem in the situation it begins to become intractable.  It is implemented as displayed in Problem 3, but this would be an universal improvement.  Might be worth implementing for thesis.}}
+%\textit{\textcolor{blue}{Note: It just occurred to me that this problem can be further simplified such that the set $\mathcal{S}$ is trimmed to remove all BSs $s \in \mathcal{S}$ where $z_s = 0$, creating a new set $\mathcal{S}'$ with no $z_s$ present (as $z_s = 1, \forall s \in \mathcal{S}'$). This would decrease the size of the problem in the situation it begins to become intractable.  It is implemented as displayed in Problem 3, but this would be an universal improvement.  Might be worth implementing for thesis.}}
 
 \subsection{Genetic Algorithm Approach} \label{subsec:ga}
 The full DEP formulation is notably intractable as its components increase in size.  Most importantly, the accuracy of the DEP is directly dependent on the size of $\Omega$, directly causing a trade off between the accuracy of the DEP and its computability in a reasonable amount of time.  In this subsection, we reformulate the problem of joint BS selection for the VWN as a genetic algorithm, circumventing the need to discretize demand or to establish $\Omega$, thereby simplifying the original problem into a more scalable form.
@@ -934,10 +934,10 @@ Overcapacity Cost ($c_\text{cap}$) & 1.015 \\
 \label{fig:NetworkArea}
 \end{figure}
 
-Unless stated otherwise, we use the default parameter vales shown in Table \ref{tab:simval}.  BS locations are determined as a stationary PPP.  Demand point locations are generated independently for each scenario as a non-stationary PPP using $\rho\left(x,\, y\right),\, x \in [0,\, X],\, y \in [0,\, Y]$, as the spatial intensity function, as described in Section \ref{sec:model}.  Fig. \ref{fig:NetworkArea} provides a visualization of the simulation network area.  (\ref{fig:BSLocVor}) shows the BS locations of $\mathcal{S}$ with the associated Voronoi Tesselation showing the coverage areas of the BSs when all are active with respect to the genetic algorithm.  (\ref{fig:SSLTDPReal}) shows the SSLT demand density field with one example scenario of demand points, which acts as a single sample of the demand density field.  To compute $u_{ms}^{\{\omega\}}$, it is assumed that there is perfect propagation between the demand points and BSs.  Unlike as described in Section \ref{sec:model}, $u_{ms}^{\{\omega\}} = 1$ if the distance between demand point $m \in \mathcal{M}$ of scenario $\omega \in \Omega$ and BS $s \in \mathcal{S}$ is less than $b_s$, and 0 otherwise.  To compute the integral of the fitness function (\ref{eq:GACost}), $\rho\left(x,\, y\right)$ is discretized into a grid of congruent pixels, and the demands of all pixels within a Voronoi cell of interest are summed together.
+Unless stated otherwise, we use the default parameter values shown in Table \ref{tab:simval}.  BS locations are determined as a stationary PPP.  Demand point locations are generated independently for each scenario as a non-stationary PPP using $\rho\left(x,\, y\right),\, x \in [0,\, X],\, y \in [0,\, Y]$, as the spatial intensity function, as described in Section \ref{sec:model}.  Fig. \ref{fig:NetworkArea} provides a visualization of the simulation network area.  (\ref{fig:BSLocVor}) shows the BS locations of $\mathcal{S}$ with the associated Voronoi Tesselation showing the coverage areas of the BSs when all are active with respect to the genetic algorithm.  (\ref{fig:SSLTDPReal}) shows the SSLT demand density field with one example scenario of demand points, which acts as a single sample of the demand density field.  To compute $u_{ms}^{\{\omega\}}$, it is assumed that there is perfect propagation between the demand points and BSs.  Unlike as described in Section \ref{sec:model}, $u_{ms}^{\{\omega\}} = 1$ if the distance between demand point $m \in \mathcal{M}$ of scenario $\omega \in \Omega$ and BS $s \in \mathcal{S}$ is less than $b_s$, and 0 otherwise.  To compute the integral of the fitness function (\ref{eq:GACost}), $\rho\left(x,\, y\right)$ is discretized into a grid of congruent pixels, and the demands of all pixels within a Voronoi cell of interest are summed together.
 
 % Mohammad cited CPLEX when he provided the original problem.  Should I, and should I consequently cite MATLAB?
-We ran our simulations on an Intel Core i7-4790K 4.00 GHz 4 real core/8 virtual core CPU with 16 GB of DDR3 RAM.  We used CPLEX \cite{Cplex} to solve the DEP optimization problems and we used MATLAB to simulate the genetic algorithm and to generate the demand field and stochastic data (i.e., $\rho\left(x,\, y\right)$ and $u_{ms}^{\{\omega\}}$).  Average values for the performance of the genetic algorithm are provided from 50 independent runs using the identical data set except for the set of initial individuals.  The DEP solutions were solved across multiple values of $\alpha$ as cost, time, and demand satisfaction are directly related to $\alpha$.
+We ran our simulations on an Intel Core i7-4790K 4.00 GHz 4 real core/8 virtual core CPU with 16 GB of DDR3 RAM running Windows 10 Pro.  We used CPLEX \cite{Cplex} to solve the DEP optimization problems and we used MATLAB to simulate the genetic algorithm and to generate the demand field and stochastic data (i.e., $\rho\left(x,\, y\right)$ and $u_{ms}^{\{\omega\}}$).  During the simulations, extraneous processes were culled to allow maximal use of computer resources.  Average values for the performance of the genetic algorithm are provided from 50 independent runs using the identical data set except for the set of initial individuals.  The DEP solutions were solved across multiple values of $\alpha$ as cost, time, and demand satisfaction are directly related to $\alpha$.
 
 \subsection{Results} \label{subsec:results}
 
@@ -954,17 +954,47 @@ We ran our simulations on an Intel Core i7-4790K 4.00 GHz 4 real core/8 virtual 
 	\caption{Adjusted (Pseudo-Real) Run Time}
 	\label{fig:CPUTimeCompAdj}
 \end{subfigure}
-\caption{Comparison of Runtimes.  The DEP run time is the solid blue line, while the minimum, average, and maximum genetic algorithm run times are provided as dot-dashed, solid, and dahsed red reference lines, respectively.}
+\caption{Run time comparison.  The DEP run time is the solid blue line, while the minimum, average, and maximum genetic algorithm run times are provided as dot-dashed, solid, and dahsed red reference lines, respectively.}
 \label{fig:CPUTime}
 \end{figure}
 
-In Fig. \ref{fig:CPUTime} is a comparison of the time to run.  (\ref{fig:CPUTimeComp}) shows the absolute overall CPU time taken to converge to a solution in both the DEP and genetic algorithm.  (\ref{fig:CPUTimeCompAdj}) shows an adjusted form of the run time the DEP took to terminate to a single solution.  CPLEX is capable of parallelizing across the 8 CPU cores, allowing for the real run time to take, at minimum, one-eighth of the time.  In comparison, the MATLAB implementation only runs in one core.  With this adjustment providing an improvement to the DEP run time, the genetic algorithm converges in around the same time as the DEP for higher levels of $\alpha$, when a single solution dominates so heavily it simplifies the overall set.  Without the adjustment, the genetic algorithm outperforms the DEP, converging to a solution in 0.125\% the time for $\alpha \geq 30$ and in 0.02\% of the time at $\alpha < 30$.
+In Fig. \ref{fig:CPUTime} is a comparison of the time to run.  (\ref{fig:CPUTimeComp}) shows the absolute overall CPU time taken to converge to a solution in both the DEP and genetic algorithm.  (\ref{fig:CPUTimeCompAdj}) shows an adjusted form of the run time the DEP took to terminate to a single solution.  CPLEX is capable of parallelizing across the 8 CPU cores, allowing for the real run time to be, at minimum, one-eighth the CPU run time.  With this adjustment providing an improvement to the DEP run time, the genetic algorithm converges in around the same time as the DEP for higher levels of $\alpha$, when a single solution dominates so heavily it simplifies the overall set.  Without the adjustment, the genetic algorithm outperforms the DEP, converging to a solution in approximately 13\% of the time for $\alpha \geq 30$ and in approximately 2\% of the time for $\alpha \in \{20,\, 25\}$.
+
+\begin{figure}
+\begin{subfigure}{.5\textwidth}
+	\centering
+	\includegraphics[width=.8\linewidth]{Figures/ComparisonCost}
+	\caption{Comparison of VWN costs}
+	\label{fig:VWNCompCost}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+	\centering
+	\includegraphics[width=.8\linewidth]{Figures/ComparisonSatisfaction}
+	\caption{Comparison of SP demand point satisfaction}%.  Outliers are ignored for the genetic algorithm minimum, maximum, and average, with the minimum outlying genetic algorithm VWN plotted in black.}
+	\label{fig:VWNCompSatis}
+\end{subfigure}
+\label{VWNComp}
+\end{figure}
+
+The trade off for the genetic algorithm's improved run time is that the solution provided is less optimal than the DEP, as indicated by an increased cost for the VNB to build the VWN.  Fig. \ref{fig:VWNCompCost} compares the increasing cost of the DEP as $\alpha$ increases with the cost of the various genetic algorithm solutions.  On average, the genetic algorithm incurs a 36\% increased cost in selecting the BSs for the VWN.  At minimum, the incurred cost is only 20\% than the DEP, which implies the genetic algorithm might be terminating early, and a tighter solution might be found by increasing $G_\text{halt}$.  It should also be noted that one unit of cost is one additional BS being selected for the VWN, and the DEP selections for $\alpha \geq 30$ have a cost of only 10 BSs.  Any variance that incurs one additional BS for the genetic algorithm incurs 10\% increased cost.  Increasing the number of BSs required to comprise the VWN would introduce additional granularity in $\mathcal{S}$ that might decrease the inefficiency of the genetic algorithm.  This was not done as this data set was chosen specifically so the DEP would terminate within 15 minutes (i.e., in a reasonable amount of time); increasing the number of BSs available to the VNB drastically increases the time it would take the DEP to converge to a solution.%  \textcolor{blue}{\textit{Would it be worthwhile to run and provide figures of a couple additional simulations here with more BSs to demonstrate this about the DEP?}}
+
+There is a direct correlation between the number of BS in the VWN and its capability for satisfying demand.  As the cost increases of the DEP solution, more BS are selected, and the demand satisfaction the DEP solution similarly trends towards 100\%, as shown in Figures \ref{fig:VWNCompCost} and \ref{fig:VWNCompSatis}.  Because of this, the genetic algorithm solutions have a very high demand satisfaction, averaging 99.9\% demand satisfaction, even reaching 100\% for some solutions.  The most expensive, 10-BS DEP solutions reach 99.2\% demand satisfaction when slicing the same set of resources that determined the DEP BS selection.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\linewidth]{Figures/ComparisonSatisfactionEval}
+	\caption{Comparison of demand satisfaction with 50 scenarios of 200 SP demand points}
+	\label{fig:VWNEvalCompSatis}
+\end{figure}
+
+When the set of demand points change to a scenario no longer in $\Omega$, the DEP performs very similarly.  Fig. \ref{fig:VWNEvalCompSatis} shows the demand satisfaction for both the DEP and genetic algorithm BS selections when sliced to a new set of scenarios.  Here, the number of demand points increases to 200 points per scenario, each with 66.8 kbps rate demand, across 50 independent scenarios.  The demand satisfaction trend of the DEP BS selection follows very closely to the original set of scenarios, but hits a maximum of 99.0\% demand satisfaction with 10 BSs.  In comparison, the SP demand point scenarios are far more beneficial to the genetic algorithm, which reaches greater than 99.99\% demand satisfaction for all generated VWNs.  This is expected as a side effect of the increased number of points and scenarios more accurately describing as a sampling of the original SSLT demand density field of the SP, $\rho(x,\, y)$.
 
 % Runtime comparison, cost comparison, comment on scalability (increase S, M, or O, and cplex very quickly takes a long time to solve, but the GA is only impacted by S; GA is impacted by I and G_halt and capped in runtime by G, none of which affect DEP, but scale linearly in execution.  GA is further impacted by pixel resolution that DEP is not, but doesn't seem bad considering.
 % Should run the GA multiple times for a single value of beta, and see the average results...  That would provide a more solid picture of the consistency of the solutions.
 % Should have a figure for rho, a figure of the complete set of demand points as allocated via rho, a figures of selected solutions.
 % Should I use a data set that cplex cannot terminate within a reasonable time to solve that the GA easily solves within just a couple minutes?
 
+\iffalse
 \noindent {\color{red} \rule{\linewidth}{0.5mm}}
 
 \textit{The following are draft notes for this section:}
@@ -972,6 +1002,7 @@ In Fig. \ref{fig:CPUTime} is a comparison of the time to run.  (\ref{fig:CPUTime
 In this section, we detail the simulation procedures.  This includes data generation, assumptions, differing models (small and larger scale data sets?), resulting data, how the data is evaluated.  Include the resulting data and potential takeaways from the data.  If solutions are as expected, expand and expound upon it.  If not, then hypothesize why.
 
 Most of this section cannot be worked on until the appropriate data is generated via simulations.  Need optimization and approximation results to compare/contrast against each other.  Approximation data currently seems good, but need optimization results to ensure satisfactory results, especially over a larger data set.
+\fi
 
 \section{Conclusion} \label{sec:conclusion}
 
