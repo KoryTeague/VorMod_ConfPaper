@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2018.2.13)  7 MAR 2018 12:17
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2018.2.13)  7 MAR 2018 15:39
 entering extended mode
 **./GenAlg_VWN-KTeag.tex
 (GenAlg_VWN-KTeag.tex
@@ -1108,6 +1108,17 @@ ut line 319.
 ABD: EveryShipout initializing macros
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
+
+
+LaTeX Warning: Reference `sec:approach' on page 1 undefined on input line 429.
+
+
+LaTeX Warning: Reference `sec:sim' on page 1 undefined on input line 429.
+
+
+LaTeX Warning: Reference `sec:conclusion' on page 1 undefined on input line 429
+.
+
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
 (Font)              scaled to size 10.00015pt on input line 546.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
@@ -1121,6 +1132,20 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 4.98067pt on input line 546.
 
+LaTeX Warning: Citation `686105' on page 1 undefined on input line 551.
+
+
+LaTeX Warning: Citation `5936263' on page 1 undefined on input line 551.
+
+
+LaTeX Warning: Citation `5936263' on page 1 undefined on input line 551.
+
+
+LaTeX Warning: Citation `eigenplaces' on page 1 undefined on input line 551.
+
+
+LaTeX Warning: Citation `6554749' on page 1 undefined on input line 551.
+
 
 LaTeX Warning: Command \textasciitilde invalid in math mode on input line 560.
 
@@ -1133,7 +1158,76 @@ Underfull \hbox (badness 3826) in paragraph at lines 560--561
 angular frequencies
  []
 
-[1] [2] [3] [4] [5] [6]
+[1]
+
+LaTeX Warning: Citation `6554749' on page 2 undefined on input line 568.
+
+
+LaTeX Warning: Reference `sec:sim' on page 2 undefined on input line 607.
+
+[2]
+
+LaTeX Warning: Reference `eq:P1S1' on page 3 undefined on input line 673.
+
+
+LaTeX Warning: Reference `eq:P1S2' on page 3 undefined on input line 673.
+
+
+LaTeX Warning: Reference `eq:P1S1C1' on page 3 undefined on input line 675.
+
+
+LaTeX Warning: Reference `eq:P1S2C1' on page 3 undefined on input line 675.
+
+
+LaTeX Warning: Reference `eq:P1S2C3' on page 3 undefined on input line 675.
+
+
+LaTeX Warning: Reference `eq:P1S2C1' on page 3 undefined on input line 675.
+
+
+LaTeX Warning: Reference `eq:P1S2C1' on page 3 undefined on input line 675.
+
+
+LaTeX Warning: Reference `eq:P1S2C2' on page 3 undefined on input line 684.
+
+[3]
+
+LaTeX Warning: Citation `stochprogramming' on page 4 undefined on input line 69
+7.
+
+
+LaTeX Warning: Reference `eq:P2' on page 4 undefined on input line 744.
+
+
+LaTeX Warning: Reference `eq:P1S1' on page 4 undefined on input line 744.
+
+
+LaTeX Warning: Reference `eq:P1S2' on page 4 undefined on input line 744.
+
+
+LaTeX Warning: Reference `eq:P2C1' on page 4 undefined on input line 744.
+
+
+LaTeX Warning: Reference `eq:P2C2' on page 4 undefined on input line 744.
+
+
+LaTeX Warning: Reference `subsec:dep' on page 4 undefined on input line 752.
+
+[4]
+
+LaTeX Warning: Reference `eq:P3' on page 5 undefined on input line 787.
+
+
+LaTeX Warning: Reference `eq:P3C2' on page 5 undefined on input line 787.
+
+[5]
+
+LaTeX Warning: Reference `eq:GACost' on page 6 undefined on input line 820.
+
+[6]
+
+LaTeX Warning: Reference `subsec:slice' on page 7 undefined on input line 838.
+
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
 (Font)              scaled to size 8.00012pt on input line 859.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
@@ -1159,7 +1253,41 @@ Overfull \hbox (2.29994pt too wide) in paragraph at lines 921--933
 []$[]$ $[]$ 
  []
 
+
+LaTeX Warning: Reference `fig:BSLocVor' on page 7 undefined on input line 933.
+
+
+LaTeX Warning: Reference `fig:SSLTDPReal' on page 7 undefined on input line 933
+.
+
+
+LaTeX Warning: Reference `fig:BSLocVor' on page 7 undefined on input line 933.
+
+
+LaTeX Warning: Reference `fig:SSLTDPReal' on page 7 undefined on input line 933
+.
+
+
+LaTeX Warning: Reference `tab:simval' on page 7 undefined on input line 937.
+
+
+LaTeX Warning: Reference `fig:NetworkArea' on page 7 undefined on input line 93
+7.
+
+
+LaTeX Warning: Reference `fig:BSLocVor' on page 7 undefined on input line 937.
+
+
+LaTeX Warning: Reference `fig:SSLTDPReal' on page 7 undefined on input line 937
+.
+
+
+LaTeX Warning: Reference `eq:GACost' on page 7 undefined on input line 937.
+
 [7]
+
+LaTeX Warning: Citation `Cplex' on page 8 undefined on input line 940.
+
 File: Figures/ComparisonTime.png Graphic file (type bmp)
 <Figures/ComparisonTime.png>
 File: Figures/ComparisonTimeAdjusted.png Graphic file (type bmp)
@@ -1170,27 +1298,56 @@ Overfull \hbox (2.29994pt too wide) in paragraph at lines 945--957
  []
 
 [8]
+
+LaTeX Warning: Reference `fig:CPUTime' on page 9 undefined on input line 961.
+
+
+LaTeX Warning: Reference `fig:CPUTimeComp' on page 9 undefined on input line 96
+1.
+
+
+LaTeX Warning: Reference `fig:CPUTimeCompAdj' on page 9 undefined on input line
+ 961.
+
 File: Figures/ComparisonCost.png Graphic file (type bmp)
 <Figures/ComparisonCost.png>
 File: Figures/ComparisonSatisfaction.png Graphic file (type bmp)
 <Figures/ComparisonSatisfaction.png>
 
-Overfull \hbox (2.29994pt too wide) in paragraph at lines 964--977
-[]$[]$ $[]$
+Overfull \hbox (2.29994pt too wide) in paragraph at lines 964--976
+[]$[]$ $[]$ 
  []
+
+
+LaTeX Warning: Reference `fig:VWNCompCost' on page 9 undefined on input line 98
+0.
+
+
+LaTeX Warning: Reference `fig:VWNComp' on page 9 undefined on input line 982.
 
 [9]
 File: Figures/ComparisonSatisfactionEval.png Graphic file (type bmp)
 <Figures/ComparisonSatisfactionEval.png>
- [10] (GenAlg_VWN-KTeag.bbl) [11] (GenAlg_VWN-KTeag.aux)
+
+
+LaTeX Warning: Reference `fig:VWNEvalCompSatis' on page 10 undefined on input l
+ine 991.
+
+[10] (GenAlg_VWN-KTeag.bbl) [11] (GenAlg_VWN-KTeag.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
  26943 strings out of 427839
- 549867 string characters out of 3152538
- 716561 words of memory out of 3000000
+ 549871 string characters out of 3152538
+ 719115 words of memory out of 3000000
  30580 multiletter control sequences out of 15000+200000
  536097 words of font info for 117 fonts, out of 3000000 for 9000
  1329 hyphenation exceptions out of 8191

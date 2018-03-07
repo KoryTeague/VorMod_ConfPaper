@@ -964,21 +964,22 @@ In Fig. \ref{fig:CPUTime} is a comparison of the time to run.  (\ref{fig:CPUTime
 \begin{subfigure}{.5\textwidth}
 	\centering
 	\includegraphics[width=.8\linewidth]{Figures/ComparisonCost}
-	\caption{Comparison of VWN costs}
+	\caption{VWN costs}
 	\label{fig:VWNCompCost}
 \end{subfigure}
 \begin{subfigure}{.5\textwidth}
 	\centering
 	\includegraphics[width=.8\linewidth]{Figures/ComparisonSatisfaction}
-	\caption{Comparison of SP demand point satisfaction}%.  Outliers are ignored for the genetic algorithm minimum, maximum, and average, with the minimum outlying genetic algorithm VWN plotted in black.}
+	\caption{SP demand point satisfaction}%.  Outliers are ignored for the genetic algorithm minimum, maximum, and average, with the minimum outlying genetic algorithm VWN plotted in black.}
 	\label{fig:VWNCompSatis}
 \end{subfigure}
-\label{VWNComp}
+\caption{Comparison of VWN costs and SP demand point satisfaction.  Note that cost and demand satisfaction show a direct correlation.}
+\label{fig:VWNComp}
 \end{figure}
 
 The trade off for the genetic algorithm's improved run time is that the solution provided is less optimal than the DEP, as indicated by an increased cost for the VNB to build the VWN.  Fig. \ref{fig:VWNCompCost} compares the increasing cost of the DEP as $\alpha$ increases with the cost of the various genetic algorithm solutions.  On average, the genetic algorithm incurs a 36\% increased cost in selecting the BSs for the VWN.  At minimum, the incurred cost is only 20\% than the DEP, which implies the genetic algorithm might be terminating early, and a tighter solution might be found by increasing $G_\text{halt}$.  It should also be noted that one unit of cost is one additional BS being selected for the VWN, and the DEP selections for $\alpha \geq 30$ have a cost of only 10 BSs.  Any variance that incurs one additional BS for the genetic algorithm incurs 10\% increased cost.  Increasing the number of BSs required to comprise the VWN would introduce additional granularity in $\mathcal{S}$ that might decrease the inefficiency of the genetic algorithm.  This was not done as this data set was chosen specifically so the DEP would terminate within 15 minutes (i.e., in a reasonable amount of time); increasing the number of BSs available to the VNB drastically increases the time it would take the DEP to converge to a solution.%  \textcolor{blue}{\textit{Would it be worthwhile to run and provide figures of a couple additional simulations here with more BSs to demonstrate this about the DEP?}}
 
-There is a direct correlation between the number of BS in the VWN and its capability for satisfying demand.  As the cost increases of the DEP solution, more BS are selected, and the demand satisfaction the DEP solution similarly trends towards 100\%, as shown in Figures \ref{fig:VWNCompCost} and \ref{fig:VWNCompSatis}.  Because of this, the genetic algorithm solutions have a very high demand satisfaction, averaging 99.9\% demand satisfaction, even reaching 100\% for some solutions.  The most expensive, 10-BS DEP solutions reach 99.2\% demand satisfaction when slicing the same set of resources that determined the DEP BS selection.
+There is a direct correlation between the number of BS in the VWN and its capability for satisfying demand.  As the cost increases of the DEP solution, more BS are selected, and the demand satisfaction the DEP solution similarly trends towards 100\%, as shown in Fig. \ref{fig:VWNComp}.  Because of this, the genetic algorithm solutions have a very high demand satisfaction, averaging 99.9\% demand satisfaction, even reaching 100\% for some solutions.  The most expensive, 10-BS DEP solutions reach 99.2\% demand satisfaction when slicing the same set of resources that determined the DEP BS selection.
 
 \begin{figure}
 	\centering
