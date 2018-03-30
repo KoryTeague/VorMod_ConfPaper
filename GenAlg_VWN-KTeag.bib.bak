@@ -11,6 +11,19 @@ doi={10.1109/MWC.2005.1421931},
 ISSN={1536-1284}, 
 month={April},}
 
+@ARTICLE{6824752, 
+author={J. G. Andrews and S. Buzzi and W. Choi and S. V. Hanly and A. Lozano and A. C. K. Soong and J. C. Zhang}, 
+journal={IEEE Journal on Selected Areas in Communications}, 
+title={What Will 5G Be?}, 
+year={2014}, 
+volume={32}, 
+number={6}, 
+pages={1065-1082}, 
+keywords={4G mobile communication;Long Term Evolution;cellular radio;mobile antennas;wireless LAN;4G mobile communication;5G air interface;5G mobile communication;LTE;Wi-Fi;antennas;cellular technology;core network;cost efficiency;device density;energy efficiency;extreme base station;seamless user experience;spectrum regulation;universal high-rate coverage;Bandwidth;Energy efficiency;IEEE 802.11 Standards;MIMO;Macrocell networks;Millimeter wave technology;Mobile communication;Special issues and sections;Wireless communication;Cellular systems;HetNets;energy efficiency;massive MIMO;millimeter wave;small cells}, 
+doi={10.1109/JSAC.2014.2328098}, 
+ISSN={0733-8716}, 
+month={June},}
+
 @ARTICLE{6553675, 
 author={X. Costa-Perez and J. Swetina and T. Guo and R. Mahindra and S. Rangarajan}, 
 journal={IEEE Communications Magazine}, 
