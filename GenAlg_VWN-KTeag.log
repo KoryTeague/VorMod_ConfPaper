@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2018.2.13)  30 MAR 2018 16:49
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2018.2.13)  6 APR 2018 08:03
 entering extended mode
 **./GenAlg_VWN-KTeag.tex
 (GenAlg_VWN-KTeag.tex
@@ -1134,7 +1134,48 @@ Underfull \hbox (badness 3826) in paragraph at lines 534--535
 angular frequencies
  []
 
-[2] [3] [4] [5] [6] [7]
+[2] [3]
+
+LaTeX Warning: Reference `eq:P1S1' on page 4 undefined on input line 582.
+
+
+LaTeX Warning: Reference `eq:P1S2' on page 4 undefined on input line 582.
+
+
+LaTeX Warning: Reference `eq:P1S1C1' on page 4 undefined on input line 584.
+
+
+LaTeX Warning: Reference `eq:P1S2C1' on page 4 undefined on input line 584.
+
+
+LaTeX Warning: Reference `eq:P1S2C3' on page 4 undefined on input line 584.
+
+
+LaTeX Warning: Reference `eq:P1S2C1' on page 4 undefined on input line 584.
+
+
+LaTeX Warning: Reference `eq:P1S2C1' on page 4 undefined on input line 584.
+
+
+LaTeX Warning: Reference `eq:P1S2C2' on page 4 undefined on input line 593.
+
+[4]
+
+LaTeX Warning: Reference `eq:P2' on page 5 undefined on input line 619.
+
+
+LaTeX Warning: Reference `eq:P1S1' on page 5 undefined on input line 619.
+
+
+LaTeX Warning: Reference `eq:P1S2' on page 5 undefined on input line 619.
+
+
+LaTeX Warning: Reference `eq:P2C1' on page 5 undefined on input line 619.
+
+
+LaTeX Warning: Reference `eq:P2C2' on page 5 undefined on input line 619.
+
+[5] [6] [7]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
 (Font)              scaled to size 8.00012pt on input line 695.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
@@ -1186,11 +1227,17 @@ File: Figures/ComparisonSatisfactionEval.png Graphic file (type bmp)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
  26948 strings out of 427839
  549916 string characters out of 3152538
- 717560 words of memory out of 3000000
+ 717458 words of memory out of 3000000
  30585 multiletter control sequences out of 15000+200000
  536097 words of font info for 117 fonts, out of 3000000 for 9000
  1329 hyphenation exceptions out of 8191
