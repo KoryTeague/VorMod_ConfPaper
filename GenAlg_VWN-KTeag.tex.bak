@@ -58,6 +58,7 @@
 % If IEEEtran.cls has not been installed into the LaTeX system files,
 % manually specify the path to it like:
 % \documentclass[conference]{../sty/IEEEtran}
+\renewcommand\IEEEkeywordsname{Index Terms}
 
 
 
@@ -325,14 +326,15 @@
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
 %\title{Joint Base Station Selection and Adaptive Slicing in Virtualized Wireless Networks with Log-Normal Distributed Traffic Demand}
-\title{Joint Base Station Selection and Adaptive Slicing in Virtualized Wireless Networks}
+%\title{Joint Base Station Selection and Adaptive Slicing in Virtualized Wireless Networks Under Uncertain User Locations}
+\title{Joint Base Station Selection and Adaptive Slicing in Virtualized Wireless Networks: A Stochastic Optimization Framework}
 
 % author names and affiliations
 % use a multiple column layout for up to three different
 % affiliations
 \author{
-\IEEEauthorblockN{Kory Teague, Mohammad J. Abdel-Rahman, and Allen B. MacKenzie\\}
-\IEEEauthorblockA{Department of Electrical and Computer Engineering, Virginia Tech, USA \\
+\IEEEauthorblockN{Kory Teague$^1$, Mohammad J. Abdel-Rahman$^{1,2}$, and Allen B. MacKenzie$^1$\\}
+\IEEEauthorblockA{$^1$Department Electrical and Computer Engineering, Virginia Tech, Blacksburg ,VA 24061, USA \\ $^2$Electrical and Energy Engineering Department, Al Hussein Technical University (HTU), Amman 11821, Jordan \\
 \{koryt, mo7ammad, mackenab\}@vt.edu
 }}
 
@@ -396,10 +398,15 @@ Email: mackenab@vt.edu}}
 % in the abstract
 \begin{abstract}
 %Wireless network virtualization is a promising avenue of research for next generation 5G cellular networks.  Virtualization focuses on the concept of active resource sharing and the building of a network designed for specific demands, decreasing operational expenditures and improving demand satisfaction of the cellular network.  In this work, we investigate the problem of selecting base stations to construct a virtual network that meets the the specific demands of a service provider, and the adaptive slicing of the resources to the service provider's demand points.  We introduce a two-stage stochastic optimization problem modeling this interaction, and present two approaches for determining a solution for the model.  The first approach uses a sampling approach applied to the deterministic equivalent program of the stochastic model, providing a tight approximation with sufficient time.  The second approach uses a genetic algorithm to approximate base station selection for the network, allowing for adaptive slicing to be determined by a simpler, single-stage optimization problem.  Scenarios testing these approaches are generated using a log-normal model designed to emulate demand from real world cellular networks.  The results from these simulations present promising results that can be expounded upon with further investigation.
-Wireless network virtualization is a promising avenue of research for next generation 5G cellular networks.  Virtualization focuses on the concept of active resource sharing and the building of a network designed for specific demands, decreasing operational expenditures and improving demand satisfaction of the cellular network.  This work investigates the problem of selecting base stations to construct a virtual network that meets the the specific demands of a service provider, and the adaptive slicing of the resources to the service provider's demand points.  A two-stage stochastic optimization problem is introduced modeling this interaction, and present two approaches for determining a solution for the model.  The first approach uses a sampling approach applied to the deterministic equivalent program of the stochastic model, providing a tight approximation with sufficient time.  The second approach uses a genetic algorithm to approximate base station selection for the network, allowing for adaptive slicing to be determined by a simpler, single-stage optimization problem.  Scenarios testing these approaches are generated using a log-normal model designed to emulate demand from real world cellular networks.  The results from these simulations present promising results that can be expounded upon with further investigation.
+Wireless network virtualization is a promising avenue of research for next-generation 5G cellular networks.  Virtualization focuses on the concept of active resource sharing and the building of a network designed for specific demands, decreasing operational expenditures and improving demand satisfaction of cellular networks.  This work investigates the problem of selecting base stations (BSs) to construct a virtual network that meets the the specific demands of a service provider, and the adaptive slicing of the resources between the service provider's demand points.  A two-stage stochastic optimization framework is introduced to model the problem of joint BS selection and adaptive slicing.  We present two methods for determining a solution for the two-stage stochastic optimization model.  The first method uses a sampling approach applied to the deterministic equivalent program of the stochastic model, providing a tight approximation with sufficient computation time.  The second method uses a genetic algorithm to approximate BS selection for the network, allowing for adaptive slicing to be determined by a simpler, single-stage linear optimization problem.  To test these methods we generated a number of scenarios using a log-normal model designed to emulate demand from real world cellular networks.  The results from these simulations present promising results that can be expounded upon with further investigation.
 \end{abstract}
 
 % no keywords
+\begin{IEEEkeywords}
+Wireless network virtualization, resource allocation, two-stage stochastic optimization, genetic algorithm.
+\end{IEEEkeywords}
+%\begin{keywords}Wireless network virtualization, resource allocation, two-stage stochastic optimization, genetic algorithm.
+%\end{keywords}
 
 
 
@@ -419,11 +426,11 @@ Wireless network virtualization is a promising avenue of research for next gener
 \section{Introduction} \label{sec:intro}
 Resource infrastructure sharing has been a common practice between mobile network operators (MNOs) to fulfill two separate needs.  First, MNOs needed to offer coverage for their users in regions where they had no infrastructure, leading to the creation of roaming agreements.  Second, the cost to maintain the wireless infrastructure became high in some areas.  Passive sharing of infrastructure, such as physical sites, tower masts, power, and air-conditioning, led to considerable cost savings \cite{1421931}.  These benefits motivated the use of more active sharing approaches, such as the reuse of backhaul and the sharing of radio access networks (RANs) in the form of base stations (BSs) and antenna systems.  The technologies developed for MNO sharing have allowed for the rise of mobile virtual network operators (MVNOs), which provide MNO-like mobile services without directly owning a physical RAN.
 
-Wireless virtualization is one of the most promising approaches for efficient sharing of radio resources in next-generation mobile networks \cite{6824752}.  In \cite{6553675}, \cite{6571315}, the opportunities for cost saving and additional flexibility are the motivations behind introducing virtualization schemes for LTE networks, focusing on resource sharing.  Doyle \textit{et al.} \cite{6737248} presented the Network without Borders (NwoB) paradigm which broadly explores the concepts of virtualization.  The authors proposed removing the traditional constraints on spectrum and presented a virtualization-centric structure for mobile wireless networks.  In this paradigm, a service provider (SP) is an MVNO that provides a specified service to its users, which could be in the form of traditional general data, voice, and messaging services or a more specific application (e.g. emergency services, internet of things, or video streaming).  The virtual network builder (VNB) aggregates and selects resources from resource providers (RPs) to build virtual networks designed for the needs of the SPs.  RPs, such as traditional MNOs, are the owners and maintainers of the physical resources and infrastructure that are provided for the virtualized wireless networks (VWNs) via contracts established with VNBs.
+Wireless virtualization is one of the most promising approaches for efficient sharing of radio resources in next-generation mobile networks \cite{6824752}.  In \cite{6553675}, \cite{6571315}, the opportunities for cost saving and additional flexibility are the motivations behind introducing virtualization schemes for LTE networks, focusing on resource sharing.  Doyle \textit{et al.} \cite{6737248} presented the Network without Borders (NwoB) paradigm which broadly explores the concepts of virtualization.  The authors proposed removing the traditional constraints on spectrum and presented a virtualization-centric structure for mobile wireless networks.  In this paradigm, a service provider (SP) is an MVNO that provides a specified service to its users, which could be in the form of traditional general data, voice, and messaging services or a more specific application (e.g., emergency services, Internet of things, or video streaming).  The virtual network builder (VNB) aggregates and selects resources from resource providers (RPs) to build virtual networks designed for the needs of the SPs.  RPs, such as traditional MNOs, are the owners and maintainers of the physical resources and infrastructure that are provided for the virtualized wireless networks (VWNs) via contracts established with VNBs.
 
-In this paper we consider the problem of BS resource allocation and the slicing of this joint resource selection in VWNs.  First, we establish a stochastic optimization problem from the perspective of the VNB to determine the optimal joint selection of resources to be leased from the RPs and adaptively sliced and allocated to form VWNs that satisfy the demands of the SPs.  We then develop two approaches that would be run in the VNB to reach a near-optimal solution of the stochastic optimization problem.  We consider two optimality criteria: maximizing demand satisfaction of SP users and minimizing the cost of the BS resources to satisfy the demand.  Then, we consider the efficacy of the approaches with a single SP with log-normal spatially-correlated demand modeled to mimic real cellular networks.
+Considering the uncertainty of user equipment (demand point) locations, in this paper we consider solving two problems.  Stochastic programming provides a powerful mathematical tool to handle optimization under uncertainty.  It had been recently exploited to optimize resource allocation in various types of wireless networks operating under uncertainties (examples include~\cite{MJ_TW_13, CC_OFDMA, MJ_MECOMM_17, MJ_CCNC_16, MJ_WCNC_16, MJ_DySPAN_15, CC_video}).  We establish a stochastic optimization problem from the perspective of the VNB to determine the optimal selection of resources to be leased from the RPs and adaptively sliced and allocated to form VWNs that satisfy the demands of the SPs.  Then, we develop two approaches that would be run in the VNB to reach a near-optimal solution of the stochastic optimization problem.  We consider two optimality criteria: maximizing demand satisfaction of SP users and minimizing the cost of the BS resources to satisfy the demand.  Finally, we consider the efficacy of the approaches with a single SP with log-normal spatially-correlated demand modeled to mimic real cellular networks.
 
-The rest of this paper is organized as follows.  In Section \ref{sec:model}, we detail and define the system model assumed for our resource allocation methods.  In Section \ref{sec:approach}, we consider our stochastic optimization problem and resource selection and demand allocation approaches.  In Section \ref{sec:sim}, we simulate the described approaches and evaluate their performance.  Finally, in Section \ref{sec:conclusion}, we discuss our conclusions and possible future extensions.
+The rest of this paper is organized as follows.  In Section \ref{sec:model}, we detail and define the system model assumed for our resource allocation methods.  In Section \ref{sec:approach}, we consider our stochastic optimization problem and resource selection and demand allocation approaches.  In Section \ref{sec:sim}, we simulate the described approaches and evaluate their performance.  Finally, in Section \ref{sec:conclusion}, we discuss our conclusions and directions of future research.
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
@@ -521,9 +528,9 @@ The rest of this paper is organized as follows.  In Section \ref{sec:model}, we 
 
 
 \section{System Model} \label{sec:model}
-We consider a geographical area of width $X$ (m) and length $Y$ (m) that contains a set $\mathcal{S} = \left\{1,\, 2,\, \ldots,\, S\right\}$ of BSs available to be leased to the VNB by a set of $N_\text{RP}$ RPs.  The rate capacity of BS $s \in \mathcal{S}$ is denoted by $r_s$, its cost is denoted by $c_s$, and its broadcasting range is denoted by $b_s$.
+We consider a geographical area of width $X$ (m) and length $Y$ (m) that contains a set $\mathcal{S} = \left\{1,\, 2,\, \ldots,\, S\right\}$ of BSs available to be leased to the VNB by a set of $\mathcal{N} = \left\{1,\, 2,\, \ldots,\, N\right\}$ RPs.  The rate capacity of BS $s \in \mathcal{S}$ is denoted by $r_s$, its cost is denoted by $c_s$, and its coverage radius is denoted by $b_s$.
 
-A Service Provider (SP) seeking a Virtualized Wireless Network from the VNB is assumed to know the distribution of traffic demand within the region the VWN would cover.  It has been shown that a log-normal distribution or a mixture of log-normal distributions can approximate traffic demand in real-world cellular networks \cite{686105}, \cite{5936263}.  It has also been shown that traffic distribution is spatially correlated \cite{5936263}, \cite{eigenplaces}.  We model the spatial traffic demand of a single SP using a similar, continuous form of the SSLT (Scalable, Spatially-correlated, and Log-normally distributed Traffic) model as proposed by Lee, Zhou, and Niu \cite{6554749}.
+A Service Provider (SP) seeking a virtualized wireless network from the VNB is assumed to know the distribution of traffic demand within the region the VWN would cover.  It has been shown that a log-normal distribution or a mixture of log-normal distributions can approximate traffic demand in real-world cellular networks \cite{686105}, \cite{5936263}.  It has also been shown that traffic distribution is spatially correlated \cite{5936263}, \cite{eigenplaces}.  We model the spatial traffic demand of a single SP using a similar, continuous form of the SSLT (Scalable, Spatially-correlated, and Log-normally distributed Traffic) model as proposed by Lee, Zhou, and Niu \cite{6554749}.
 
 To generate this spatial distribution over the area of consideration, an initial Gaussian field, $\rho^G = \rho^G\left(x,\, y\right),\, x \in \left[0,\, X\right],\, y \in \left[0,\, Y\right]$, is generated by
 
@@ -541,7 +548,7 @@ The approximate Gaussian distribution $\rho^G$ is then normalized to $\rho^S = \
 
 $\rho\left(x,\, y\right)$ can be sampled over the space into individual pixels as per Lee with each pixel's value indicating the number of homogeneous demand points within the pixel \cite{6554749}.  In contrast, we allow $\rho\left(x,\, y\right)$ to provide a continuous, spatially-correlated log-normal distribution depicting the demand density over the region for the SP.
 
-Let $\mathcal{M} \eqdef \{1,\, 2,\, \ldots,\, M\}$ be the set of the SP's demand points seeking to connect to the VWN; the value of total traffic demand at each point is denoted by $d_m$.  Further let $u_{ms} \in [0,\, 1],\, m \in \mathcal{M},\, s \in \mathcal{S}$, represent the normalized capacity (with respect to $r_s$) of BS $s$ at point $m$, i.e., the normalized maximum rate that a user can receive at point $m$ from BS $s$.  $u_{ms} = 0$ when $m$ is outside the coverage area of $s$ and $u_{ms} = 1$ when $m$ is within a small distance of $s$.  The specific position of point $m$, and therefore the value of $u_{ms}$, is determined stochastically by the demand field $\rho$.
+Let $\mathcal{M} \eqdef \{1,\, 2,\, \ldots,\, M\}$ be the set of the SP's demand points seeking to connect to the VWN; the value of total traffic demand at each point is denoted by $d_m$.  Further, let $u_{ms} \in [0,\, 1],\, m \in \mathcal{M},\, s \in \mathcal{S}$, represent the normalized capacity (with respect to $r_s$) of BS $s$ at point $m$, i.e., the normalized maximum rate that a user can receive at point $m$ from BS $s$.  $u_{ms} = 0$ when $m$ is outside the coverage area of $s$ and $u_{ms} = 1$ when $m$ is within a small distance of $s$.  The specific position of point $m$, and therefore the value of $u_{ms}$, is determined stochastically by the demand field $\rho$.
 
 We assume that a BS $s \in \mathcal{S}$ can be allocated between multiple demand points, and $\delta_{ms} \in [0,\, r_s],\, m \in \mathcal{M},\, s \in \mathcal{S}$, represents the rate of BS $s$ that is allocated to point $m$.
 
@@ -573,7 +580,7 @@ where $h(\mbox{\textbf{\textit{z}}}, \mbox{$\tilde{\textbf{\textit{u}}}$})$ is t
 \begin{align}
 & \underset{\left\{\substack{\delta_{ms}, m \in \mathcal{M}, s \in \mathcal{S}}\right\}}{\mathrm{minimize}} \left\{ - \sum_{m \in \mathcal{M}} \sum_{s \in \mathcal{S}} \delta_{ms} \; \tilde{u}_{ms} \right\} \label{eq:P1S2}\\
 & \text{subject to:}  \nonumber \\
-& \hspace{0.4in} x_s = \mathbb{1}_{\left\{\sum_{m \in \mathcal{M}} \delta_{ms} > 0\right\}}, \forall s \in \mathcal{S} \label{eq:P1S2C1}\\
+& \hspace{0.4in} z_s = \mathbb{1}_{\left\{\sum_{m \in \mathcal{M}} \delta_{ms} > 0\right\}}, \forall s \in \mathcal{S} \label{eq:P1S2C1}\\
 & \hspace{0.4in} \sum_{s \in \mathcal{S}} \delta_{ms} \; \tilde{u}_{ms} \leq d_m, \forall m \in \mathcal{M} \label{eq:P1S2C2}\\
 & \hspace{0.4in} \sum_{m \in \mathcal{M}} \delta_{ms} \leq r_s, \forall s \in \mathcal{S} \label{eq:P1S2C3}
 \end{align}
@@ -594,21 +601,19 @@ Constraint (\ref{eq:P1S2C2}) ensures a demand point $m \in \mathcal{M}$ is not a
 
 \subsection{Deterministic Equivalent Reformulation} \label{subsec:dep}
 
-One major obstacle with solving Problem 1 is that stochastic equations are impossible to solve with available linear programming tools.  In order to be practical, Problem 1 must be reformulated such that it does not contain any stochastic variables.
+In order to solve the two-stage stochastic optimization formulation (Problem 1), we need to convert it to a deterministic equivalent program (DEP) that does not contain any stochastic variables (only deterministic variables) \cite{stochprogramming}.
 
-Our approach for solving the proposed stochastic optimization formulation is to derive their deterministic equivalent programs (DEPs).  The DEP is an equivalent reformulation of the original stochastic program, but only contains deterministic variables \cite{stochprogramming}.
-
-Let $ \Omega \eqdef \{1,\, 2,\, \ldots,\, O\} $ be defined as the set of discrete scenarios, each of which contains a sampled version of the stochastic variables within Problem 1.  As \textit{O} approaches infinity, $\Omega$ contains the entire scope of the stochastic variables.  The probability a given scenario $\omega \in \Omega$ occurs is denoted by $p^{\{\omega\}},\, \omega \in \Omega$, where $\sum_{\omega \in \Omega} p^{\{\omega\}} = 1$.  Variables that are dependent on $\Omega$ are shown with a superscript \{$\omega$\} with the specific scenario it is dependent on indicated by $\omega$.
+Let $ \Omega \eqdef \{1,\, 2,\, \ldots,\, |\Omega|\} $ be defined as the set of discrete scenarios, each of which contains a sampled version of the stochastic variables within Problem 1.  As $|\Omega|$ approaches infinity, $\Omega$ contains the entire scope of the stochastic variables.  The probability a given scenario $\omega \in \Omega$ occurs is denoted by $p^{(\omega)},\, \omega \in \Omega$, where $\sum_{\omega \in \Omega} p^{(\omega)} = 1$.  Variables that are dependent on $\Omega$ are shown with a superscript ($\omega$) with the specific scenario it is dependent on indicated by $\omega$.
 
 \vspace{5mm}
 \begin{tcolorbox}[title = Problem 2 (Deterministic Equivalent Program of Problem 1)]
 \begin{align}
 & 
 \underset{\left\{ \substack{
-	z_s,\, \delta_{ms}^{\{\omega\}},\\
+	z_s,\, \delta_{ms}^{(\omega)},\\
 	s \in \mathcal{S},\, m \in \mathcal{M},\\
 	\omega \in \Omega} \right\}} {\text{minimize}}
-\sum_{s \in \mathcal{S}} c_s \; z_s - \alpha \sum_{\omega \in \Omega} p^{\{\omega\}} \left( \sum_{m \in \mathcal{M}} \sum_{s \in \mathcal{S}} \delta_{ms}^{\{\omega\}} \; u_{ms}^{\{\omega\}} \right) \label{eq:P2}\\
+\sum_{s \in \mathcal{S}} c_s \; z_s - \alpha \sum_{\omega \in \Omega} p^{(\omega)} \left( \sum_{m \in \mathcal{M}} \sum_{s \in \mathcal{S}} \delta_{ms}^{\{\omega\}} \; u_{ms}^{\{\omega\}} \right) \label{eq:P2}\\
 & \text{subject to:}  \nonumber \\
 & \sum_{s \in \mathcal{S}} \delta_{ms}^{\{\omega\}} \; u_{ms}^{\{\omega\}} \leq d_m,\, \forall m \in \mathcal{M},\, \forall \omega \in \Omega \label{eq:P2C1}\\
 & \sum_{m \in \mathcal{M}} \delta_{ms}^{\{\omega\}} \leq r_s \; z_s,\, \forall s \in \mathcal{S},\, \forall \omega \in \Omega \label{eq:P2C2}\\
@@ -618,11 +623,11 @@ Let $ \Omega \eqdef \{1,\, 2,\, \ldots,\, O\} $ be defined as the set of discret
 
 The objective function (\ref{eq:P2}) combines both objective functions (\ref{eq:P1S1}) and (\ref{eq:P1S2}) of the initial formulation into a deterministic form.  Constraints (\ref{eq:P2C1}) and (\ref{eq:P2C2})	ensure demand is not overallocated and is only allocated to selected resources and within capacity for all scenarios.
 
-While Problem 2 provides an equivalent deterministic form of Problem 1, it only remains so while $\Omega$ contains the entire scope of the stochastic variables (i.e., $\Omega$ contains every scenario that the stochastic variables can take with their associated probabilities occurring).  For Problem 2 to be in a generally tractable form, $\Omega$ must be a finite set.  We use a sampling approach, sampling $\Omega$ with a finite number of scenarios, \textit{O}.  With sufficiently large \textit{O}, $\Omega$ approaches a tight approximation of the scope of the stochastic variables.  Within each scenario $\omega \in \Omega$, the SSLT demand field $\rho$ is sampled to provide a set of \textit{M} discrete demand points.  Each sampling of $\rho$ is generated by creating a non-stationary 2D Poisson point process (PPP) with \textit{M} points over the region using $\rho$ as the spatial intensity function.  To generate this non-stationary PPP, we use an acceptance-rejection method.  That is, each point of a stationary PPP with an intensity of $\rho_{\max} = \max_i\rho\left(x_i,\, y_i\right)$ is retained with probability $\frac{\rho\,\left(x_i,\, y_i\right)}{\rho_{\max}}$, where $x_i$ and $y_i$ are the x- and y-coordinates of the $i^{th}$ point of the stationary PPP.
+While Problem 2 provides an equivalent deterministic form of Problem 1, it only remains so while $\Omega$ contains the entire scope of the stochastic variables (i.e., $\Omega$ contains every scenario that the stochastic variables can take with their associated probabilities occurring).  For Problem 2 to be in a generally tractable form, $\Omega$ needs to be sampled.  We sample $\Omega$ with a finite number of scenarios, $|\Omega|$.  With sufficiently large $|\Omega|$, $\Omega$ approaches a tight approximation of the scope of the stochastic variables.  Within each scenario $\omega \in \Omega$, the SSLT demand field $\rho$ is sampled to provide a set of \textit{M} discrete demand points.  Each sampling of $\rho$ is generated by creating a non-stationary 2D Poisson point process (PPP) with \textit{M} points over the region using $\rho$ as the spatial intensity function.  To generate this non-stationary PPP, we use an acceptance-rejection method.  That is, each point of a stationary PPP with an intensity of $\rho_{\max} = \max_i\rho\left(x_i,\, y_i\right)$ is retained with probability $\frac{\rho\,\left(x_i,\, y_i\right)}{\rho_{\max}}$, where $x_i$ and $y_i$ are the x- and y-coordinates of the $i^{th}$ point of the stationary PPP.
 
 \subsection{Adaptive Slicing within a Formed VWN} \label{subsec:slice}
 
-After the solution to the sampled DEP of Section \ref{subsec:dep} has been found, the VNB has determined the joint BS selection that forms the VWN and a proposed resource slicing of considered possible scenarios, $\Omega$, that allocates the resources to the SP's demand points.  Since $O$ is not infinite, any given scenario present in the formed VWN is exceedingly unlikely to be an element of $\Omega$.  Further, as demand points move between BSs or enter or exit the VWN, a new scenario $\omega \notin \Omega$ is formed with a possibly new set $\mathcal{M}' \eqdef \{1,\, 2,\, \ldots,\, M'\}$.  The VWN must adapt its resource slicing to these new demand points to maintain maximal demand satisfaction.  With the VWN built, the joint BS selection, $z_s$, becomes a constant of the network, simplifying Problem 2 to a single-stage optimization problem
+After the solution to the sampled DEP of Section \ref{subsec:dep} has been found, the VNB has determined the joint BS selection that forms the VWN and a proposed resource slicing of considered possible scenarios, $\Omega$, that allocates the resources to the SP's demand points.  Since $|\Omega|$ is not infinite, any given scenario present in the formed VWN is exceedingly unlikely to be an element of $\Omega$.  Further, as demand points move between BSs or enter or exit the VWN, a new scenario $\omega \notin \Omega$ is formed with a possibly new set $\mathcal{M}' \eqdef \{1,\, 2,\, \ldots,\, M'\}$.  The VWN must adapt its resource slicing to these new demand points to maintain maximal demand satisfaction.  With the VWN built, the joint BS selection, $z_s$, becomes a constant of the network, simplifying Problem 2 to a single-stage optimization problem
 
 \vspace{5mm}
 \begin{tcolorbox}[title = Problem 3 (Deterministic Adaptive Slicing)]
@@ -631,14 +636,14 @@ After the solution to the sampled DEP of Section \ref{subsec:dep} has been found
 \underset{\left\{ \substack{
 	\delta_{ms}^{\{\omega\}},\,	s \in \mathcal{S},\\
 	m \in \mathcal{M}',\, \omega \in \Omega'} \right\}} {\text{minimize}}
-- \sum_{\omega \in \Omega'} p^{\{\omega\}} \left( \sum_{m \in \mathcal{M}'} \sum_{s \in \mathcal{S}} \delta_{ms}^{\{\omega\}} \; u_{ms}^{\{\omega\}} \right) \label{eq:P3}\\
+- \sum_{\omega \in \Omega'} p^{(\omega)} \left( \sum_{m \in \mathcal{M}'} \sum_{s \in \mathcal{S}} \delta_{ms}^{\{\omega\}} \; u_{ms}^{\{\omega\}} \right) \label{eq:P3}\\
 & \text{subject to:}  \nonumber \\
 & \sum_{s \in \mathcal{S}} \delta_{ms}^{\{\omega\}} \; u_{ms}^{\{\omega\}} \leq d_m,\, \forall m \in \mathcal{M}',\, \forall \omega \in \Omega' \label{eq:P3C1}\\
 & \sum_{m \in \mathcal{M}'} \delta_{ms}^{\{\omega\}} \leq r_s \; z_s,\, \forall s \in \mathcal{S},\, \forall \omega \in \Omega' \label{eq:P3C2}
 \end{align}
 \end{tcolorbox}
 
-\noindent where $\Omega' \eqdef \{1,\, 2,\, \ldots,\, O'\}$ is the set of $O'$ scenarios independent of the original set $\Omega$.  In practice, $O' = 1$ with $p^{\{1\}} = 1$, as only the currently existing scenario of the network is of interest for slicing the resources at that moment.  Higher values of $O'$ are useful for simulating multiple scenarios with a homogeneous $\mathcal{M}'$.  It is worth noting that Problem 3 is more tractable than Problem 2 as it only contains the single decision variable for resource slicing, simplifying the objective function (\ref{eq:P3}) and constraint (\ref{eq:P3C2}).
+\noindent where $\Omega' \eqdef \{1,\, 2,\, \ldots,\, |\Omega|'\}$ is the set of $|\Omega|'$ scenarios independent of the original set $\Omega$.  In practice, $|\Omega|' = 1$ with $p^{(1)} = 1$, as only the currently existing scenario of the network is of interest for slicing the resources at that moment.  Higher values of $|\Omega|'$ are useful for simulating multiple scenarios with a homogeneous $\mathcal{M}'$.  It is worth noting that Problem 3 is more tractable than Problem 2 as it only contains the single decision variable for resource slicing, simplifying the objective function (\ref{eq:P3}) and constraint (\ref{eq:P3C2}).
 
 %\textit{\textcolor{blue}{Note: It just occurred to me that this problem can be further simplified such that the set $\mathcal{S}$ is trimmed to remove all BSs $s \in \mathcal{S}$ where $z_s = 0$, creating a new set $\mathcal{S}'$ with no $z_s$ present (as $z_s = 1, \forall s \in \mathcal{S}'$). This would decrease the size of the problem in the situation it begins to become intractable.  It is implemented as displayed in Problem 3, but this would be an universal improvement.  Might be worth implementing for thesis.}}
 
@@ -705,7 +710,7 @@ Number of BSs ($S$) & 60 \\
 \hline 
 Number of Demand Points ($M$) & 75 \\ 
 \hline 
-Number of Scenarios ($O$) & 25 \\ 
+Number of Scenarios ($|\Omega|$) & 25 \\ 
 \hline 
 BS cost ($c_s, \forall s \in \mathcal{S}$) & 1 \\ 
 \hline 
