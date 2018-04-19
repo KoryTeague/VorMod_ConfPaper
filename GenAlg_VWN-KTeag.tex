@@ -707,7 +707,7 @@ Number of BSs ($S$) & 60 \\
 \hline 
 Number of Demand Points ($M$) & 75 \\ 
 \hline 
-Number of Scenarios ($|\Omega|$) & 25 \\ 
+Number of Scenarios ($|\Omega|$) & $\{5,\, 10,\, \ldots,\, 50\}$ \iffalse 25 \fi \\ 
 \hline 
 BS cost ($c_s, \forall s \in \mathcal{S}$) & 1 \\ 
 \hline 
@@ -717,7 +717,7 @@ BS range ($b_s, \forall s \in \mathcal{S}$) & 500 m \\
 \hline 
 Demand Point Demand ($d_m, \forall m \in \mathcal{M}$) & 0.178 Mbps \\ 
 \hline 
-Set of Two-Stage Model Weights ($\alpha$) & $\{5,\, 10,\, \ldots,\, 100\}$ \\ 
+Set of Two-Stage Model Weights ($\alpha$) & 20\iffalse $\{5,\, 10,\, \ldots,\, 100\}$ \fi \\ 
 \hline 
 \hline
 SSLT Approximation Depth ($L$) & 50 \\ 
@@ -754,15 +754,17 @@ Overcapacity Cost ($c_\text{cap}$) & 1.015 \\
 \end{table}
 
 \begin{figure}[h]
-\begin{subfigure}{.5\textwidth}
+\centering
+\begin{subfigure}{.45\textwidth}
 	\centering
-	\includegraphics[width=.8\linewidth]{Figures/BSLocationsVoronoi}
+	\includegraphics[width=1\linewidth]{Figures/BSLocationsVoronoi}
 	\caption{RP BS Locations in $\mathcal{S}$ with associated Voronoi tesselation}
 	\label{fig:BSLocVor}
 \end{subfigure}
-\begin{subfigure}{.5\textwidth}
+\hspace{0.5cm}
+\begin{subfigure}{.45\textwidth}
 	\centering
-	\includegraphics[width=.8\linewidth]{Figures/SSLTnsPPP_demandpointreal}
+	\includegraphics[width=1\linewidth]{Figures/SSLTnsPPP_demandpointreal}
 	\caption{SP SSLT demand density field with one scenario of SP demand points}
 	\label{fig:SSLTDPReal}
 \end{subfigure}
@@ -776,35 +778,48 @@ We ran our simulations on an Intel Core i7-4790K 4.00 GHz 4 real/8 virtual core 
 
 \subsection{Results} \label{subsec:results}
 
+\iffalse
 \begin{figure}[h]
-\begin{subfigure}{.5\textwidth}
+\centering
+\begin{subfigure}{.45\textwidth}
 	\centering
-	\includegraphics[width=.8\linewidth]{Figures/ComparisonTime}
-	\caption{True CPU Time}
+	\includegraphics[width=1\linewidth]{Figures/VOSGA_SpeedupRatio_AbsComp_alpha20}
+	\caption{Speedup Ratio and Run Time}
+	\label{fig:AlgSpeedupRunTime}
+\end{subfigure}
+\hspace{0.5cm}
+\begin{subfigure}{.45\textwidth}
+	\centering
+	\includegraphics[width=1\linewidth]{Figures/ComparisonCombined}
+	\caption{Absolute CPU Run Time}
 	\label{fig:CPUTimeComp}
 \end{subfigure}
-\begin{subfigure}{.5\textwidth}
-	\centering
-	\includegraphics[width=.8\linewidth]{Figures/ComparisonTimeAdjusted}
-	\caption{Adjusted (Pseudo-Real) Run Time}
-	\label{fig:CPUTimeCompAdj}
-\end{subfigure}
 \caption{Run time comparison.  The DEP run time is the solid blue line, while the minimum, average, and maximum genetic algorithm run times are provided as dot-dashed, solid, and dashed red reference lines, respectively.}
-\label{fig:CPUTime}
+\label{fig:RunTimeComp}
 \end{figure}
-
-In Fig. \ref{fig:CPUTime} is a comparison of the time to run.  (\ref{fig:CPUTimeComp}) shows the absolute overall CPU time taken to converge to a solution in both the DEP and genetic algorithm.  (\ref{fig:CPUTimeCompAdj}) shows an adjusted form of the run time the DEP took to terminate to a single solution.  CPLEX is capable of parallelizing across the 8 CPU cores, allowing for the real run time to be, at minimum, one-eighth the CPU run time.  With this adjustment providing an improvement to the sampled DEP run time, the genetic algorithm converges in approximately the same time as the sampled DEP for higher levels of $\alpha$, when a single solution dominates.  Without the adjustment, the genetic algorithm outperforms the sampled DEP, converging to a solution in approximately 13\% of the time for $\alpha \geq 30$ and in approximately 2\% of the time for $\alpha \in \{20,\, 25\}$.
+\fi
 
 \begin{figure}
-\begin{subfigure}{.5\textwidth}
 	\centering
-	\includegraphics[width=.8\linewidth]{Figures/ComparisonCost}
+	\includegraphics[width=.45\textwidth]{Figures/VOSGA_SpeedupRatio_AbsComp_alpha20}
+	\caption{Absolute run time and speedup ratio of the genetic algorithm and sampled DEP approaches.  Speedup ratio is the ratio between the average genetic algorithm and sampled DEP run times.  Adjusted time is the minimum wall run time accounting for CPLEX utilizing 8 threads.  CPLEX did not converge to a final solution within the time limit (15 minutes) in the 50 scenario case.}
+	\label{fig:AlgSpeedupRunTime}
+\end{figure}
+
+In Fig. \ref{fig:AlgSpeedupRunTime} is a comparison of the approach run times.  It shows the run times of both the DEP and genetic algorithm in terms of the speedup ratio and in absolute number of seconds.  As the number of scenarios sampled increases, the CPU run time of the sampled DEP increases exponentionally, and fails to converge to a final solution with 50 scenarios within the time limit of 15 minutes.  Except for the 5 scenario case, the genetic algorithm converges to a solution in less CPU time (125.8 seconds) than the sampled DEP.  When 20 scenarios are sampled, the DEP takes approximately 440\% of the time as the genetic algorithm; at 45 scenarios, this has increased to 4,630\%.  CPLEX is capable of parallelizing across the 8 CPU cores, allowing for the real run time to be, at minimum, one-eighth the CPU run time.  In terms of the adjusted approximate "wall" time, the genetic algorithm converges in less wall time than the sampled DEP for 25 or more sampled scenarios.
+
+\begin{figure}
+\centering
+\begin{subfigure}{.45\textwidth}
+	\centering
+	\includegraphics[width=1\linewidth]{Figures/ComparisonCost}
 	\caption{VWN costs}
 	\label{fig:VWNCompCost}
 \end{subfigure}
-\begin{subfigure}{.5\textwidth}
+\hspace{0.5cm}
+\begin{subfigure}{.45\textwidth}
 	\centering
-	\includegraphics[width=.8\linewidth]{Figures/ComparisonSatisfaction}
+	\includegraphics[width=1\linewidth]{Figures/ComparisonSatisfaction}
 	\caption{SP demand point satisfaction}
 	\label{fig:VWNCompSatis}
 \end{subfigure}
@@ -818,7 +833,7 @@ There is a direct correlation between the number of BS in the VWN and its capabi
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.8\linewidth]{Figures/ComparisonSatisfactionEval}
+	\includegraphics[width=0.45\linewidth]{Figures/ComparisonSatisfactionEval}
 	\caption{Comparison of demand satisfaction with 50 scenarios of 200 SP demand points}
 	\label{fig:VWNEvalCompSatis}
 \end{figure}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2018.2.13)  18 APR 2018 02:31
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2018.2.13)  18 APR 2018 20:24
 entering extended mode
 **./GenAlg_VWN-KTeag.tex
 (GenAlg_VWN-KTeag.tex
@@ -1163,43 +1163,24 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 File: Figures/BSLocationsVoronoi.png Graphic file (type bmp)
 <Figures/BSLocationsVoronoi.png>
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 9.00014pt on input line 760.
+(Font)              scaled to size 9.00014pt on input line 761.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 8.99986pt on input line 760.
+(Font)              scaled to size 8.99986pt on input line 761.
 File: Figures/SSLTnsPPP_demandpointreal.png Graphic file (type bmp)
 <Figures/SSLTnsPPP_demandpointreal.png>
-
-Overfull \hbox (2.29994pt too wide) in paragraph at lines 757--769
-[]$[]$ $[]$ 
- []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [8]
-File: Figures/ComparisonTime.png Graphic file (type bmp)
-<Figures/ComparisonTime.png>
-File: Figures/ComparisonTimeAdjusted.png Graphic file (type bmp)
-<Figures/ComparisonTimeAdjusted.png>
-
-Overfull \hbox (2.29994pt too wide) in paragraph at lines 780--792
-[]$[]$ $[]$ 
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[9]
+File: Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png Graphic file (type bmp)
+<Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png>
+ [9]
 File: Figures/ComparisonCost.png Graphic file (type bmp)
 <Figures/ComparisonCost.png>
 File: Figures/ComparisonSatisfaction.png Graphic file (type bmp)
 <Figures/ComparisonSatisfaction.png>
-
-Overfull \hbox (2.29994pt too wide) in paragraph at lines 799--811
-[]$[]$ $[]$ 
- []
-
-[10]
+ [10]
 File: Figures/ComparisonSatisfactionEval.png Graphic file (type bmp)
 <Figures/ComparisonSatisfactionEval.png>
  [11] [12] (GenAlg_VWN-KTeag.bbl [13]) [14] (GenAlg_VWN-KTeag.aux)
@@ -1208,10 +1189,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 26977 strings out of 427839
- 550884 string characters out of 3152538
- 719591 words of memory out of 3000000
- 30605 multiletter control sequences out of 15000+200000
+ 26969 strings out of 427839
+ 550751 string characters out of 3152538
+ 719554 words of memory out of 3000000
+ 30598 multiletter control sequences out of 15000+200000
  537754 words of font info for 129 fonts, out of 3000000 for 9000
  1329 hyphenation exceptions out of 8191
  65i,18n,75p,10387b,547s stack positions out of 5000i,500n,10000p,200000b,50000s
