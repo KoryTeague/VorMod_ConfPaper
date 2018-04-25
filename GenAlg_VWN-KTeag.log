@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2018.2.13)  18 APR 2018 20:24
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2018.2.13)  24 APR 2018 19:56
 entering extended mode
 **./GenAlg_VWN-KTeag.tex
 (GenAlg_VWN-KTeag.tex
@@ -943,7 +943,7 @@ LaTeX Font Info:    ... okay on input line 320.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 320.
 LaTeX Font Info:    ... okay on input line 320.
 
--- Lines per column: 37 (exact).
+-- Lines per column: 56 (exact).
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 320.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
@@ -1121,80 +1121,126 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 7.69984pt on input line 394.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 5.49991pt on input line 394.
- [1]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00015pt on input line 528.
+(Font)              scaled to size 10.00015pt on input line 394.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.01247pt on input line 528.
+(Font)              scaled to size 7.01247pt on input line 394.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 4.9808pt on input line 528.
+(Font)              scaled to size 4.9808pt on input line 394.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99985pt on input line 528.
+(Font)              scaled to size 9.99985pt on input line 394.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.01224pt on input line 528.
+(Font)              scaled to size 7.01224pt on input line 394.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.98067pt on input line 528.
- [2]
+(Font)              scaled to size 4.98067pt on input line 394.
 
-LaTeX Warning: Command \textasciitilde invalid in math mode on input line 538.
-
-
-LaTeX Warning: Command \textasciitilde invalid in math mode on input line 538.
-
-
-Underfull \hbox (badness 3826) in paragraph at lines 538--539
-\TU/ptm/bx/it/10 where $[] [] []$ is a set of the products of two cosines with 
-angular frequencies
+Underfull \hbox (badness 10000) in paragraph at lines 398--401
+[]\TU/lmr/bx/it/9 Abstract\TU/lmr/bx/n/9 —Wireless network virtualization is a
  []
 
-[3] [4] [5] [6] [7]
+
+Underfull \hbox (badness 2376) in paragraph at lines 398--401
+\TU/lmr/bx/n/9 solution for the two-stage stochastic optimization
+ []
+
+
+Underfull \hbox (badness 5050) in paragraph at lines 398--401
+\TU/lmr/bx/n/9 indicate that the first approach can provide a
+ []
+
+[1
+
+
+]
+
+LaTeX Warning: Command \textasciitilde invalid in math mode on input line 538.
+
+
+LaTeX Warning: Command \textasciitilde invalid in math mode on input line 538.
+
+[2] [3]
+Underfull \hbox (badness 1728) in paragraph at lines 651--652
+[]\TU/ptm/bx/it/10 The full sampled DEP formulation is notably in-
+ []
+
+
+Overfull \hbox (89.85667pt too wide) detected at line 664
+[][] [] []
+ []
+
+
+Overfull \hbox (148.5208pt too wide) detected at line 673
+[] [] [] [] []
+ []
+
+[4]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00012pt on input line 697.
+(Font)              scaled to size 8.00012pt on input line 701.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00009pt on input line 697.
+(Font)              scaled to size 6.00009pt on input line 701.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00008pt on input line 697.
+(Font)              scaled to size 5.00008pt on input line 701.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99988pt on input line 697.
+(Font)              scaled to size 7.99988pt on input line 701.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99991pt on input line 697.
+(Font)              scaled to size 5.99991pt on input line 701.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99992pt on input line 697.
+(Font)              scaled to size 4.99992pt on input line 701.
 File: Figures/BSLocationsVoronoi.png Graphic file (type bmp)
 <Figures/BSLocationsVoronoi.png>
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 9.00014pt on input line 761.
+(Font)              scaled to size 9.00014pt on input line 765.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 8.99986pt on input line 761.
+(Font)              scaled to size 8.99986pt on input line 765.
 File: Figures/SSLTnsPPP_demandpointreal.png Graphic file (type bmp)
 <Figures/SSLTnsPPP_demandpointreal.png>
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[8]
 File: Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png Graphic file (type bmp)
 <Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png>
- [9]
+[5]
+Underfull \vbox (badness 5331) has occurred while \output is active []
+
 File: Figures/ComparisonCost.png Graphic file (type bmp)
 <Figures/ComparisonCost.png>
 File: Figures/ComparisonSatisfaction.png Graphic file (type bmp)
 <Figures/ComparisonSatisfaction.png>
- [10]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6]
 File: Figures/ComparisonSatisfactionEval.png Graphic file (type bmp)
 <Figures/ComparisonSatisfactionEval.png>
- [11] [12] (GenAlg_VWN-KTeag.bbl [13]) [14] (GenAlg_VWN-KTeag.aux)
+
+Underfull \vbox (badness 4060) has occurred while \output is active []
+
+ [7]
+(GenAlg_VWN-KTeag.bbl)
+
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the appropriate paper size.
+
+[8] (GenAlg_VWN-KTeag.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 26969 strings out of 427839
- 550751 string characters out of 3152538
- 719554 words of memory out of 3000000
- 30598 multiletter control sequences out of 15000+200000
+ 26972 strings out of 427839
+ 550812 string characters out of 3152538
+ 726032 words of memory out of 3000000
+ 30601 multiletter control sequences out of 15000+200000
  537754 words of font info for 129 fonts, out of 3000000 for 9000
  1329 hyphenation exceptions out of 8191
  65i,18n,75p,10387b,547s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on GenAlg_VWN-KTeag.pdf (14 pages).
+Output written on GenAlg_VWN-KTeag.pdf (8 pages).
