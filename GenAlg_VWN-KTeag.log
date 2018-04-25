@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2018.2.13)  24 APR 2018 19:56
+This is XeTeX, Version 3.14159265-2.6-0.99998 (MiKTeX 2.9.6500 64-bit) (preloaded format=xelatex 2018.2.13)  24 APR 2018 22:50
 entering extended mode
 **./GenAlg_VWN-KTeag.tex
 (GenAlg_VWN-KTeag.tex
@@ -1158,40 +1158,25 @@ LaTeX Warning: Command \textasciitilde invalid in math mode on input line 538.
 
 LaTeX Warning: Command \textasciitilde invalid in math mode on input line 538.
 
-[2] [3]
-Underfull \hbox (badness 1728) in paragraph at lines 651--652
-[]\TU/ptm/bx/it/10 The full sampled DEP formulation is notably in-
- []
-
-
-Overfull \hbox (89.85667pt too wide) detected at line 664
-[][] [] []
- []
-
-
-Overfull \hbox (148.5208pt too wide) detected at line 673
-[] [] [] [] []
- []
-
-[4]
+[2] [3] [4]
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 8.00012pt on input line 701.
+(Font)              scaled to size 8.00012pt on input line 712.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 6.00009pt on input line 701.
+(Font)              scaled to size 6.00009pt on input line 712.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00008pt on input line 701.
+(Font)              scaled to size 5.00008pt on input line 712.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.99988pt on input line 701.
+(Font)              scaled to size 7.99988pt on input line 712.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.99991pt on input line 701.
+(Font)              scaled to size 5.99991pt on input line 712.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99992pt on input line 701.
+(Font)              scaled to size 4.99992pt on input line 712.
 File: Figures/BSLocationsVoronoi.png Graphic file (type bmp)
 <Figures/BSLocationsVoronoi.png>
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 9.00014pt on input line 765.
+(Font)              scaled to size 9.00014pt on input line 776.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 8.99986pt on input line 765.
+(Font)              scaled to size 8.99986pt on input line 776.
 File: Figures/SSLTnsPPP_demandpointreal.png Graphic file (type bmp)
 <Figures/SSLTnsPPP_demandpointreal.png>
 
@@ -1233,12 +1218,15 @@ Before submitting the final camera ready copy, remember to:
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 26972 strings out of 427839
- 550812 string characters out of 3152538
- 726032 words of memory out of 3000000
- 30601 multiletter control sequences out of 15000+200000
+ 26975 strings out of 427839
+ 550840 string characters out of 3152538
+ 726074 words of memory out of 3000000
+ 30604 multiletter control sequences out of 15000+200000
  537754 words of font info for 129 fonts, out of 3000000 for 9000
  1329 hyphenation exceptions out of 8191
  65i,18n,75p,10387b,547s stack positions out of 5000i,500n,10000p,200000b,50000s
