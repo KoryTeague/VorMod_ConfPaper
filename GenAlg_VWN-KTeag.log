@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.9)  25 APR 2018 12:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.9)  1 MAY 2018 20:09
 entering extended mode
 **./GenAlg_VWN-KTeag.tex
 (GenAlg_VWN-KTeag.tex
@@ -512,18 +512,18 @@ LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
 ) (GenAlg_VWN-KTeag.aux)
 \openout1 = `GenAlg_VWN-KTeag.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 281.
-LaTeX Font Info:    ... okay on input line 281.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 281.
-LaTeX Font Info:    ... okay on input line 281.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 281.
-LaTeX Font Info:    ... okay on input line 281.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 281.
-LaTeX Font Info:    ... okay on input line 281.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 281.
-LaTeX Font Info:    ... okay on input line 281.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 281.
-LaTeX Font Info:    ... okay on input line 281.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 280.
+LaTeX Font Info:    ... okay on input line 280.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 280.
+LaTeX Font Info:    ... okay on input line 280.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 280.
+LaTeX Font Info:    ... okay on input line 280.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 280.
+LaTeX Font Info:    ... okay on input line 280.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 280.
+LaTeX Font Info:    ... okay on input line 280.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 280.
+LaTeX Font Info:    ... okay on input line 280.
 
 -- Lines per column: 56 (exact).
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
@@ -593,61 +593,54 @@ Package grfext Info: Graphics extension search list:
 ABD: EveryShipout initializing macros
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 297.
-LaTeX Font Info:    Try loading font information for U+msa on input line 297.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 296.
+LaTeX Font Info:    Try loading font information for U+msa on input line 296.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 297.
+LaTeX Font Info:    Try loading font information for U+msb on input line 296.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 297.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 296.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 297.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 296.
  [1{C:/Users/teagu/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 ]
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 428.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 427.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1phv.fd"
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
-LaTeX Font Info:    Try loading font information for U+bbm on input line 480.
+LaTeX Font Info:    Try loading font information for U+bbm on input line 467.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\bbm\ubbm.fd"
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-)
-Underfull \vbox (badness 3148) has occurred while \output is active []
-
- [2]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [3]
-[4]
+) [2] [3] [4]
 <Figures/BSLocationsVoronoi.png, id=37, 421.575pt x 315.579pt>
 File: Figures/BSLocationsVoronoi.png Graphic file (type png)
 <use Figures/BSLocationsVoronoi.png>
-Package pdftex.def Info: Figures/BSLocationsVoronoi.png  used on input line 649
-. on input line 649.
+Package pdftex.def Info: Figures/BSLocationsVoronoi.png  used on input line 654
+. on input line 654.
 Package pdftex.def Info: Requested size: 232.19843pt x 173.81937pt on input lin
-e 649.
+e 654.
 <Figures/SSLTnsPPP_demandpointreal.png, id=38, 421.575pt x 316.0608pt>
 File: Figures/SSLTnsPPP_demandpointreal.png Graphic file (type png)
 <use Figures/SSLTnsPPP_demandpointreal.png>
 Package pdftex.def Info: Figures/SSLTnsPPP_demandpointreal.png  used on input l
-ine 656. on input line 656.
+ine 661. on input line 661.
 Package pdftex.def Info: Requested size: 232.19843pt x 174.08475pt on input lin
-e 656.
+e 661.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -657,44 +650,39 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png Graphic file (type png)
 <use Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png>
 Package pdftex.def Info: Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png  used o
-n input line 672. on input line 672.
+n input line 677. on input line 677.
 Package pdftex.def Info: Requested size: 232.19843pt x 174.08475pt on input lin
-e 672.
+e 677.
 [5 <./Figures/BSLocationsVoronoi.png (PNG copy)> <./Figures/SSLTnsPPP_demandpoi
 ntreal.png (PNG copy)>]
 <Figures/ComparisonCost.png, id=47, 421.575pt x 316.0608pt>
 File: Figures/ComparisonCost.png Graphic file (type png)
 <use Figures/ComparisonCost.png>
-Package pdftex.def Info: Figures/ComparisonCost.png  used on input line 711. on
- input line 711.
+Package pdftex.def Info: Figures/ComparisonCost.png  used on input line 716. on
+ input line 716.
 Package pdftex.def Info: Requested size: 154.80157pt x 116.0581pt on input line
- 711.
+ 716.
 <Figures/ComparisonSatisfaction.png, id=48, 421.575pt x 316.0608pt>
 File: Figures/ComparisonSatisfaction.png Graphic file (type png)
 <use Figures/ComparisonSatisfaction.png>
 Package pdftex.def Info: Figures/ComparisonSatisfaction.png  used on input line
- 718. on input line 718.
+ 723. on input line 723.
 Package pdftex.def Info: Requested size: 154.80157pt x 116.0581pt on input line
- 718.
+ 723.
 <Figures/ComparisonSatisfactionEval.png, id=49, 421.575pt x 316.0608pt>
 File: Figures/ComparisonSatisfactionEval.png Graphic file (type png)
 <use Figures/ComparisonSatisfactionEval.png>
 Package pdftex.def Info: Figures/ComparisonSatisfactionEval.png  used on input 
-line 725. on input line 725.
+line 730. on input line 730.
 Package pdftex.def Info: Requested size: 154.80157pt x 116.0581pt on input line
- 725.
+ 730.
 
-Underfull \vbox (badness 3049) has occurred while \output is active []
+Underfull \vbox (badness 1478) has occurred while \output is active []
 
  [6 <./Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png (PNG copy)>] (GenAlg_VWN-
 KTeag.bbl
 Missing character: There is no Å in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
-
-Underfull \hbox (badness 1552) in paragraph at lines 79--83
-[]\OT1/ptm/m/n/8 M. J. Abdel-Rahman, M. Ab-del-Ra-heem, and A. B. MacKen-zie,
- []
-
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¤ in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
@@ -758,7 +746,7 @@ ls/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb>
 /MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on GenAlg_VWN-KTeag.pdf (7 pages, 558305 bytes).
+Output written on GenAlg_VWN-KTeag.pdf (7 pages, 557810 bytes).
 PDF statistics:
  133 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
