@@ -276,7 +276,7 @@
 % correct bad hyphenation here
 \hyphenation{net-works}
 
-\setlength{\columnsep}{0.2in}
+\setlength{\columnsep}{0.22in}
 \begin{document}
 %
 % paper title
@@ -562,7 +562,7 @@ The fitness heuristic of each individual chromosome, $z^{\{ig\}}$, is assessed a
 \begin{equation}
 \nonumber
 \end{equation}
-\vspace{0.01in}
+%\vspace{0.01in}
 \begin{multline} \label{eq:GACost}
 \text{cost}\left(z^{\{ig\}}\right) = \sum_{s \in \mathcal{S}} \Biggl( c_s \; z_s^{\{ig\}} + c_\text{cov} \; \mathbbm{1}_{\left\{ V_s \not\subseteq R_s \right\}} + \\ \left(c_\text{cap}^g - 1\right) \; \max\left( 0,\, \iint_{R_s} \rho\left(x,\, y\right)\, dx\, dy - r_s \right) \Biggr)
 \end{multline}
