@@ -1,53 +1,9 @@
-%% bare_conf.tex
-%% V1.4b
-%% 2015/08/26
-%% by Michael Shell
-%% See:
-%% http://www.michaelshell.org/
-%% for current contact information.
-%%
-%% This is a skeleton file demonstrating the use of IEEEtran.cls
-%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
-%% conference paper.
-%%
-%% Support sites:
-%% http://www.michaelshell.org/tex/ieeetran/
-%% http://www.ctan.org/pkg/ieeetran
-%% and
-%% http://www.ieee.org/
-
-%%*************************************************************************
-%% Legal Notice:
-%% This code is offered as-is without any warranty either expressed or
-%% implied; without even the implied warranty of MERCHANTABILITY or
-%% FITNESS FOR A PARTICULAR PURPOSE! 
-%% User assumes all risk.
-%% In no event shall the IEEE or any contributor to this code be liable for
-%% any damages or losses, including, but not limited to, incidental,
-%% consequential, or any other damages, resulting from the use or misuse
-%% of any information contained here.
-%%
-%% All comments are the opinions of their respective authors and are not
-%% necessarily endorsed by the IEEE.
-%%
-%% This work is distributed under the LaTeX Project Public License (LPPL)
-%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
-%% distributed and modified. A copy of the LPPL, version 1.3, is included
-%% in the base LaTeX documentation of all distributions of LaTeX released
-%% 2003/12/01 or later.
-%% Retain all contribution notices and credits.
-%% ** Modified files should be clearly indicated as such, including  **
-%% ** renaming them and changing author support contact information. **
-%%*************************************************************************
-
-
 % *** Authors should verify (and, if needed, correct) their LaTeX system  ***
 % *** with the testflow diagnostic prior to trusting their LaTeX platform ***
 % *** with production work. The IEEE's font choices and paper sizes can   ***
 % *** trigger bugs that do not appear when using other class files.       ***                          ***
 % The testflow support page is at:
 % http://www.michaelshell.org/tex/testflow/
-
 
 
 \documentclass[conference]{IEEEtran}
@@ -307,16 +263,20 @@
 % There should be no need to do such things with IEEEtran.cls V1.6 and later.
 % (Unless specifically asked to do so by the journal or conference you plan
 % to submit to, of course. )
-\usepackage{unicode-math}
-\usepackage{color}
+%\usepackage{unicode-math}
+%\usepackage{color}
 \usepackage{tcolorbox}
 \usepackage{subcaption}
+\usepackage{amsfonts}
+\usepackage{bbm}
+
+\newcommand\myeq{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily def}}}{=}}}
 
 
 % correct bad hyphenation here
 \hyphenation{net-works}
 
-
+\setlength{\columnsep}{0.22in}
 \begin{document}
 %
 % paper title
@@ -325,78 +285,17 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-%\title{Joint Base Station Selection and Adaptive Slicing in Virtualized Wireless Networks Under Uncertain User Locations}
-\title{Joint Base Station Selection and Adaptive Slicing in Virtualized Wireless Networks: A Stochastic Optimization Framework}
+\title{Joint Base Station Selection and Adaptive Slicing in Virtualized Wireless Networks:\\A Stochastic Optimization Framework}
 
-% author names and affiliations
-% use a multiple column layout for up to three different
-% affiliations
 \author{
 \IEEEauthorblockN{Kory Teague$^1$, Mohammad J. Abdel-Rahman$^{1,2}$, and Allen B. MacKenzie$^1$\\}
 \IEEEauthorblockA{$^1$Department of Electrical and Computer Engineering, Virginia Tech, Blacksburg ,VA 24061, USA \\ $^2$Department of Electrical and Energy Engineering, Al Hussein Technical University (HTU), Amman 11821, Jordan \\
 \{koryt, mo7ammad, mackenab\}@vt.edu
 }}
 
-\iffalse
-\author{\IEEEauthorblockN{Kory Teague}
-\IEEEauthorblockA{School of Electrical and\\Computer Engineering\\
-Virginia Tech\\
-Blacksburg, VA\\
-Email: koryt@vt.edu}
-\and
-\\
-\IEEEauthorblockN{Mohammad Abdel-Rahman}
-\IEEEauthorblockA{School of Electrical and\\Computer Engineering\\
-Virginia Tech\\
-Blacksburg, VA\\
-Email: mo7ammad@vt.edu}
-\and
-\\
-\IEEEauthorblockN{Allen MacKenzie}
-\IEEEauthorblockA{School of Electrical and\\Computer Engineering\\
-Virginia Tech\\
-Blacksburg, VA\\
-Email: mackenab@vt.edu}}
-\fi
-
-% conference papers do not typically use \thanks and this command
-% is locked out in conference mode. If really needed, such as for
-% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
-% after \documentclass
-
-% for over three affiliations, or if they all won't fit within the width
-% of the page, use this alternative format:
-% 
-%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
-%Homer Simpson\IEEEauthorrefmark{2},
-%James Kirk\IEEEauthorrefmark{3}, 
-%Montgomery Scott\IEEEauthorrefmark{3} and
-%Eldon Tyrell\IEEEauthorrefmark{4}}
-%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
-%Georgia Institute of Technology,
-%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
-%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
-%Email: homer@thesimpsons.com}
-%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
-%Telephone: (800) 555--1212, Fax: (888) 555--1212}
-%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
-
-
-
-
-% use for special paper notices
-%\IEEEspecialpapernotice{(Invited Paper)}
-
-
-
-
-% make the title area
 \maketitle
 
-% As a general rule, do not put math, special symbols or citations
-% in the abstract
 \begin{abstract}
-%Wireless network virtualization is a promising avenue of research for next generation 5G cellular networks.  Virtualization focuses on the concept of active resource sharing and the building of a network designed for specific demands, decreasing operational expenditures and improving demand satisfaction of the cellular network.  In this work, we investigate the problem of selecting base stations to construct a virtual network that meets the the specific demands of a service provider, and the adaptive slicing of the resources to the service provider's demand points.  We introduce a two-stage stochastic optimization problem modeling this interaction, and present two approaches for determining a solution for the model.  The first approach uses a sampling approach applied to the deterministic equivalent program of the stochastic model, providing a tight approximation with sufficient time.  The second approach uses a genetic algorithm to approximate base station selection for the network, allowing for adaptive slicing to be determined by a simpler, single-stage optimization problem.  Scenarios testing these approaches are generated using a log-normal model designed to emulate demand from real world cellular networks.  The results from these simulations present promising results that can be expounded upon with further investigation.
 Wireless network virtualization is a promising avenue of research for next-generation 5G cellular networks.  Virtualization focuses on the concept of active resource sharing and the building of a network designed for specific demands, decreasing operational expenditures and improving demand satisfaction of cellular networks.  This work investigates the problem of selecting base stations (BSs) to construct a virtual network that meets the the specific demands of a service provider, and adaptive slicing of the resources between the service provider's demand points.  A two-stage stochastic optimization framework is introduced to model the problem of joint BS selection and adaptive slicing.  We present two methods for determining a solution for the two-stage stochastic optimization model.  The first method uses a sampling approach applied to the deterministic equivalent program of the stochastic model, providing a tight approximation with sufficient computation time.  The second method uses a genetic algorithm for BS selection for the network, allowing for adaptive slicing to be determined by a simpler, single-stage linear optimization problem.  To test these methods we generated a number of scenarios using a log-normal model designed to emulate demand from real world cellular networks.  Our simulations indicate that the first approach can provide a reasonably tight solution, but is constrained as the time expense grows exponentially with the number of parameters.  In contrast, the second approach provides a vast improvement in run time, allowing for larger constructed networks, with the introduction of notable error.
 \end{abstract}
 
@@ -525,99 +424,87 @@ The rest of this paper is organized as follows.  In Section \ref{sec:model}, we 
 
 
 \section{System Model} \label{sec:model}
-We consider a geographical area of width $X$ (m) and length $Y$ (m) that contains a set $\mathcal{S} = \left\{1,\, 2,\, \ldots,\, S\right\}$ of BSs available to be leased to the VNB by a set of $\mathcal{N} = \left\{1,\, 2,\, \ldots,\, N\right\}$ RPs.  The rate capacity of BS $s \in \mathcal{S}$ is denoted by $r_s$, its cost is denoted by $c_s$, and its coverage radius is denoted by $b_s$.
+We consider a geographical area of width $X$ (m) and length $Y$ (m) that contains a set $\mathcal{S} \myeq \left\{1,\, 2,\, \ldots,\, S\right\}$ of BSs available to be leased to the VNB by a set of $\mathcal{N} \myeq \left\{1,\, 2,\, \ldots,\, N\right\}$ RPs.  The rate capacity of BS $s \in \mathcal{S}$ is denoted by $r_s$, its cost is denoted by $c_s$, and its coverage radius is denoted by $b_s$.
 
 A Service Provider (SP) seeking a virtualized wireless network from the VNB is assumed to know the distribution of traffic demand within the region the VWN would cover.  It has been shown that a log-normal distribution or a mixture of log-normal distributions can approximate traffic demand in real-world cellular networks \cite{686105, 5936263}.  It has also been shown that traffic distribution is spatially correlated \cite{5936263, eigenplaces}.  We model the spatial traffic demand of a single SP using a similar, continuous form of the SSLT (Scalable, Spatially-correlated, and Log-normally distributed Traffic) model as proposed by Lee, Zhou, and Niu \cite{6554749}.
 
 To generate this spatial distribution over the area of consideration, an initial Gaussian field, $\rho^G = \rho^G\left(x,\, y\right),\, x \in \left[0,\, X\right],\, y \in \left[0,\, Y\right]$, is generated by
-
 \begin{equation}
 \rho^G\left(x,\, y\right)=\frac{1}{L} \; \sum_{l=1}^L \cos\left(i_lx+\phi_l\right) \; \cos\left(j_ly+\psi_l\right)
 \end{equation} \label{eq:rhoG}
+\noindent where $\mathcal{L} \myeq \left\{1,\, 2,\, \ldots,\, L\right\}$ is a set of the products of two cosines with angular frequencies $i_l,\, j_l\, \sim \mathcal{U}\left(0,\, \omega_{\max}\right),\, l \in \mathcal{L}$ and phases $\phi_l,\, \psi_l\, \sim \mathcal{U}\left(0,\, 2\pi\right),\, l \in \mathcal{L}$.  As $L$ increases, $\rho^G$ approaches a Gaussian random field with a spatial autocorrelation dependent on $\omega_{\max}$ according to the central limit theorem.
 
-\noindent where $\mathcal{L} \eqdef \left\{1,\, 2,\, \ldots,\, L\right\}$ is a set of the products of two cosines with angular frequencies $i_l,\, j_l\, \textasciitilde\, \mathcal{U}\left(0,\, \omega_{\max}\right),\, l \in \mathcal{L}$ and phases $\phi_l,\, \psi_l\, \textasciitilde\, \mathcal{U}\left(0,\, 2\pi\right),\, l \in \mathcal{L}$.  As $L$ increases, $\rho^G$ approaches a Gaussian random field with a spatial autocorrelation dependent on $\omega_{\max}$ according to the central limit theorem.
-
-The approximate Gaussian distribution $\rho^G$ is then normalized to a standard normal distribution as $\rho^S = \rho^S\left(x,\, y\right), x \in [0,\, X], y \in [0,\, Y]$
-
+The approximate Gaussian distribution $\rho^G$ is then normalized to a standard normal distribution.  The final log-normal distribution, $\rho = \rho\left(x,\, y\right), x \in [0,\, X], y \in [0,\, Y]$, is determined by assigning location and scale parameters
 \begin{equation}
-\rho^S\left(x,\, y\right) = \frac{1}{\sqrt{\text{Var}\left(\rho^G\right)}} \; \rho^G\left(x,\, y\right)
-\end{equation} \label{eq:rhoS}
-
-\noindent where $\text{Var}\left(\rho^G\right)$ is the variance of $\rho^G$.  The final log-normal distribution, $\rho = \rho\left(x,\, y\right), x \in [0,\, X], y \in [0,\, Y]$, is determined by assigning location and scale parameters $\mu$ and $\sigma$
-
-\begin{equation}
-\rho\left(x,\, y\right) = \exp\left(\sigma \; \rho^S\left(x,\, y\right)+\mu\right).
+\rho\left(x,\, y\right) = \exp\left(\frac{\sigma}{\sqrt{\text{Var}\left(\rho^G\right)}} \; \rho^G\left(x,\, y\right)+\mu\right)
 \end{equation} \label{eq:rhoLN}
+\noindent where $\text{Var}\left(\rho^G\right)$ is the variance of $\rho^G$.
 
 $\rho\left(x,\, y\right)$ can be sampled over the space into individual pixels as per Lee with each pixel's value indicating the number of homogeneous demand points within the pixel \cite{6554749}.  In contrast, we allow $\rho\left(x,\, y\right)$ to provide a continuous, spatially-correlated log-normal distribution depicting the demand density over the region for the SP.
 
-Let $\mathcal{M} \eqdef \{1,\, 2,\, \ldots,\, M\}$ be the set of the SP's demand points seeking to connect to the VWN; the value of total traffic demand at each point is denoted by $d_m$.  Further, let $u_{ms} \in [0,\, 1],\, m \in \mathcal{M},\, s \in \mathcal{S}$, represent the normalized capacity (with respect to $r_s$) of BS $s$ at point $m$, i.e., the normalized maximum rate that a user can receive at point $m$ from BS $s$.  $u_{ms} = 0$ when $m$ is outside the coverage area of $s$ and $u_{ms} = 1$ when $m$ is within a small distance of $s$.  The specific position of the points in $\mathcal{M}$, and therefore the values of $u_{ms}$, is determined via a non-stationary 2D Poisson point process (PPP) with $M$ points using the demand field, $\rho$, as the spatial intensity function.  To generate this non-stationary PPP, we use an acceptance-rejection method.  Each point of a stationary PPP with an intensity of $\rho_{\max} = \max_i\rho\left(x_i,\, y_i\right)$ is retained with probability $\frac{\rho\,\left(x_i,\, y_i\right)}{\rho_{\max}}$, where $x_i$ and $y_i$ are the x- and y-coordinates of the $i^{th}$ point of the stationary PPP.
+Let $\mathcal{M} \myeq \{1,\, 2,\, \ldots,\, M\}$ be the set of the SP's demand points seeking to connect to the VWN; the value of total traffic demand at each point is denoted by $d_m$.  Further, let $u_{ms} \in [0,\, 1],\, m \in \mathcal{M},\, s \in \mathcal{S}$, represent the normalized capacity (with respect to $r_s$) of BS $s$ at point $m$, i.e., the normalized maximum rate that a user can receive at point $m$ from BS $s$.  $u_{ms} = 0$ when $m$ is outside the coverage area of $s$ and $u_{ms} = 1$ when $m$ is within a small distance of $s$.  The specific position of the points in $\mathcal{M}$, and therefore the values of $u_{ms}$, is determined via a non-stationary 2D Poisson point process (PPP) with $M$ points using the demand field, $\rho$, as the spatial intensity function.  To generate this non-stationary PPP, we use an acceptance-rejection method.  Each point of a stationary PPP with an intensity of $\rho_{\max} = \max_i\rho\left(x_i,\, y_i\right)$ is retained with probability $\frac{\rho\,\left(x_i,\, y_i\right)}{\rho_{\max}}$, where $x_i$ and $y_i$ are the x- and y-coordinates of the $i^{th}$ point of the stationary PPP.
 
 We assume that a BS $s \in \mathcal{S}$ can be allocated between multiple demand points, and $\delta_{ms} \in [0,\, r_s],\, m \in \mathcal{M},\, s \in \mathcal{S}$, represents the rate of BS $s$ that is allocated to point $m$.
 
-Throughout this paper, stochastic variables will be differentiated from deterministic variables with a tilde (\textasciitilde) placed above the symbol.
+Throughout this paper, stochastic variables will be differentiated from deterministic variables with a tilde ($\sim$) placed above the symbol.
 
 \section{Solution Approach} \label{sec:approach}
 In this section, we detail our approaches for selecting the subset of resources within $\mathcal{S}$ to create a virtual network with the minimum cost while allocating the selected resources to the demand points within the region such that it maximizes demand satisfaction.  First, we formulate the problem of BS selection and allocation to individual demand points as a two-stage stochastic optimization problem.  Second, the optimization problem is converted to its deterministic equivalent program to remove the stochastic variables then approximated using a sampling method.  Finally, a genetic algorithm is used as a separate approximation to the BS selection portion of the problem.  In Section \ref{sec:sim}, we will consider the efficacy of these latter two approaches.
 
 \subsection{Problem Formulation} \label{subsec:stoch}
 We formulate the presented problem as a two-stage stochastic optimization problem.  We introduce $z_s, s \in \mathcal{S}$ as a binary decision variable defined as
-
-\[ z_s =
+\[ z_s \myeq
 	\begin{cases}
-		1,& \text{if BS $s$ is selected for the created network,}\\
+		1,& \text{if BS $s$ is selected for the created VWN,}\\
 		0,& \text{otherwise.}
 	\end{cases}
 \]
 
 To balance the interest of maximizing demand satisfaction against minimizing cost, we introduce the positive real number $\alpha$ as a weighting coefficient between the two stages.
 
-\vspace{3mm}
-\begin{tcolorbox}[title = Problem 1 (Two-Stage Stochastic Optimization Problem)]
-\begin{align}
-& \underset{\left\{z_s,\, s \in \mathcal{S}\right\}}{\text{minimize}} \left\{ \sum_{s \in \mathcal{S}} c_s \; z_s + \alpha \mathbb{E}\left[ h\left( \textbf{\textit{z}},\, \mbox{$\tilde{\textbf{\textit{u}}}$} \right) \right] \right\} \label{eq:P1S1}\\
-& \text{subject to:}  \nonumber \\
-& \hspace{0.4in} z_s \in \{0, 1\}, \forall s \in \mathcal{S} \label{eq:P1S1C1}
-\end{align}
-where $h(\mbox{\textbf{\textit{z}}}, \mbox{$\tilde{\textbf{\textit{u}}}$})$ is the optimal value of the second-stage problem, which is given by:
-\begin{align}
-& \underset{\left\{\substack{\delta_{ms}, m \in \mathcal{M}, s \in \mathcal{S}}\right\}}{\mathrm{minimize}} \left\{ - \sum_{m \in \mathcal{M}} \sum_{s \in \mathcal{S}} \delta_{ms} \; \tilde{u}_{ms} \right\} \label{eq:P1S2}\\
-& \text{subject to:}  \nonumber \\
-& \hspace{0.4in} z_s = \mathbb{1}_{\left\{\sum_{m \in \mathcal{M}} \delta_{ms} > 0\right\}}, \forall s \in \mathcal{S} \label{eq:P1S2C1}\\
-& \hspace{0.4in} \sum_{s \in \mathcal{S}} \delta_{ms} \; \tilde{u}_{ms} \leq d_m, \forall m \in \mathcal{M} \label{eq:P1S2C2}\\
-& \hspace{0.4in} \sum_{m \in \mathcal{M}} \delta_{ms} \leq r_s, \forall s \in \mathcal{S}. \label{eq:P1S2C3}
-\end{align}
-\end{tcolorbox}
-\vspace{3mm}
+The first stage objective function (\ref{eq:P1S1}) minimizes the total cost of the selected network with respect to that network's ability to satisfy the demand contained within the region.  The second stage objective function (\ref{eq:P1S2}) maximizes demand satisfaction by maximizing the total demand allocated to the resources comprising the network, as specified by $\delta_{ms}$ as the decision variable of the second stage.
 
-The first stage objective function (\ref{eq:P1S1}) minimizes the total cost of the selected network with respect to that network's ability to satisfy the demand contained within the region\iffalse, as determined by $\rho$\fi.  The second stage objective function (\ref{eq:P1S2}) maximizes demand satisfaction by maximizing the total demand allocated to the resources comprising the network, as specified by $\delta_{ms}$ as the decision variable of the second stage.
-
-Constraints (\ref{eq:P1S1C1}), (\ref{eq:P1S2C1}), and (\ref{eq:P1S2C3}) implement the defined ranges and values of the decision variables $z_s$ and $\delta_{ms}$, with (\ref{eq:P1S2C1}) ensuring that demand is allocated only to selected resources.  For constraint (\ref{eq:P1S2C1}), $\mathbb{1}_{\{*\}}$ is defined by
-
-\[ \mathbb{1}_{\{*\}} =
+Constraints (\ref{eq:P1S1C1}), (\ref{eq:P1S2C1}), and (\ref{eq:P1S2C3}) implement the defined ranges and values of the decision variables $z_s$ and $\delta_{ms}$, with (\ref{eq:P1S2C1}) ensuring that demand is allocated only to selected resources.  For constraint (\ref{eq:P1S2C1}), $\mathbbm{1}_{\{*\}}$ is defined by
+\[ \mathbbm{1}_{\{*\}} \myeq
 	\begin{cases}
-		1,& \text{if condition $*$ is true,}\\
-		0,& \text{otherwise}.
+		1,& \text{if condition $\{*\}$ is true,}\\
+		0,& \text{otherwise}
 	\end{cases}
 \]
 
 Constraint (\ref{eq:P1S2C2}) ensures a demand point $m \in \mathcal{M}$ is not allocated more resources than it demands.
 
+\vspace{3mm}
+\begin{tcolorbox}[title = Problem 1 (Two-Stage Stochastic Optimization Problem)]
+\begin{align}
+& \underset{\left\{z_s,\, s \in \mathcal{S}\right\}}{\text{minimize}} \left\{ \sum_{s \in \mathcal{S}} c_s \; z_s + \alpha \mathbb{E}\left[ h\left( z,\, u \right) \right] \right\} \label{eq:P1S1}\\
+& \text{subject to:}  \nonumber \\
+& \hspace{0.4in} z_s \in \{0, 1\}, \forall s \in \mathcal{S} \label{eq:P1S1C1}
+\end{align}
+where $h(z, u)$ is the optimal value of the second-stage problem, which is given by:
+\begin{align}
+& \underset{\left\{\substack{\delta_{ms}, m \in \mathcal{M}, s \in \mathcal{S}}\right\}}{\mathrm{minimize}} \left\{ - \sum_{m \in \mathcal{M}} \sum_{s \in \mathcal{S}} \delta_{ms} \; \tilde{u}_{ms} \right\} \label{eq:P1S2}\\
+& \text{subject to:}  \nonumber \\
+& \hspace{0.4in} z_s = \mathbbm{1}_{\left\{\sum_{m \in \mathcal{M}} \delta_{ms} > 0\right\}}, \forall s \in \mathcal{S} \label{eq:P1S2C1}\\
+& \hspace{0.4in} \sum_{s \in \mathcal{S}} \delta_{ms} \; \tilde{u}_{ms} \leq d_m, \forall m \in \mathcal{M} \label{eq:P1S2C2}\\
+& \hspace{0.4in} \sum_{m \in \mathcal{M}} \delta_{ms} \leq r_s, \forall s \in \mathcal{S}. \label{eq:P1S2C3}
+\end{align}
+\end{tcolorbox}
+
 \subsection{Deterministic Equivalent Reformulation} \label{subsec:dep}
 
 In order to solve the two-stage stochastic optimization formulation (Problem 1), we need to convert it to a deterministic equivalent program (DEP) that does not contain any stochastic variables (only deterministic variables) \cite{stochprogramming}.
 
-\iffalse
-Let $ \Omega \eqdef \{1,\, 2,\, \ldots,\, |\Omega|\} $ be defined as the set of discrete scenarios, each of which contains a sampled version of the stochastic variables within Problem 1.  As $|\Omega|$ approaches infinity, $\Omega$ contains the entire scope of the stochastic variables.
-\fi
+Let $\Omega$ be defined as the sample space, i.e., the set of all scenarios.  Let $\hat{\Omega} \myeq \{1,\, 2,\, \ldots,\, O\}$ be a discrete set containing sampled scenarios.  The probability a given scenario $\omega \in \hat{\Omega}$ occurs is denoted by $p^{(\omega)},\, \omega \in \hat{\Omega}$, where $\sum_{\omega \in \hat{\Omega}} p^{(\omega)} = 1$.  Variables that are dependent on the scenario are shown with a superscript ($\omega$) with the specific scenario it is dependent on indicated by $\omega$.
 
-Let $\Omega$ be defined as the sample space, i.e., the set of all scenarios.  Let $\hat{\Omega} \eqdef \{1,\, 2,\, \ldots,\, O\}$ be a discrete set containing sampled scenarios.  The probability a given scenario $\omega \in \hat{\Omega}$ occurs is denoted by $p^{(\omega)},\, \omega \in \hat{\Omega}$, where $\sum_{\omega \in \hat{\Omega}} p^{(\omega)} = 1$.  Variables that are dependent on the scenario are shown with a superscript ($\omega$) with the specific scenario it is dependent on indicated by $\omega$.
+The objective function (\ref{eq:P2}) combines both objective functions (\ref{eq:P1S1}) and (\ref{eq:P1S2}) of the initial formulation into a deterministic form.  Constraints (\ref{eq:P2C1}) and (\ref{eq:P2C2})	ensure demand is not overallocated and is only allocated to selected resources and within capacity for all scenarios.
+
+Problem 2 provides an equivalent deterministic form of Problem 1 for the (finite) sampled state space, $\hat{\Omega}$, containing $O$ scenarios.  With sufficiently large $O$, $\hat{\Omega}$ approaches a tight approximation of the original sample space.  Within each scenario $\omega \in \hat{\Omega}$, the SSLT demand field $\rho$ is sampled to provide a set of $M$ discrete demand points.  Each sampling of $\rho$ is generated by creating a non-stationary 2D PPP with $M$ points as described in Section \ref{sec:model}.
 
 \vspace{3mm}
 \begin{tcolorbox}[title = Problem 2 (Deterministic Equivalent Program of Problem 1)]
 \begin{align}
-& 
-\underset{\left\{ \substack{
+& \underset{\left\{ \substack{
 	z_s,\, \delta_{ms}^{(\omega)},\\
 	s \in \mathcal{S},\, m \in \mathcal{M},\\
 	\omega \in \hat{\Omega}} \right\}} {\text{minimize}}
@@ -629,31 +516,24 @@ Let $\Omega$ be defined as the sample space, i.e., the set of all scenarios.  Le
 & \hspace{0.4in} z_s \in \{0,\, 1\},\, \forall s \in \mathcal{S}. \label{eq:P2C3}
 \end{align}
 \end{tcolorbox}
-\vspace{3mm}
-
-The objective function (\ref{eq:P2}) combines both objective functions (\ref{eq:P1S1}) and (\ref{eq:P1S2}) of the initial formulation into a deterministic form.  Constraints (\ref{eq:P2C1}) and (\ref{eq:P2C2})	ensure demand is not overallocated and is only allocated to selected resources and within capacity for all scenarios.
-
-Problem 2 provides an equivalent deterministic form of Problem 1 for the (finite) sampled state space, $\hat{\Omega}$, containing $O$ scenarios.  With sufficiently large $O$, $\hat{\Omega}$ approaches a tight approximation of the original sample space.  Within each scenario $\omega \in \hat{\Omega}$, the SSLT demand field $\rho$ is sampled to provide a set of $M$ discrete demand points.  Each sampling of $\rho$ is generated by creating a non-stationary 2D PPP with $M$ points as described in Section \ref{sec:model}.
 
 \subsection{Adaptive Slicing within a Formed VWN} \label{subsec:slice}
 
-After the solution to the sampled DEP of Section \ref{subsec:dep} has been found, the VNB has determined the joint BS selection that forms the VWN and a proposed resource slicing of considered possible scenarios, $\hat{\Omega}$, that allocates the resources to the SP's demand points.  Since $O$ is not infinite, any given scenario present in the formed VWN is unlikely to be an element of $\hat{\Omega}$.  Further, as demand points move between BSs or enter or exit the VWN, a new scenario $\omega \notin \hat{\Omega}$ is formed.  The VWN must adapt its resource slicing to these new demand points to maintain maximal demand satisfaction.  With the VWN built, the joint BS selection, $z_s$, becomes a constant of the network, simplifying Problem 2 to a single-stage optimization problem
+After the solution to the sampled DEP of Section \ref{subsec:dep} has been found, the VNB has determined the joint BS selection that forms the VWN and a proposed resource slicing of considered possible scenarios, $\hat{\Omega}$, that allocates the resources to the SP's demand points.  Since $O$ is not infinite, any given scenario present in the formed VWN is unlikely to be an element of $\hat{\Omega}$.  Further, as demand points move between BSs or enter or exit the VWN, a new scenario $\omega \notin \hat{\Omega}$ is formed.  The VWN must adapt its resource slicing to these new demand points to maintain maximal demand satisfaction.  With the VWN built, the joint BS selection, $z_s$, becomes a constant of the network, simplifying Problem 2 to a single-stage optimization problem.
+
+It is worth noting that Problem 3 is more tractable than Problem 2 as it only contains the single continuous decision variable for resource slicing, simplifying the objective function (\ref{eq:P3}) and constraint (\ref{eq:P3C2}) from a mixed integer linear program to a linear programming problem.
 
 \vspace{3mm}
 \begin{tcolorbox}[title = Problem 3 (Deterministic Adaptive Slicing)]
 \begin{align}
-& 
-\underset{\left\{ \substack{
-	\delta_{ms},\,	s \in \mathcal{S},\, m \in \mathcal{M}} \right\}} {\text{minimize}}
-- \left( \sum_{m \in \mathcal{M}} \sum_{s \in \mathcal{S}} \delta_{ms} \; u_{ms} \right) \label{eq:P3}\\
+& \underset{\left\{ \substack{
+	\delta_{ms},\,	s \in \mathcal{S},\, m \in \mathcal{M}} \right\}} {\text{maximize}}
+\left\{ \sum_{m \in \mathcal{M}} \sum_{s \in \mathcal{S}} \delta_{ms} \; u_{ms} \right\} \label{eq:P3}\\
 & \text{subject to:}  \nonumber \\
 & \hspace{0.4in} \sum_{s \in \mathcal{S}} \delta_{ms} \; u_{ms} \leq d_m,\, \forall m \in \mathcal{M} \label{eq:P3C1}\\
 & \hspace{0.4in} \sum_{m \in \mathcal{M}} \delta_{ms} \leq r_s \; z_s,\, \forall s \in \mathcal{S}. \label{eq:P3C2}
 \end{align}
 \end{tcolorbox}
-\vspace{3mm}
-
-It is worth noting that Problem 3 is more tractable than Problem 2 as it only contains the single continuous decision variable for resource slicing, simplifying the objective function (\ref{eq:P3}) and constraint (\ref{eq:P3C2}) from a mixed integer linear program to a linear programming problem.
 
 %\textit{\textcolor{blue}{Note: It just occurred to me that this problem can be further simplified such that the set $\mathcal{S}$ is trimmed to remove all BSs $s \in \mathcal{S}$ where $z_s = 0$, creating a new set $\mathcal{S}'$ with no $z_s$ present (as $z_s = 1, \forall s \in \mathcal{S}'$). This would decrease the size of the problem in the situation it begins to become intractable.  It is implemented as displayed in Problem 3, but this would be an universal improvement.  Might be worth implementing for thesis.}}
 
@@ -664,8 +544,7 @@ A genetic algorithm is an iterative metaheuristic in which an approximate soluti
 
 For the genetic algorithm, $\rho$ is not sampled for discrete demand points.  Instead, we assume that all demand over the region is allocated to the closest resource.  The subset of $\mathcal{S}$, $\mathcal{S}'$, that is selected for a given possible VWN forms a Voronoi tessellation from the point locations of the selected resources.  The total demand allocated to a selected resource $s \in \mathcal{S}' \subseteq \mathcal{S}$ is $\iint_{V_s} \rho\left(x,\, y\right) \,dx \,dy$, where $V_s$ is the region bounded by the cell of resource \textit{s} in the Voronoi tessellation.  If the total demand allocated to \textit{s} exceeds $r_s$, \textit{s} is considered to be \textit{overcapacity}.  If $V_s$ is not wholly contained within the coverage area of resource \textit{s}, \textit{s} is considered to be \textit{overcoverage}.
 
-Let $\mathcal{G} \eqdef \left\{1,\, 2,\, \ldots,\, G\right\}$ be the set of generations used in the genetic algorithm and $\mathcal{I}_g \eqdef \left\{1,\, 2,\, \ldots,\, I\right\}, g \in \mathcal{G}$ be the set of individuals within generation \textit{g}.  Each individual $i \in \mathcal{I}_{g \in \mathcal{G}}$ has a binary chromosome $z^{\{ig\}}$ of length \textit{S}.  $z_s^{\{ig\}}, s \in \mathcal{S}$, denoting each individual bit of the chromosome, is defined as follows:
-
+Let $\mathcal{G} \myeq \left\{1,\, 2,\, \ldots,\, G\right\}$ be the set of generations used in the genetic algorithm and $\mathcal{I}_g \myeq \left\{1,\, 2,\, \ldots,\, I\right\}, g \in \mathcal{G}$ be the set of individuals within generation \textit{g}.  Each individual $i \in \mathcal{I}_{g \in \mathcal{G}}$ has a binary chromosome $z^{\{ig\}}$ of length \textit{S}.  $z_s^{\{ig\}}, s \in \mathcal{S}$, denoting each individual bit of the chromosome, is defined as follows:
 \[ z_s^{\{ig\}} =
 	\begin{cases}
 		1,& \text{if BS $s$ is selected for the VWN for}\\
@@ -679,25 +558,27 @@ The fitness heuristic of each individual chromosome, $z^{\{ig\}}$, is assessed a
 \begin{equation} \label{eq:GAFit}
 \text{fitness}\left(z^{\{ig\}}\right) = \frac{1}{\text{cost}\left(z^{\{ig\}}\right)}
 \end{equation}
+\vspace{0.2in}
+\begin{equation}
+\nonumber
+\end{equation}
+%\vspace{0.01in}
 \begin{multline} \label{eq:GACost}
-\text{cost}\left(z^{\{ig\}}\right) = \sum_{s \in \mathcal{S}} \Biggl( c_s \; z_s^{\{ig\}} + c_\text{cov} \; \mathbb{1}_{\left\{ V_s \nsubseteq R_s \right\}} + \\ \left(c_\text{cap}^g - 1\right) \; \max\left( 0,\, \iint_{R_s} \rho\left(x,\, y\right)\, dx\, dy - r_s \right) \Biggr)
+\text{cost}\left(z^{\{ig\}}\right) = \sum_{s \in \mathcal{S}} \Biggl( c_s \; z_s^{\{ig\}} + c_\text{cov} \; \mathbbm{1}_{\left\{ V_s \not\subseteq R_s \right\}} + \\ \left(c_\text{cap}^g - 1\right) \; \max\left( 0,\, \iint_{R_s} \rho\left(x,\, y\right)\, dx\, dy - r_s \right) \Biggr)
 \end{multline}
 
 \noindent where $R_s$ is the coverage area region of resource $s \in \mathcal{S}$.
 
 The cost function (\ref{eq:GACost}) indicates cost increases not only based on the cost of the resources selected, but also with imperfection costs $c_\text{cov}$ and $c_\text{cap}$, the costs of a selected resource being overcoverage or overcapacity, respectively.  The overcapacity cost grows with each successive generation.  For early generations, this allows for imperfect solutions to temporarily exist to seed later generations and improve diversity to increase the probability of finding a better final approximate solution.
 
-Elitism is used, where the \textit{n} most fit individuals of a given generation are automatically selected without crossover or mutation to be the first children of the next generation.  Selection occurs via the roulette wheel selection method.  Every individual \textit{i} of a given generation \textit{g} has a probability of being selected given by
-
-% Might need citation or reasoning for roulette-wheel selection method
-
+Elitism is used, where the \textit{n} most fit individuals of a given generation are automatically selected without crossover or mutation to be the first children of the next generation.  Selection occurs via the roulette wheel selection method.  Every individual $i$ of a given generation $g$ has a probability of being selected given by
 \[
 \frac{\text{fitness}\left( z^{\{ig\}} \right)}{\sum_{i \in \mathcal{I}} \text{fitness}\left( z^{\{ig\}} \right)}
 \]
 
-When crossover is performed on selected individuals, it is via the uniform crossover method with a mixing ratio of 0.5.  That is, if two selected parent individuals crossover, each equivalent bit in the parents will swap with a probability of 50\%.  It has been suggested that uniform crossover is more exploratory than \textit{n}-point crossover \textcolor{blue}{\textit{(cite)}}.  Mutation occurs on a bit-by-bit level, with each bit mutating (i.e., flipping) with probability $\frac{1}{S}$.  The uniqueness property is then enforced on the resulting children to ensure diversity; if a child chromosome is identical to another child chromosome in the next generation, the child is discarded and a new child generated, ensuring that each individual of any given generation is unique within that generation.
+When crossover is performed on selected individuals, it is via the uniform crossover method with a mixing ratio of 0.5.  That is, if two selected parent individuals crossover, each equivalent bit in the parents will swap with a probability of 50\%.  Mutation occurs on a bit-by-bit level, with each bit mutating (i.e., flipping) with probability $\frac{1}{S}$.  The uniqueness property is then enforced on the resulting children to ensure diversity; if a child chromosome is identical to another child chromosome in the next generation, the child is discarded and a new child generated, ensuring that each individual of any given generation is unique within that generation.
 
-The genetic algorithm iterates for a number of generations \textit{G}.  If the genetic algorithm settles on a single individual for a number of continuous generations, $G_\text{halt}$, it will halt and present that individual's chromosome as the final approximate solution for $z_s$.  Otherwise, the chromosome of the fittest individual of generation \textit{G} determines $z_s$.
+The genetic algorithm iterates for a number of generations $G$.  If the genetic algorithm settles on a single individual for a number of continuous generations, $G_\text{halt}$, it will halt and present that individual's chromosome as the final approximate solution for $z_s$.  Otherwise, the chromosome of the fittest individual of generation $G$ determines $z_s$.
 
 The genetic algorithm only determines an approximate solution to the BS selection forming the VWN, informing the VNB of which BSs to obtain from the RPs.  With this selection, $z_s$, the SP's demand points can be dynamically allocated resource slices as described by Problem 3 in Section \ref{subsec:slice}.
 
@@ -706,17 +587,14 @@ In this section, we evaluate the sampled DEP and genetic algorithm approaches as
 
 \subsection{Setup} \label{subsec:setup}
 
-\begin{table*}[t]
+%\begin{table*}[t]
+\begin{table}
+\vspace{0.25in}
 \centering
 \caption{Numerical Values of Relevant Parameters}
 \begin{tabular}{|c|c|} 
 \hline
-\textbf{Parameter} & \textbf{Value} \\
-\hline
-\hline 
-Width of Geographic Area ($X$) & 2 km \\
-\hline
-Height of Geographic Area ($Y$) & 2 km \\
+Width, Height of Geographic Area ($X$) & 2 km x 2 km \\
 \hline
 Number of BSs ($S$) & 60 \\ 
 \hline 
@@ -743,14 +621,14 @@ SSLT Location Parameter ($\sigma$) & 0 \\
 \hline 
 SSLT Scale Parameter ($\mu$) & 1 \\ 
 \hline
-Pixel Grid Size & 100 x 100, 20 m side\\
+Pixel Grid Size & 100 x 100, 20 m \\
 \hline 
 \hline
 Maximum Number of Generations ($G$) & 3000 \\ 
 \hline
 Minimum Number of Generations & 300 \\
 \hline
-Number of Unchanged Generations Before Halt ($G_\text{halt}$) & 150 \\
+Unchanged Generations Before Halt ($G_\text{halt}$) & 150 \\
 \hline 
 Number of Individuals per Generation ($I$) & 80 \\ 
 \hline
@@ -766,24 +644,25 @@ Overcapacity Cost ($c_\text{cap}$) & 1.015 \\
 \hline
 \end{tabular}
 \label{tab:simval}
-\end{table*}
+%\end{table*}
+\end{table}
 
 \begin{figure}[h]
 \centering
 \begin{subfigure}{.45\textwidth}
 	\centering
 	\includegraphics[width=1\linewidth]{Figures/BSLocationsVoronoi}
-	\caption{RP BS Locations in $\mathcal{S}$ with associated Voronoi tesselation}
+	\caption{RP BS Locations in $\mathcal{S}$ with Voronoi tesselation}
 	\label{fig:BSLocVor}
 \end{subfigure}
 \hspace{0.5cm}
 \begin{subfigure}{.45\textwidth}
 	\centering
 	\includegraphics[width=1\linewidth]{Figures/SSLTnsPPP_demandpointreal}
-	\caption{SP SSLT demand density field with one scenario of SP demand points}
+	\caption{SP SSLT demand density field with one scenario}
 	\label{fig:SSLTDPReal}
 \end{subfigure}
-\caption{Visualization of network area.  (\ref{fig:BSLocVor}) visualizes the resources available to VNB for creating the VWN, and (\ref{fig:SSLTDPReal}) visualizes the demand to be satisfied by the VWN.}
+\caption{\small Visualization of network area.  (\ref{fig:BSLocVor}) visualizes the resources available to VNB for creating the VWN, and (\ref{fig:SSLTDPReal}) visualizes the demand to be satisfied by the VWN.}
 \label{fig:NetworkArea}
 \end{figure}
 
@@ -796,43 +675,71 @@ We ran our simulations on an Intel Core i7-4790K 4.00 GHz 4 real/8 virtual core 
 \begin{figure}
 	\centering
 	\includegraphics[width=.45\textwidth]{Figures/VOSGA_SpeedupRatio_AbsComp_alpha20}
-	\caption{Absolute run time and speedup ratio of the genetic algorithm and sampled DEP approaches.  Speedup ratio is the ratio between the average genetic algorithm and sampled DEP run times.  Adjusted time is the minimum wall run time accounting for CPLEX utilizing 8 threads.  CPLEX did not converge to a final solution within the time limit (15 minutes) in the 50 scenario case.}
+	\caption{\small Absolute run time and speedup ratio of the genetic algorithm and sampled DEP approaches.  Speedup ratio is the ratio between the average genetic algorithm and sampled DEP run times.  CPLEX did not converge to a final solution within the time limit (15 minutes) in the 50 scenario case.}
 	\label{fig:AlgSpeedupRunTime}
 \end{figure}
 
 In Fig. \ref{fig:AlgSpeedupRunTime} is a comparison of the approach run times.  It shows the run times of both the DEP and genetic algorithm in terms of the speedup ratio and in absolute number of seconds.  As the number of scenarios sampled increases, the CPU run time of the sampled DEP increases exponentionally, and fails to converge to a final solution with 50 scenarios within the time limit of 15 minutes.  Except for the 5 scenario case, the genetic algorithm converges to a solution in less CPU time (125.8 seconds) than the sampled DEP.  When 20 scenarios are sampled, the DEP takes approximately 440\% of the time as the genetic algorithm; at 45 scenarios, this has increased to 4,630\%.  CPLEX is capable of parallelizing across the 8 CPU cores, allowing for the wall clock run time to be, at minimum, one-eighth the CPU run time.  In terms of the adjusted approximate ``wall clock" time, the genetic algorithm converges in less wall clock time than the sampled DEP for 25 or more sampled scenarios.
 
-\begin{figure}
+\iffalse
+\begin{figure*}[t]
 \centering
-\begin{subfigure}{.45\textwidth}
+\begin{subfigure}{.3\textwidth}
 	\centering
 	\includegraphics[width=1\linewidth]{Figures/ComparisonCost}
 	\caption{VWN costs}
 	\label{fig:VWNCompCost}
 \end{subfigure}
 \hspace{0.5cm}
-\begin{subfigure}{.45\textwidth}
+\begin{subfigure}{.3\textwidth}
 	\centering
 	\includegraphics[width=1\linewidth]{Figures/ComparisonSatisfaction}
 	\caption{SP demand point satisfaction}
 	\label{fig:VWNCompSatis}
 \end{subfigure}
-\caption{Comparison of VWN costs and SP demand point satisfaction.  Note that cost and demand satisfaction show a direct correlation.}
+\caption{\small Comparison of VWN costs and SP demand point satisfaction.}
 \label{fig:VWNComp}
-\end{figure}
+\end{figure*}
+
+\begin{figure*}[t]
+	\centering
+	\includegraphics[width=.3\textwidth]{Figures/ComparisonSatisfactionEval}
+	\caption{\small Comparison of demand satisfaction with 50 new scenarios of 200 SP demand points sliced using Problem 3.}
+	\label{fig:VWNEvalCompSatis}
+\end{figure*}
+\fi
+
+\begin{figure*}[t]
+\centering
+\begin{subfigure}{.3\textwidth}
+	\centering
+	\includegraphics[width=1\linewidth]{Figures/ComparisonCost}
+	\caption{VWN costs}
+	\label{fig:VWNCompCost}
+\end{subfigure}
+\hspace{0.3cm}
+\begin{subfigure}{.3\textwidth}
+	\centering
+	\includegraphics[width=1\linewidth]{Figures/ComparisonSatisfaction}
+	\caption{SP demand point satisfaction}
+	\label{fig:VWNCompSatis}
+\end{subfigure}
+\hspace{0.3cm}
+\begin{subfigure}{.3\textwidth}
+	\centering
+	\includegraphics[width=1\linewidth]{Figures/ComparisonSatisfactionEval}
+	\caption{50 new scenarios of 200 SP demand points evalutaed with Problem 3.}
+	\label{fig:VWNCompSatisEval}
+\end{subfigure}
+\caption{\small Comparison of VWN costs and SP demand point satisfaction.}
+\label{fig:VWNComp}
+\end{figure*}
 
 The trade off for the genetic algorithm's improved run time is that the solution provided is less optimal than the sampled DEP, as indicated by an increased cost for the VNB to build the VWN.  Fig. \ref{fig:VWNCompCost} compares the increasing cost of the sampled DEP as $\alpha$ increases with the cost of the various genetic algorithm solutions.  On average, the genetic algorithm incurs a 36\% increased cost in selecting the BSs for the VWN.  At minimum, the incurred cost is only 20\% than the sampled DEP, which implies the genetic algorithm might be terminating early, and a tighter solution might be found by increasing $G_\text{halt}$.  It should also be noted that one unit of cost is one additional BS being selected for the VWN, and the sampled DEP selections for $\alpha \geq 30$ have a cost of only 10 BSs.  Any variance that incurs one additional BS for the genetic algorithm incurs 10\% increased cost.  Increasing the number of BSs required to comprise the VWN would introduce additional granularity in $\mathcal{S}$ that might decrease the inefficiency of the genetic algorithm.  This was not done as this data set was chosen specifically so the sampled DEP would terminate within 15 minutes (i.e., in a reasonable amount of time); increasing the number of BSs available to the VNB drastically increases the time it would take the sampled DEP to converge to a solution.
 
 There is a direct correlation between the number of BSs in the VWN and its capability for satisfying demand.  As the cost - and, therefore, the number of BSs - increases for a given solution, the average demand satisfaction trends towards 100\%, as shown in Fig. \ref{fig:VWNCompSatis}.  Because of this overallocation of resources, the genetic algorithm solutions have a very high demand satisfaction, averaging 99.9\% satisfaction and reaching 100\% for some solutions.  The worst performing genetic algorithm solution exceeded 99.1\% demand satisfaction.  The most expensive 10-BS sampled DEP solutions reach 99.2\% when slicing to the same set of demand point scenarios, $\Omega$, that determined the sampled DEP BS selection.
 
-\begin{figure}
-	\centering
-	\includegraphics[width=0.45\textwidth]{Figures/ComparisonSatisfactionEval}
-	\caption{Comparison of demand satisfaction with 50 new scenarios of 200 SP demand points sliced using Problem 3.}
-	\label{fig:VWNEvalCompSatis}
-\end{figure}
-
-When the set of demand points change to a scenario no longer in $\Omega$, the sampled DEP performs very similarly.  Fig. \ref{fig:VWNEvalCompSatis} shows the demand satisfaction for both the sampled DEP and genetic algorithm BS selections when sliced to a new set of scenarios as evaluated with Problem 3.  Here, the number of demand points increases to 200 points per scenario, each with 66.8 kbps rate demand, across 50 independent scenarios.  The demand satisfaction trend of the sampled DEP BS selection follows very closely to the original set of scenarios but hits a maximum of 99.0\% demand satisfaction with 10 BSs.  In comparison, the SP demand point scenarios are far more beneficial to the genetic algorithm, which reaches greater than 99.99\% demand satisfaction for all generated VWNs.  This is expected as a side effect of the increased number of points and scenarios more accurately describing a sampling of the original SSLT demand density field of the SP, $\rho$.
+When the set of demand points change to a scenario no longer in $\Omega$, the sampled DEP performs very similarly.  Fig. \ref{fig:VWNCompSatisEval} shows the demand satisfaction for both the sampled DEP and genetic algorithm BS selections when sliced to a new set of scenarios as evaluated with Problem 3.  Here, the number of demand points increases to 200 points per scenario, each with 66.8 kbps rate demand, across 50 independent scenarios.  The demand satisfaction trend of the sampled DEP BS selection follows very closely to the original set of scenarios but hits a maximum of 99.0\% demand satisfaction with 10 BSs.  In comparison, the SP demand point scenarios are far more beneficial to the genetic algorithm, which reaches greater than 99.99\% demand satisfaction for all generated VWNs.  This is expected as a side effect of the increased number of points and scenarios more accurately describing a sampling of the original SSLT demand density field of the SP, $\rho$.
 
 \section{Conclusion} \label{sec:conclusion}
 
@@ -841,17 +748,6 @@ In this work, we studied the problem of determining the optimal joint BS selecti
 The sampled DEP is considered to be closer to the original problem, and will provide a tight approximate solution to the original DEP or stochastic model with a sufficiently large set of scenarios and sufficient time.  However, it is shown to be intractable, as it is time prohibitive to converge to a solution as these ideally large sets are approached.  The genetic algorithm is a hybrid approach intending to simplify the first stage of the model by using a metaheuristic.  All demand, known from a continuous demand density model, within a resource's cell in a Voronoi tessellation is considered allocated to that resource, a simpler process than attempting to allocate individual demand points to the entire pool of resources.  The advantage of this approach is that it simplifies the search space of the original two-stage model to a single-stage model which only handles slicing demand points to the selected resources.  This provides a faster solution with the introduction of some error.
 
 The simulation results indicate that the genetic algorithm approach may be an adequate avenue for a solution.  This approach trends to a solution in 2\% of the time, incurring 20\% increased error.  While the error is significant, it could decrease with larger, more computationally-intensive data sets that would provide more resolution to both the resource and demand sets, allowing for less error to be incurred for small variations.  It is important to note that increasing the size of the data set incurs a larger time cost on the sampled DEP approach than on the genetic algorithm approach.  Analyzing these larger data sets, improving on the genetic algorithm formulation, or utilizing other metaheuristic algorithms could improve on these results and would be obvious avenues for further investigation.
-
-
-
-% conference papers do not normally have an appendix
-
-
-% use section* for acknowledgment
-%\section*{Acknowledgment}
-
-
-%The authors would like to thank...
 
 
 
