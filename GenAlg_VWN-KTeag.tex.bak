@@ -289,7 +289,7 @@
 
 \author{
 \IEEEauthorblockN{Kory Teague$^1$, Mohammad J. Abdel-Rahman$^{1,2}$, and Allen B. MacKenzie$^1$\\}
-\IEEEauthorblockA{$^1$Department of Electrical and Computer Engineering, Virginia Tech, Blacksburg ,VA 24061, USA \\ $^2$Department of Electrical and Energy Engineering, Al Hussein Technical University (HTU), Amman 11821, Jordan \\
+\IEEEauthorblockA{$^1$Department of Electrical and Computer Engineering, Virginia Tech, Blacksburg, VA 24061, USA \\ $^2$Department of Electrical and Energy Engineering, Al Hussein Technical University (HTU), Amman 11821, Jordan \\
 \{koryt, mo7ammad, mackenab\}@vt.edu
 }}
 
@@ -749,7 +749,64 @@ The sampled DEP is considered to be closer to the original problem, and will pro
 
 The simulation results indicate that the genetic algorithm approach may be an adequate avenue for a solution.  This approach trends to a solution in 2\% of the time, incurring 20\% increased error.  While the error is significant, it could decrease with larger, more computationally-intensive data sets that would provide more resolution to both the resource and demand sets, allowing for less error to be incurred for small variations.  It is important to note that increasing the size of the data set incurs a larger time cost on the sampled DEP approach than on the genetic algorithm approach.  Analyzing these larger data sets, improving on the genetic algorithm formulation, or utilizing other metaheuristic algorithms could improve on these results and would be obvious avenues for further investigation.
 
+\section{Testing}
 
+\begin{tcolorbox}[floatplacement = !ht, float, title = Problem 1 \\ Two-Stage Stochastic Optimization Program]
+\begin{align}
+& \underset{\left\{z_s,\, s \in \mathcal{S}\right\}}{\text{minimize}} \left\{ \sum_{s \in \mathcal{S}} c_s \; z_s + \alpha \mathbb{E}\left[ h\left( z,\, u \right) \right] \right\} \nonumber \\
+& \text{subject to:}  \nonumber \\
+& \hspace{0.4in} z_s \in \{0, 1\},\, \forall s \in \mathcal{S} \nonumber
+\end{align}
+where $h(z, u)$ is the optimal value of the second-stage problem, which is given by:
+\begin{align}
+& \underset{\left\{\substack{\delta_{ms},\, m \in \mathcal{M},\, s \in \mathcal{S}}\right\}}{\mathrm{minimize}} \left\{ - \sum_{m \in \mathcal{M}} \sum_{s \in \mathcal{S}} \delta_{ms} \; \tilde{u}_{ms} \right\} \nonumber \\
+& \text{subject to:}  \nonumber \\
+& \hspace{0.4in} z_s = \left[\sum_{m \in \mathcal{M}} \delta_{ms} > 0\right],\, \forall s \in \mathcal{S} \nonumber \\
+& \hspace{0.4in} \sum_{s \in \mathcal{S}} \delta_{ms} \; \tilde{u}_{ms} \leq d_m,\, \forall m \in \mathcal{M} \nonumber \\
+& \hspace{0.4in} \sum_{m \in \mathcal{M}} \delta_{ms} \leq r_s,\, \forall s \in \mathcal{S}. \nonumber
+\end{align}
+\end{tcolorbox}
+
+\begin{tcolorbox}[floatplacement = !ht, float, title = Problem 2 \\ Deterministic Equivalent Program (DEP)]
+\begin{align}
+& \underset{\left\{ \substack{
+	z_s,\, \delta_{ms}^{(\omega)},\\
+	s \in \mathcal{S},\, m \in \mathcal{M},\\
+	\omega \in \Omega} \right\}} {\text{minimize}}
+\Biggl\{ \sum_{s \in \mathcal{S}} c_s \; z_s - \nonumber \\
+& \hspace{0.4in} \alpha \sum_{\omega \in \Omega} p^{(\omega)} \left( \sum_{m \in \mathcal{M}} \sum_{s \in \mathcal{S}} \delta_{ms}^{(\omega)} \; u_{ms}^{(\omega)} \right) \Biggr\} \nonumber \\
+& \text{subject to:}  \nonumber \\
+& \hspace{0.4in} \sum_{s \in \mathcal{S}} \delta_{ms}^{(\omega)} \; u_{ms}^{(\omega)} \leq d_m,\, \forall m \in \mathcal{M},\, \forall \omega \in \Omega \nonumber \\
+& \hspace{0.4in} \sum_{m \in \mathcal{M}} \delta_{ms}^{(\omega)} \leq r_s \; z_s,\, \forall s \in \mathcal{S},\, \forall \omega \in \Omega \nonumber \\
+& \hspace{0.4in} z_s \in \{0,\, 1\},\, \forall s \in \mathcal{S}. \nonumber
+\end{align}
+\end{tcolorbox}
+
+\begin{tcolorbox}[floatplacement = !ht, float, title = Problem 3 \\ Sampled Deterministic Equivalent Program (sDEP)]
+\begin{align}
+& \underset{\left\{ \substack{
+	z_s,\, \delta_{ms}^{(\omega)},\\
+	s \in \mathcal{S},\, m \in \mathcal{M},\\
+	\omega \in \hat{\Omega}} \right\}} {\text{minimize}}
+\Biggl\{ \sum_{s \in \mathcal{S}} c_s \; z_s - \nonumber \\
+& \hspace{0.4in} \alpha \sum_{\omega \in \hat{\Omega}} p^{(\omega)} \left( \sum_{m \in \mathcal{M}} \sum_{s \in \mathcal{S}} \delta_{ms}^{(\omega)} \; u_{ms}^{(\omega)} \right) \Biggr\} \nonumber \\
+& \text{subject to:}  \nonumber \\
+& \hspace{0.4in} \sum_{s \in \mathcal{S}} \delta_{ms}^{(\omega)} \; u_{ms}^{(\omega)} \leq d_m,\, \forall m \in \mathcal{M},\, \forall \omega \in \hat{\Omega} \nonumber \\
+& \hspace{0.4in} \sum_{m \in \mathcal{M}} \delta_{ms}^{(\omega)} \leq r_s \; z_s,\, \forall s \in \mathcal{S},\, \forall \omega \in \hat{\Omega} \nonumber \\
+& \hspace{0.4in} z_s \in \{0,\, 1\},\, \forall s \in \mathcal{S}. \nonumber
+\end{align}
+\end{tcolorbox}
+
+\begin{tcolorbox}[floatplacement = !ht, float, title = Adaptive Slicing Model]
+\begin{align}
+& \underset{\left\{ \substack{
+	\delta_{ms},\,	s \in \mathcal{S},\, m \in \mathcal{M}} \right\}} {\text{maximize}}
+\left\{ \sum_{m \in \mathcal{M}} \sum_{s \in \mathcal{S}} \delta_{ms} \; u_{ms} \right\} \nonumber \\
+& \text{subject to:}  \nonumber \\
+& \hspace{0.4in} \sum_{s \in \mathcal{S}} \delta_{ms} \; u_{ms} \leq d_m,\, \forall m \in \mathcal{M} \nonumber \\
+& \hspace{0.4in} \sum_{m \in \mathcal{M}} \delta_{ms} \leq r_s \; z_s,\, \forall s \in \mathcal{S}. \nonumber
+\end{align}
+\end{tcolorbox}
 
 
 
