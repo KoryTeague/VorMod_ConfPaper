@@ -21,11 +21,6 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{1421931}
-C.~Beckman and G.~Smith, ``Shared networks: making wireless communication
-  affordable,'' \emph{IEEE Wireless Communications Magazine}, vol.~12, no.~2,
-  pp. 78--85, April 2005.
-
 \bibitem{6824752}
 J.~G. Andrews, S.~Buzzi, W.~Choi, S.~V. Hanly, A.~Lozano, A.~C.~K. Soong, and
   J.~C. Zhang, ``What will {5G} be?'' \emph{IEEE Journal on Selected Areas in
@@ -109,6 +104,14 @@ D.~Lee, S.~Zhou, and Z.~Niu, ``Spatial modeling of scalable
   energy-efficient network planning,'' in \emph{Proceedings of the IEEE
   Wireless Communications and Networking Conference (WCNC)}, April 2013, pp.
   1285--1290.
+
+\bibitem{leeds:nsPPPgeneration}
+\BIBentryALTinterwordspacing
+{Department of Mining and Mineral Engineering}, ``Poisson: A program for
+  spatial point generation using poisson processes,'' Sept 2002. [Online].
+  Available:
+  \url{http://www.leeds.ac.uk/StochasticRockFractures/Download/ReportsSeminars/Report1\_POISSON\_Prog.pdf}
+\BIBentrySTDinterwordspacing
 
 \bibitem{stochprogramming}
 P.~Kall and S.~W. Wallace, \emph{Stochastic Programming}.\hskip 1em plus 0.5em

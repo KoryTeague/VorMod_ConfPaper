@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.9)  16 AUG 2018 22:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.9)  17 AUG 2018 11:21
 entering extended mode
 **./GenAlg_VWN-KTeag.tex
 (GenAlg_VWN-KTeag.tex
@@ -509,21 +509,29 @@ LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
 (Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
 (Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
-) (GenAlg_VWN-KTeag.aux)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\cleveref\cleveref.sty"
+Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
+)
+(GenAlg_VWN-KTeag.aux)
 \openout1 = `GenAlg_VWN-KTeag.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 357.
-LaTeX Font Info:    ... okay on input line 357.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 357.
-LaTeX Font Info:    ... okay on input line 357.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 357.
-LaTeX Font Info:    ... okay on input line 357.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 357.
-LaTeX Font Info:    ... okay on input line 357.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 357.
-LaTeX Font Info:    ... okay on input line 357.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 357.
-LaTeX Font Info:    ... okay on input line 357.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 359.
+LaTeX Font Info:    ... okay on input line 359.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 359.
+LaTeX Font Info:    ... okay on input line 359.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 359.
+LaTeX Font Info:    ... okay on input line 359.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 359.
+LaTeX Font Info:    ... okay on input line 359.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 359.
+LaTeX Font Info:    ... okay on input line 359.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 359.
+LaTeX Font Info:    ... okay on input line 359.
 
 -- Lines per column: 56 (exact).
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
@@ -593,141 +601,122 @@ Package grfext Info: Graphics extension search list:
 ABD: EveryShipout initializing macros
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 373.
-LaTeX Font Info:    Try loading font information for U+msa on input line 373.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 375.
+LaTeX Font Info:    Try loading font information for U+msa on input line 375.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 373.
+LaTeX Font Info:    Try loading font information for U+msb on input line 375.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 373.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 375.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 373.
- [1{C:/Users/teagu/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
-
-
-]
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 506.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 375.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 508.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1phv.fd"
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
-)
-
-LaTeX Warning: Reference `eq:P1S1' on page 2 undefined on input line 544.
+) [1{C:/Users/teagu/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
-LaTeX Warning: Reference `eq:P1S2' on page 2 undefined on input line 544.
+]
+LaTeX Font Info:    Try loading font information for U+bbm on input line 556.
 
-
-LaTeX Warning: Reference `eq:P1S1C1' on page 2 undefined on input line 546.
-
-
-LaTeX Warning: Reference `eq:P1S2C1' on page 2 undefined on input line 546.
-
-
-LaTeX Warning: Reference `eq:P1S2C3' on page 2 undefined on input line 546.
-
-
-LaTeX Warning: Reference `eq:P1S2C1' on page 2 undefined on input line 546.
-
-
-LaTeX Warning: Reference `eq:P1S2C1' on page 2 undefined on input line 546.
-
-LaTeX Font Info:    Try loading font information for U+bbm on input line 546.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\bbm\ubbm.fd"
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 )
 
-LaTeX Warning: Reference `eq:P1S2C2' on page 2 undefined on input line 554.
+LaTeX Warning: Reference `eq:P2' on page 2 undefined on input line 569.
+
+
+LaTeX Warning: Reference `eq:P1S1' on page 2 undefined on input line 569.
+
+
+LaTeX Warning: Reference `eq:P1S2' on page 2 undefined on input line 569.
+
+
+LaTeX Warning: Reference `eq:P2C1' on page 2 undefined on input line 569.
+
+
+LaTeX Warning: Reference `eq:P2C2' on page 2 undefined on input line 569.
 
 [2]
 
-LaTeX Warning: Reference `eq:P2' on page 3 undefined on input line 598.
+LaTeX Warning: Reference `eq:P3' on page 3 undefined on input line 618.
 
 
-LaTeX Warning: Reference `eq:P1S1' on page 3 undefined on input line 598.
+LaTeX Warning: Reference `eq:P3C2' on page 3 undefined on input line 618.
 
 
-LaTeX Warning: Reference `eq:P1S2' on page 3 undefined on input line 598.
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-LaTeX Warning: Reference `eq:P2C1' on page 3 undefined on input line 598.
-
-
-LaTeX Warning: Reference `eq:P2C2' on page 3 undefined on input line 598.
-
-
-LaTeX Warning: Reference `eq:P3' on page 3 undefined on input line 647.
-
-
-LaTeX Warning: Reference `eq:P3C2' on page 3 undefined on input line 647.
-
-[3]
+ [3]
 <Figures/BSLocationsVoronoi.png, id=34, 421.575pt x 315.579pt>
 File: Figures/BSLocationsVoronoi.png Graphic file (type png)
 <use Figures/BSLocationsVoronoi.png>
-Package pdftex.def Info: Figures/BSLocationsVoronoi.png  used on input line 784
-. on input line 784.
+Package pdftex.def Info: Figures/BSLocationsVoronoi.png  used on input line 755
+. on input line 755.
 Package pdftex.def Info: Requested size: 232.19843pt x 173.81937pt on input lin
-e 784.
+e 755.
 <Figures/SSLTnsPPP_demandpointreal.png, id=35, 421.575pt x 316.0608pt>
 File: Figures/SSLTnsPPP_demandpointreal.png Graphic file (type png)
 <use Figures/SSLTnsPPP_demandpointreal.png>
 Package pdftex.def Info: Figures/SSLTnsPPP_demandpointreal.png  used on input l
-ine 791. on input line 791.
+ine 762. on input line 762.
 Package pdftex.def Info: Requested size: 232.19843pt x 174.08475pt on input lin
-e 791.
+e 762.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [4]
-<Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png, id=39, 421.575pt x 316.0608pt>
+<Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png, id=42, 421.575pt x 316.0608pt>
 
 File: Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png Graphic file (type png)
 <use Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png>
 Package pdftex.def Info: Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png  used o
-n input line 807. on input line 807.
+n input line 778. on input line 778.
 Package pdftex.def Info: Requested size: 232.19843pt x 174.08475pt on input lin
-e 807.
- [5 <./Figures/BSLocationsVoronoi.png (PNG copy)> <./Figures/SSLTnsPPP_demandpo
-intreal.png (PNG copy)>]
-<Figures/ComparisonCost.png, id=47, 421.575pt x 316.0608pt>
+e 778.
+<Figures/ComparisonCost.png, id=43, 421.575pt x 316.0608pt>
 File: Figures/ComparisonCost.png Graphic file (type png)
 <use Figures/ComparisonCost.png>
-Package pdftex.def Info: Figures/ComparisonCost.png  used on input line 846. on
- input line 846.
+Package pdftex.def Info: Figures/ComparisonCost.png  used on input line 817. on
+ input line 817.
 Package pdftex.def Info: Requested size: 154.80157pt x 116.0581pt on input line
- 846.
-<Figures/ComparisonSatisfaction.png, id=48, 421.575pt x 316.0608pt>
+ 817.
+<Figures/ComparisonSatisfaction.png, id=44, 421.575pt x 316.0608pt>
 File: Figures/ComparisonSatisfaction.png Graphic file (type png)
 <use Figures/ComparisonSatisfaction.png>
 Package pdftex.def Info: Figures/ComparisonSatisfaction.png  used on input line
- 853. on input line 853.
+ 824. on input line 824.
 Package pdftex.def Info: Requested size: 154.80157pt x 116.0581pt on input line
- 853.
-<Figures/ComparisonSatisfactionEval.png, id=49, 421.575pt x 316.0608pt>
+ 824.
+<Figures/ComparisonSatisfactionEval.png, id=45, 421.575pt x 316.0608pt>
 File: Figures/ComparisonSatisfactionEval.png Graphic file (type png)
 <use Figures/ComparisonSatisfactionEval.png>
 Package pdftex.def Info: Figures/ComparisonSatisfactionEval.png  used on input 
-line 860. on input line 860.
+line 831. on input line 831.
 Package pdftex.def Info: Requested size: 154.80157pt x 116.0581pt on input line
- 860.
+ 831.
 
-Underfull \vbox (badness 1478) has occurred while \output is active []
+Underfull \vbox (badness 3049) has occurred while \output is active []
 
- [6 <./Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png (PNG copy)>] (GenAlg_VWN-
-KTeag.bbl
+ [5 <./Figures/BSLocationsVoronoi.png (PNG copy)> <./Figures/SSLTnsPPP_demandpo
+intreal.png (PNG copy)> <./Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png (PNG 
+copy)>]
+(GenAlg_VWN-KTeag.bbl [6 <./Figures/ComparisonCost.png (PNG copy)> <./Figures/C
+omparisonSatisfaction.png (PNG copy)> <./Figures/ComparisonSatisfactionEval.png
+ (PNG copy)>]
 Missing character: There is no Å in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
@@ -736,17 +725,6 @@ Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¤ in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¶ in font ptmr7t!
-
-Underfull \hbox (badness 10000) in paragraph at lines 118--121
-[]\OT1/ptm/m/n/8 IBM, ``Op-ti-miza-tion model de-vel-op-ment toolkit for math-e
--
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 118--121
-\OT1/ptm/m/n/8 mat-i-cal and con-straint pro-gram-ming (CPLEX),'' http://www-
- []
-
 )
 
 ** Conference Paper **
@@ -759,18 +737,18 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[7 <./Figures/ComparisonCost.png (PNG copy)> <./Figures/ComparisonSatisfaction.
-png (PNG copy)> <./Figures/ComparisonSatisfactionEval.png (PNG copy)>]
-(GenAlg_VWN-KTeag.aux)
+[7
+
+] (GenAlg_VWN-KTeag.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 13902 strings out of 493312
- 271930 string characters out of 3138900
- 329294 words of memory out of 3000000
- 17174 multiletter control sequences out of 15000+200000
+ 15725 strings out of 493312
+ 312437 string characters out of 3138900
+ 374066 words of memory out of 3000000
+ 18989 multiletter control sequences out of 15000+200000
  51818 words of font info for 115 fonts, out of 3000000 for 9000
  1142 hyphenation exceptions out of 8191
  54i,17n,73p,1667b,522s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -796,7 +774,7 @@ ram Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKT
 eX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr
 8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on GenAlg_VWN-KTeag.pdf (7 pages, 558819 bytes).
+Output written on GenAlg_VWN-KTeag.pdf (7 pages, 551032 bytes).
 PDF statistics:
  133 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

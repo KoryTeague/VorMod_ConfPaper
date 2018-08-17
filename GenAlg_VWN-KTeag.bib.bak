@@ -193,4 +193,12 @@ title = {Virtualization and Programmability in Mobile Wireless Networks: Archite
 booktitle = {Proceedings of the Workshop on Mobile Edge Communications (MECOMM'17)},
 year = {2017},
 pages = {1--6},
-} 
+}
+
+@misc{leeds:nsPPPgeneration,
+	author = {{Department of Mining and Mineral Engineering}},
+	title = {Poisson: A program for spatial point generation using Poisson processes},
+	year = {2002},
+	month = {Sept},
+	url = {http://www.leeds.ac.uk/StochasticRockFractures/Download/ReportsSeminars/Report1\_POISSON\_Prog.pdf},
+}
