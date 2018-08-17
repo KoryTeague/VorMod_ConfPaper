@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.9)  16 AUG 2018 10:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.9)  16 AUG 2018 22:49
 entering extended mode
 **./GenAlg_VWN-KTeag.tex
 (GenAlg_VWN-KTeag.tex
@@ -512,18 +512,18 @@ LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
 ) (GenAlg_VWN-KTeag.aux)
 \openout1 = `GenAlg_VWN-KTeag.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 280.
-LaTeX Font Info:    ... okay on input line 280.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 280.
-LaTeX Font Info:    ... okay on input line 280.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 280.
-LaTeX Font Info:    ... okay on input line 280.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 280.
-LaTeX Font Info:    ... okay on input line 280.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 280.
-LaTeX Font Info:    ... okay on input line 280.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 280.
-LaTeX Font Info:    ... okay on input line 280.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 357.
+LaTeX Font Info:    ... okay on input line 357.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 357.
+LaTeX Font Info:    ... okay on input line 357.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 357.
+LaTeX Font Info:    ... okay on input line 357.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 357.
+LaTeX Font Info:    ... okay on input line 357.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 357.
+LaTeX Font Info:    ... okay on input line 357.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 357.
+LaTeX Font Info:    ... okay on input line 357.
 
 -- Lines per column: 56 (exact).
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
@@ -593,89 +593,136 @@ Package grfext Info: Graphics extension search list:
 ABD: EveryShipout initializing macros
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 296.
-LaTeX Font Info:    Try loading font information for U+msa on input line 296.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 373.
+LaTeX Font Info:    Try loading font information for U+msa on input line 373.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 296.
+LaTeX Font Info:    Try loading font information for U+msb on input line 373.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 296.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 373.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 296.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 373.
  [1{C:/Users/teagu/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 ]
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 427.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 506.
 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1phv.fd"
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
-LaTeX Font Info:    Try loading font information for U+bbm on input line 467.
 
+LaTeX Warning: Reference `eq:P1S1' on page 2 undefined on input line 544.
+
+
+LaTeX Warning: Reference `eq:P1S2' on page 2 undefined on input line 544.
+
+
+LaTeX Warning: Reference `eq:P1S1C1' on page 2 undefined on input line 546.
+
+
+LaTeX Warning: Reference `eq:P1S2C1' on page 2 undefined on input line 546.
+
+
+LaTeX Warning: Reference `eq:P1S2C3' on page 2 undefined on input line 546.
+
+
+LaTeX Warning: Reference `eq:P1S2C1' on page 2 undefined on input line 546.
+
+
+LaTeX Warning: Reference `eq:P1S2C1' on page 2 undefined on input line 546.
+
+LaTeX Font Info:    Try loading font information for U+bbm on input line 546.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\bbm\ubbm.fd"
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [2] [3] [4]
-<Figures/BSLocationsVoronoi.png, id=37, 421.575pt x 315.579pt>
+)
+
+LaTeX Warning: Reference `eq:P1S2C2' on page 2 undefined on input line 554.
+
+[2]
+
+LaTeX Warning: Reference `eq:P2' on page 3 undefined on input line 598.
+
+
+LaTeX Warning: Reference `eq:P1S1' on page 3 undefined on input line 598.
+
+
+LaTeX Warning: Reference `eq:P1S2' on page 3 undefined on input line 598.
+
+
+LaTeX Warning: Reference `eq:P2C1' on page 3 undefined on input line 598.
+
+
+LaTeX Warning: Reference `eq:P2C2' on page 3 undefined on input line 598.
+
+
+LaTeX Warning: Reference `eq:P3' on page 3 undefined on input line 647.
+
+
+LaTeX Warning: Reference `eq:P3C2' on page 3 undefined on input line 647.
+
+[3]
+<Figures/BSLocationsVoronoi.png, id=34, 421.575pt x 315.579pt>
 File: Figures/BSLocationsVoronoi.png Graphic file (type png)
 <use Figures/BSLocationsVoronoi.png>
-Package pdftex.def Info: Figures/BSLocationsVoronoi.png  used on input line 654
-. on input line 654.
+Package pdftex.def Info: Figures/BSLocationsVoronoi.png  used on input line 784
+. on input line 784.
 Package pdftex.def Info: Requested size: 232.19843pt x 173.81937pt on input lin
-e 654.
-<Figures/SSLTnsPPP_demandpointreal.png, id=38, 421.575pt x 316.0608pt>
+e 784.
+<Figures/SSLTnsPPP_demandpointreal.png, id=35, 421.575pt x 316.0608pt>
 File: Figures/SSLTnsPPP_demandpointreal.png Graphic file (type png)
 <use Figures/SSLTnsPPP_demandpointreal.png>
 Package pdftex.def Info: Figures/SSLTnsPPP_demandpointreal.png  used on input l
-ine 661. on input line 661.
+ine 791. on input line 791.
 Package pdftex.def Info: Requested size: 232.19843pt x 174.08475pt on input lin
-e 661.
+e 791.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[4]
 <Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png, id=39, 421.575pt x 316.0608pt>
 
 File: Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png Graphic file (type png)
 <use Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png>
 Package pdftex.def Info: Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png  used o
-n input line 677. on input line 677.
+n input line 807. on input line 807.
 Package pdftex.def Info: Requested size: 232.19843pt x 174.08475pt on input lin
-e 677.
-[5 <./Figures/BSLocationsVoronoi.png (PNG copy)> <./Figures/SSLTnsPPP_demandpoi
-ntreal.png (PNG copy)>]
+e 807.
+ [5 <./Figures/BSLocationsVoronoi.png (PNG copy)> <./Figures/SSLTnsPPP_demandpo
+intreal.png (PNG copy)>]
 <Figures/ComparisonCost.png, id=47, 421.575pt x 316.0608pt>
 File: Figures/ComparisonCost.png Graphic file (type png)
 <use Figures/ComparisonCost.png>
-Package pdftex.def Info: Figures/ComparisonCost.png  used on input line 716. on
- input line 716.
+Package pdftex.def Info: Figures/ComparisonCost.png  used on input line 846. on
+ input line 846.
 Package pdftex.def Info: Requested size: 154.80157pt x 116.0581pt on input line
- 716.
+ 846.
 <Figures/ComparisonSatisfaction.png, id=48, 421.575pt x 316.0608pt>
 File: Figures/ComparisonSatisfaction.png Graphic file (type png)
 <use Figures/ComparisonSatisfaction.png>
 Package pdftex.def Info: Figures/ComparisonSatisfaction.png  used on input line
- 723. on input line 723.
+ 853. on input line 853.
 Package pdftex.def Info: Requested size: 154.80157pt x 116.0581pt on input line
- 723.
+ 853.
 <Figures/ComparisonSatisfactionEval.png, id=49, 421.575pt x 316.0608pt>
 File: Figures/ComparisonSatisfactionEval.png Graphic file (type png)
 <use Figures/ComparisonSatisfactionEval.png>
 Package pdftex.def Info: Figures/ComparisonSatisfactionEval.png  used on input 
-line 730. on input line 730.
+line 860. on input line 860.
 Package pdftex.def Info: Requested size: 154.80157pt x 116.0581pt on input line
- 730.
+ 860.
 
 Underfull \vbox (badness 1478) has occurred while \output is active []
 
@@ -714,39 +761,42 @@ Before submitting the final camera ready copy, remember to:
 
 [7 <./Figures/ComparisonCost.png (PNG copy)> <./Figures/ComparisonSatisfaction.
 png (PNG copy)> <./Figures/ComparisonSatisfactionEval.png (PNG copy)>]
-(GenAlg_VWN-KTeag.aux) ) 
+(GenAlg_VWN-KTeag.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 13865 strings out of 493312
- 271587 string characters out of 3138900
- 325819 words of memory out of 3000000
- 17139 multiletter control sequences out of 15000+200000
- 49615 words of font info for 113 fonts, out of 3000000 for 9000
+ 13902 strings out of 493312
+ 271930 string characters out of 3138900
+ 329294 words of memory out of 3000000
+ 17174 multiletter control sequences out of 15000+200000
+ 51818 words of font info for 115 fonts, out of 3000000 for 9000
  1142 hyphenation exceptions out of 8191
- 54i,19n,73p,1667b,471s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\teagu\AppData\Local\MiKTeX\2.9\fonts\pk\ljfo
-ur\public\bbm\dpi600\bbm10.pk>{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base
-/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/
-Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program 
-Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmr5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbo
-ls/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/font
-s/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times
-/utmri8a.pfb>
-Output written on GenAlg_VWN-KTeag.pdf (7 pages, 557807 bytes).
+ 54i,17n,73p,1667b,522s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\teagu\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\public\bbm\dpi600\b
+bm10.pk>{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmsy5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/P
+rogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr
+8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on GenAlg_VWN-KTeag.pdf (7 pages, 558819 bytes).
 PDF statistics:
  133 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
