@@ -114,7 +114,7 @@
 \maketitle
 
 \begin{abstract}
-Wireless network virtualization is a promising avenue of research for next-generation 5G cellular networks.  Virtualization focuses on the concept of active resource sharing and the building of a network designed for specific demands, decreasing operational expenditures, and improving demand satisfaction of cellular networks.  This work investigates the problem of selecting base stations (BSs) to construct a virtual network that meets the the specific demands of a service provider, and adaptive slicing of the resources between the service provider's demand points.  A two-stage stochastic optimization framework is introduced to model the problem of joint BS selection and adaptive slicing.  We present two methods for determining an approximation for the two-stage stochastic optimization model.  The first method uses a sampling approach applied to the deterministic equivalent program of the stochastic model.  The second method uses a genetic algorithm for BS selection and adaptively slicing via a single-stage linear optimization problem.  To test these methods we generated a number of scenarios using a log-normal model designed to emulate demand from real world cellular networks.  Our simulations indicate that the first approach can provide a reasonably tight solution, but is constrained as the time expense grows exponentially with the number of parameters.  The second approach provides a vast improvement in run time with the introduction of notable error.
+Wireless network virtualization is a promising avenue of research for next-generation 5G cellular networks.  Virtualization focuses on the concept of active resource sharing and the building of a network designed for specific demands, decreasing operational expenditures, and improving demand satisfaction of cellular networks.  This work investigates the problem of selecting base stations (BSs) to construct a virtual network that meets the the specific demands of a service provider, and adaptive slicing of the resources between the service provider's demand points.  A two-stage stochastic optimization framework is introduced to model the problem of joint BS selection and adaptive slicing.  Two methods were presented for determining an approximation for the two-stage stochastic optimization model.  The first method uses a sampling approach applied to the deterministic equivalent program of the stochastic model.  The second method uses a genetic algorithm for BS selection and adaptively slicing via a single-stage linear optimization problem.  For testing, a number of scenarios were generated using a log-normal model designed to emulate demand from real world cellular networks.  Our simulations indicate that the first approach can provide a reasonably tight solution, but is constrained as the time expense grows exponentially with the number of parameters.  The second approach provides a vast improvement in run time with the introduction of notable error.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -126,145 +126,28 @@ Wireless network virtualization, resource allocation, two-stage stochastic optim
 
 
 \section{Introduction} \label{sec:intro}
-%Resource infrastructure sharing has been a common practice between mobile network operators (MNOs) to fulfill two separate needs: offering coverage in regions where they had no infrastructure (e.g., roaming agreements), and reducing expenditures where the cost of wireless infrastructure maintenance or expansion is high.  Sharing of passive infrastructure, such as physical sites and tower masts, led to considerable cost savings~\cite{1421931}, which motivated the use of more active sharing approaches, such as the reuse of backhaul and the sharing of radio access networks (RANs).  The technologies developed for MNO sharing have allowed for the rise of mobile virtual network operators (MVNOs), which provide MNO-like mobile services without directly owning a physical RAN.
-
-%Resource infrastructure sharing has been a common practice between mobile network operators (MNOs) to fulfill two separate needs.  First, MNOs needed to offer coverage for their users in regions where they had no infrastructure, leading to the creation of roaming agreements.  Second, the cost to maintain the wireless infrastructure is high in some areas.  Sharing of passive infrastructure, such as physical sites, tower masts, power, and air-conditioning, led to considerable cost savings \cite{1421931}.  These benefits motivated the use of more active sharing approaches, such as the reuse of backhaul and the sharing of radio access networks (RANs) in the form of base stations (BSs) and antenna systems.  The technologies developed for MNO sharing have allowed for the rise of mobile virtual network operators (MVNOs), which provide MNO-like mobile services without directly owning a physical RAN.
 
 Wireless virtualization is one of the most promising approaches for efficient sharing of radio resources in next-generation mobile networks~\cite{6824752}.  In~\cite{6553675, 6571315}, the opportunities for cost saving and additional flexibility are the motivations behind introducing virtualization schemes for LTE networks, focusing on resource sharing.  Doyle et al.~\cite{6737248} presented the Network without Borders (NwoB) paradigm which broadly explores the concepts of virtualization.  The authors proposed removing the traditional constraints on spectrum and presented a virtualization-centric structure for mobile wireless networks.  In this paradigm, a service provider (SP) provides a specified service to its users, which could be in the form of traditional general data, voice, and messaging services or a more specific application (e.g., emergency services, Internet of things, or video streaming).  The virtual network builder (VNB) aggregates and selects resources from resource providers (RPs) to build virtual networks designed for the needs of the SPs.  RPs, such as traditional MNOs, are the owners and maintainers of the physical resources and infrastructure that are provided for the virtualized wireless networks (VWNs) via contracts established with VNBs.
 
-Considering the uncertainty of user equipment (demand point) locations, in this paper we consider solving two problems jointly.  The first problem is to optimally orchestrate a set of BSs from a set of RPs to meet the demands of a set of SPs.  The second problem is to slice the set of selected BSs adaptively (in response to the change in the users distribution) between the demand points of various SPs.  Stochastic programming provides a powerful mathematical tool to handle optimization under uncertainty.  It had been recently exploited to optimize resource allocation in various types of wireless networks operating under uncertainties (examples include~\cite{MJ_TW_13, CC_OFDMA, MJ_MECOMM_17, MJ_CCNC_16, MJ_WCNC_16, MJ_DySPAN_15, CC_video}).  We establish a stochastic optimization problem from the perspective of the VNB to determine the optimal selection of resources to be leased from the RPs and adaptively sliced and allocated to form VWNs that satisfy the demands of the SPs.  Then, we develop two approaches that would be run in the VNB to reach a near-optimal solution of the stochastic optimization problem.  We consider two optimality criteria: maximizing demand satisfaction of SP users and minimizing the cost of the BS resources to satisfy the demand.  Finally, we consider the efficacy of the approaches with a single SP with log-normal spatially-correlated demand modeled to mimic real cellular networks.
+Considering the uncertainty of user equipment (demand point) locations, in this paper we consider solving two problems jointly.  The first problem is to optimally orchestrate a set of BSs from a set of RPs to meet the demands of an SP.  The second problem is to slice the set of selected BSs adaptively between the demand points of the SP according to changes in distribution.  Stochastic programming provides a powerful mathematical tool to handle optimization under uncertainty.  It had been recently exploited to optimize resource allocation in various types of wireless networks operating under uncertainties (examples include~\cite{MJ_TW_13, CC_OFDMA, MJ_MECOMM_17, MJ_CCNC_16, MJ_WCNC_16, MJ_DySPAN_15, CC_video}).  We establish a stochastic optimization problem from the perspective of the VNB to jointly solve the problems.  Then, we develop two approaches that would be run in the VNB to reach a near-optimal solution of the stochastic optimization problem.  We consider two optimality criteria: maximizing demand satisfaction of SP users and minimizing the cost of network construction.  Finally, we consider the efficacy of the approaches with a single SP with log-normal spatially-correlated demand modeled to mimic real cellular networks.
 
-The rest of this paper is organized as follows.  In \Cref{sec:model}, we detail and define the system model assumed for our resource allocation methods.  In \Cref{sec:approach}, we consider our stochastic optimization problem and its solution approaches.  In \Cref{sec:sim}, we simulate the described approaches and evaluate their performance.  Finally, in \Cref{sec:conclusion}, we discuss our conclusions and directions of future research.
-
-% An example of a floating figure using the graphicx package.
-% Note that \label must occur AFTER (or within) \caption.
-% For figures, \caption should occur after the \includegraphics.
-% Note that IEEEtran v1.7 and later has special internal code that
-% is designed to preserve the operation of \label within \caption
-% even when the captionsoff option is in effect. However, because
-% of issues like this, it may be the safest practice to put all your
-% \label just after \caption rather than within \caption{}.
-%
-% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
-% option should be used if it is desired that the figures are to be
-% displayed while in draft mode.
-%
-%\begin{figure}[!t]
-%\centering
-%\includegraphics[width=2.5in]{myfigure}
-% where an .eps filename suffix will be assumed under latex, 
-% and a .pdf suffix will be assumed for pdflatex; or what has been declared
-% via \DeclareGraphicsExtensions.
-%\caption{Simulation results for the network.}
-%\label{fig_sim}
-%\end{figure}
-
-% Note that the IEEE typically puts floats only at the top, even when this
-% results in a large percentage of a column being occupied by floats.
-
-
-% An example of a double column floating figure using two subfigures.
-% (The subfig.sty package must be loaded for this to work.)
-% The subfigure \label commands are set within each subfloat command,
-% and the \label for the overall figure must come after \caption.
-% \hfil is used as a separator to get equal spacing.
-% Watch out that the combined width of all the subfigures on a 
-% line do not exceed the text width or a line break will occur.
-%
-%\begin{figure*}[!t]
-%\centering
-%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
-%\label{fig_first_case}}
-%\hfil
-%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
-%\label{fig_second_case}}
-%\caption{Simulation results for the network.}
-%\label{fig_sim}
-%\end{figure*}
-%
-% Note that often IEEE papers with subfigures do not employ subfigure
-% captions (using the optional argument to \subfloat[]), but instead will
-% reference/describe all of them (a), (b), etc., within the main caption.
-% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
-% labels, the optional argument to \subfloat must be present. If a
-% subcaption is not desired, just leave its contents blank,
-% e.g., \subfloat[].
-
-
-% An example of a floating table. Note that, for IEEE style tables, the
-% \caption command should come BEFORE the table and, given that table
-% captions serve much like titles, are usually capitalized except for words
-% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
-% and up, which are usually not capitalized unless they are the first or
-% last word of the caption. Table text will default to \footnotesize as
-% the IEEE normally uses this smaller font for tables.
-% The \label must come after \caption as always.
-%
-%\begin{table}[!t]
-%% increase table row spacing, adjust to taste
-%\renewcommand{\arraystretch}{1.3}
-% if using array.sty, it might be a good idea to tweak the value of
-% \extrarowheight as needed to properly center the text within the cells
-%\caption{An Example of a Table}
-%\label{table_example}
-%\centering
-%% Some packages, such as MDW tools, offer better commands for making tables
-%% than the plain LaTeX2e tabular which is used here.
-%\begin{tabular}{|c||c|}
-%\hline
-%One & Two\\
-%\hline
-%Three & Four\\
-%\hline
-%\end{tabular}
-%\end{table}
-
-
-% Note that the IEEE does not put floats in the very first column
-% - or typically anywhere on the first page for that matter. Also,
-% in-text middle ("here") positioning is typically not used, but it
-% is allowed and encouraged for Computer Society conferences (but
-% not Computer Society journals). Most IEEE journals/conferences use
-% top floats exclusively. 
-% Note that, LaTeX2e, unlike IEEE journals/conferences, places
-% footnotes above bottom floats. This can be corrected via the
-% \fnbelowfloat command of the stfloats package.
-
+The rest of this paper is organized as follows.  \Cref{sec:model} details and defines the system model assumed for this paper.  \Cref{sec:approach} establishes our stochastic optimization problem and approximation approaches.  \Cref{sec:sim} simulates the approaches and evaluates their performance.  \Cref{sec:conclusion} discusses our conclusions and directions of future research.
 
 \section{System Model} \label{sec:model}
-We consider a geographic region, $\mathcal{R}$, of width $X$ (m) and length $Y$ (m) that contains a VNB and a set $\mathcal{S} \defeq \left\{ 1,\, 2,\, \ldots,\, S \right\}$ of virtualized BSs the VNB had aggregated for use from a set of RPs.  The rate capacity of BS $s \in \mathcal{S}$ is denoted by $r_s$, its cost is denoted by $c_s$, and its coverage radius is denoted by $b_s$.
 
-An SP seeking a VWN from the VNB is assumed to know the distribution of traffic demand within the region the VWN would cover.  It has been shown that a log-normal distribution or a mixture of log-normal distributions can approximate traffic demand in real-world cellular networks~\cite{686105, 5936263}.  It has also been shown that traffic distribution is spatially correlated~\cite{5936263, eigenplaces}.  We model the spatial traffic demand of a single SP using a similar, continuous form of the SSLT (Scalable, Spatially-correlated, and Log-normally distributed Traffic) model as proposed by Lee, Zhou, and Niu~\cite{6554749}.
+We consider a geographic region, $\mathcal{R}$, of width $X$ (m) and length $Y$ (m) that contains a VNB and a set $\mathcal{S} \defeq \left\{ 1,\, 2,\, \ldots,\, S \right\}$ of virtualized BSs the VNB had aggregated for use from a set of RPs.  The rate capacity of BS $s \in \mathcal{S}$ is denoted by $r_s$, its cost $c_s$, and its coverage radius $b_s$.
 
-To generate this SSLT model, an initial Gaussian field, $\rho^G$, is generated from a sum of the products of two cosines each with random phase and frequency.  This Gaussian field has a spatial autocorrelation dependent on the maximum frequency of the cosines.  This field is then normalized to have a standard normal distribution, generating $\rho^S$.  The final SSLT model, $\rho$, is generated by applying log-normal location ($\mu$) and scale parameters ($\sigma$): $\rho = \exp \left( \sigma \rho^S + \mu \right)$.  Our implementation differs from Lee's, Zhou's, and Niu's~\cite{6554749} by leaving the SSLT model in a continuous form rather than pixellating it.  This continuous form is differentiated as $\lambda \left( x,\, y \right)$.
+An SP seeking a VWN from the VNB is assumed to know the distribution of traffic demand within the region the VWN would cover.  It has been shown that a log-normal distribution or a mixture of log-normal distributions can approximate traffic demand in real-world cellular networks~\cite{686105, 5936263}.  It has also been shown that traffic distribution is spatially correlated~\cite{5936263, eigenplaces}.  We model the spatial traffic demand of a single SP using a similar, continuous form of the SSLT (Scalable, Spatially-correlated, and Log-normally distributed Traffic) model as proposed by Lee, Zhou, and Niu~\cite{6554749}.  Our implementation differs from theirs by converting the SSLT model into a continuous, not pixelated, form.  This continuous SSLT is denoted as $\lambda \left( x,\, y \right)$.
 
-\iffalse
-To generate this spatial distribution over the area of consideration, an initial Gaussian field, $\lambda^G = \lambda^G\left( x,\, y \right),\, x \in \left[ 0,\, X \right],\, y \in \left[ 0,\, Y \right]$, is generated by
-\begin{equation}
-\lambda^G\left( x,\, y \right) = \frac{1}{L} \; \sum_{l=1}^L \cos\left( i_l x + \phi_l \right) \; \cos\left( j_l y + \psi_l \right)
-\end{equation} \label{eq:rhoG}
-\noindent where $\mathcal{L} \defeq \left\{ 1,\, 2,\, \ldots,\, L \right\}$ is a set of the products of two cosines with angular frequencies $i_l,\, j_l\, \sim \mathcal{U}\left( 0,\, \omega_{\max} \right),\, l \in \mathcal{L}$ and phases $\phi_l,\, \psi_l\, \sim \mathcal{U}\left( 0,\, 2 \pi \right),\, l \in \mathcal{L}$.  As $L$ increases, $\lambda^G$ approaches a Gaussian random field with a spatial autocorrelation dependent on $\omega_{\max}$ according to the central limit theorem.
-
-The approximate Gaussian distribution $\lambda^G$ is then normalized to a standard normal distribution.  The final log-normal distribution, $\lambda = \lambda\left( x,\, y \right), x \in \left[ 0,\, X \right], y \in \left[ 0,\, Y \right]$, is determined by assigning location and scale parameters
-\begin{equation}
-\lambda\left( x,\, y \right) = \exp\left( \sigma \; \frac{\lambda^G\left( x,\, y \right) - \mean{\lambda^G}}{\sqrt{\text{Var}\left( \lambda^G \right)}} \; + \mu \right)
-\end{equation} \label{eq:rhoLN}
-\noindent where $\text{Var}\left( \lambda^G \right)$ and $\mean{\lambda^G}$ are respectively the variance and mean of $\lambda^G$.
-
-$\lambda\left( x,\, y \right)$ can be sampled over the space into individual pixels as per Lee with each pixel's value indicating the number of homogeneous demand points within the pixel~\cite{6554749}.  In contrast, we allow $\lambda\left(x,\, y\right)$ to provide a continuous, spatially-correlated log-normal distribution depicting the demand density over the region for the SP.
-\fi
-
-Let $\mathcal{M} \defeq \left\{ 1,\, 2,\, \ldots,\, M \right\}$ be the set of the SP's demand points seeking to connect to the VWN; the value of total traffic demand at each point is denoted by $d_m$.  Further, let $u_{ms} \in \left[ 0,\, 1 \right],\, m \in \mathcal{M},\, s \in \mathcal{S}$, represent the normalized capacity (with respect to $r_s$) of BS $s$ at point $m$, i.e., the normalized maximum rate that a user can receive at point $m$ from BS $s$.  $u_{ms} = 0$ when $m$ is outside the coverage area of $s$ and $u_{ms} = 1$ when $m$ is within the coverage area of $s$.  The specific position of the points in $\mathcal{M}$, and therefore the values of $u_{ms}$, is determined via a non-stationary 2D Poisson point process (PPP) with $M$ points using the demand field, $\lambda \left( x,\, y \right)$, as the spatial intensity function.  To generate this non-stationary PPP, we use an accept-reject method~\cite{leeds:nsPPPgeneration}.
+Let $\mathcal{M} \defeq \left\{ 1,\, 2,\, \ldots,\, M \right\}$ be the set of the SP's demand points seeking to connect to the VWN; the traffic demand at each point is denoted by $d_m$.  Let $u_{ms} \in \left[ 0,\, 1 \right],\, m \in \mathcal{M},\, s \in \mathcal{S}$, represent the normalized maximum rate (with respect to $r_s$) that a user at point $m$ can receive from BS $s$.  $u_{ms} = 0$ when $m$ is outside the coverage area of $s$ and $u_{ms} = 1$ otherwise.  The specific position of the points in $\mathcal{M}$, and therefore the values of $u_{ms}$, is determined via a non-stationary 2D Poisson point process (PPP) with $M$ points using the demand field, $\lambda \left( x,\, y \right)$, as the spatial intensity function.  To generate this non-stationary PPP, we use an accept-reject method~\cite{leeds:nsPPPgeneration}.
 
 We assume that a BS $s \in \mathcal{S}$ can be allocated between multiple demand points, and $\delta_{ms} \in \left[ 0,\, r_s \right],\, m \in \mathcal{M},\, s \in \mathcal{S}$, represents the rate of BS $s$ that is allocated to point $m$.
 
-%Throughout this paper, stochastic variables will be differentiated from deterministic variables with a tilde ($\sim$) placed above the symbol.
-
 \section{Solution Approach} \label{sec:approach}
-In this section, we detail our approaches for selecting the subset of resources within $\mathcal{S}$ to create a virtual network with minimum cost while allocating the selected resources to the demand points with maximum demand satisfaction.  First, we formulate the problem as a two-stage stochastic optimization program.  Second, the optimization problem is converted to its deterministic equivalent program and approximated using a sampling method.  Finally, a genetic algorithm is used as an approximation of BS selection.  In \Cref{sec:sim}, we will consider the efficacy of these latter two approaches.
+
+In this section, we detail our approaches for selecting resources within $\mathcal{S}$ to construct a VWN.  First, we formulate the problem as a two-stage stochastic optimization program.  Second, the optimization problem is converted to its deterministic equivalent program and sampled.  Finally, a genetic algorithm is used as an approximation of BS selection.
 
 \subsection{Problem Formulation} \label{subsec:stoch}
-We formulate the presented problem as a two-stage stochastic optimization problem.  We introduce $z_s,\, s \in \mathcal{S}$, as a binary decision variable defined such that $z_s = 1$ if BS $s$ is selected for the created VWN and $z_s = 0$ otherwise.  To balance the interest of maximizing demand satisfaction against minimizing cost, we introduce the positive real number $\alpha$ as a weighting coefficient between the two stages.
 
 \begin{tcolorbox}[floatplacement = !ht, float, title = Problem 1:\\Two-Stage Stochastic Optimization Program]
 \begin{align}
@@ -282,6 +165,8 @@ where $h(\textit{\textbf{z}}, \tilde{\textit{\textbf{u}}})$ is the optimal value
 & \hspace{0.4in} \delta_{ms} \in \left[ 0,\, d_m \right],\, \forall m \in \mathcal{M},\, \forall s \in \mathcal{S} \label{eq:SOPS2C4}
 \end{align}
 \end{tcolorbox}
+
+To formulate the presented problem, we introduce $z_s,\, s \in \mathcal{S}$, as a binary decision variable defined such that $z_s = 1$ if BS $s$ is selected for the created VWN and $z_s = 0$ otherwise.  To balance maximizing demand satisfaction against minimizing cost, we introduce positive real number $\alpha$ as a weighting coefficient.
 
 The first stage objective function (\cref{eq:SOPS1O}) minimizes the total cost of the selected network with respect to that network's ability to satisfy the demand contained within the region.  The second stage objective function (\cref{eq:SOPS2O}) maximizes demand satisfaction by maximizing the total demand allocated to the resources comprising the network, as specified by $\delta_{ms}$ as the decision variable of the second stage.
 
@@ -304,7 +189,7 @@ Let $\hat{\Omega} \defeq \left\{ 1,\, 2,\, \ldots, O \right\}$ be this set of sa
 \end{align}
 \end{tcolorbox}
 
-The objective function (\cref{eq:sDEPO}) combines both objective functions of Problem 1.  \Cref{eq:sDEPC1,eq:sDEPC2} ensure demand is not overallocated and is only allocated to selected resources within those resources capacities for all scenarios.
+The objective function (\cref{eq:sDEPO}) combines both objective functions of Problem 1.  \Cref{eq:sDEPC1,eq:sDEPC2} ensure demand is not overallocated and is only allocated to selected resources within those resources' capacities for all scenarios.
 
 Problem 2 provides an equivalent deterministic form of Problem 1 for the sampled sample space, $\hat{\Omega}$.  With a sufficiently large $O$, $\hat{\Omega}$ approaches a tight approximation of the whole sample space at the cost of computational complexity.
 
@@ -325,11 +210,12 @@ After the solution to the sDEP has been found, the VNB has determined the joint 
 It is worth noting that Problem 3 is less computationally complex than Problem 2 as it only contains the single continuous decision variable for resource slicing, simplifying Problem 3 to a linear programming problem.
 
 \subsection{Genetic Algorithm Approach} \label{subsec:ga}
-The Problem 2 formulation becomes intractable as $O$, $S$, or $M$ increases.  Most importantly, the accuracy of the sampled DEP is directly dependent on the size of $\hat{\Omega}$, $O$, directly causing a trade off between the accuracy of the sampled DEP and its computability in a reasonable amount of time.  Through the less computationally complex Problem 3, an approximation of Problem 1 can be found by finding an optimal BS selection.  In this subsection, we reformulate the problem of joint BS selection for the VWN as a genetic algorithm (GA).
 
-A GA is an iterative metaheuristic in which an approximate solution to a given optimization problem is arrived at via a series of progressive generations.  Each generation contains a number of candidate solutions (individuals), each defined by a chromosome.  Each individual is assessed by its fitness; the fitter a solution, the better its solution.  Then individuals are \emph{selected} at random, with more fit individuals being selected with higher probability.  Pairs of selected individuals will \emph{crossover} with probability $p_\text{xov}$, a process similar to genetic recombination in biology.  The resulting chromosomes then have probability $p_\text{mut}$ to \emph{mutate}, altering the chromosome slightly.  The resultant children individuals from the next generation, and the process repeats.
+The Problem 2 formulation becomes intractable as $O$, $S$, or $M$ increases.  Most importantly, the accuracy of the sDEP is directly dependent on the size of $\hat{\Omega}$, $O$, directly causing a trade off between the accuracy of the sDEP and its computability in a reasonable amount of time.  Through the less computationally complex Problem 3, an approximation of Problem 1 can be found by finding an optimal BS selection.  In this subsection, we reformulate the problem of joint BS selection for the VWN as a genetic algorithm (GA).
 
-Let $\mathcal{G} \defeq \left\{1,\, 2,\, \ldots,\, G\right\}$ be the set of generations used in the GA and $\mathcal{I}_g \defeq \left\{1,\, 2,\, \ldots,\, I\right\}, g \in \mathcal{G}$ be the set of individuals within generation $g$.  Each individual $i \in \mathcal{I}_g$ has a binary chromosome $\textbf{z}^{\left\{ ig \right\}}$.  Each bit of $\textbf{z}^{\left\{ ig \right\}}$, $z_s^{\left\{ ig \right\}}, s \in \mathcal{S}$, is defined such that $z_s^{\left\{ ig \right\}} = 1$ is BS s is selected by individual $i$ in generation $g$ and $z_s^{\left\{ ig \right\}} = 0$ otherwise.
+A GA is an iterative metaheuristic in which an approximate solution to a given optimization problem is arrived at via a series of progressive generations.  Each generation contains a number of candidate solutions (individuals), each defined by a chromosome.  Each individual is assessed by its fitness; the fitter an individual, the better its solution.  Then individuals are \emph{selected} at random, with more fit individuals being selected with higher probability.  Pairs of selected individuals will \emph{crossover} with probability $p_\text{xov}$, a process similar to genetic recombination in biology.  The resulting chromosomes then have probability $p_\text{mut}$ to \emph{mutate}, altering the chromosome slightly.  The resultant children individuals form the next generation, and the process repeats.
+
+Let $\mathcal{G} \defeq \left\{1,\, 2,\, \ldots,\, G\right\}$ be the set of generations used in the GA and $\mathcal{I}_g \defeq \left\{1,\, 2,\, \ldots,\, I\right\}, g \in \mathcal{G}$ be the set of individuals within generation $g$.  Each individual $i \in \mathcal{I}_g$ has a binary chromosome $\textbf{z}^{\left\{ ig \right\}}$.  Each bit of $\textbf{z}^{\left\{ ig \right\}}$, $z_s^{\left\{ ig \right\}}, s \in \mathcal{S}$, is defined such that $z_s^{\left\{ ig \right\}} = 1$ if BS s is selected by individual $i$ in generation $g$ and $z_s^{\left\{ ig \right\}} = 0$ otherwise.
 
 We assume that all demand over the region is allocated to the closest resource.  Let $\mathcal{S}^{\left\{ ig \right\}} \subseteq \mathcal{S}$ be the set of BSs selected by $\textbf{z}^{\left\{ ig \right\}}$.  The total demand allocated to BS $s \in \mathcal{S}^{\left\{ ig \right\}}$ is $\iint_{V_s} \lambda\left( x,\, y \right) \,dx \,dy$, where $V_s$ is the region bounded by the cell of BS $s$ in the Voronoi tessellation of $\mathcal{S}^{\left\{ ig \right\}}$.  If this allocated demand exceeds $r_s$, then BS $s$ is said to be \emph{overcapacity}.  Let $B_s$ be the region within the coverage radius of BS $s$.  If $V_s \not\subseteq B_s$, then BS $s$ is considered \emph{overcoverage}.
 
@@ -344,13 +230,14 @@ The fitness of each individual, $\textbf{z}^{\left\{ ig \right\}}$, is assessed 
 
 \noindent where cost is the sum of the cost of the resources and their overcoverage ($c_\text{cov}$) and overcapacity ($c_\text{cap}$) costs.  Overcoverage resources are not desired.  Overcapacity resources are allowed in early generations to increase exploration of the search space, but are trimmed as the overcapacity cost increases exponentially.
 
-Elitism is used, where the $n$ most fit individuals of a given generation are automatically selected without crossover or mutation to be the first children of the next generation.  Selection occurs via the roulette wheel selection method.  Every individual $i$ of generation $g$ has a selection probability of $\frac{\text{fitness}\left( \textbf{z}^{\left\{ ig \right\}} \right)}{\sum_{i \in \mathcal{I}} \text{fitness}\left( \textbf{z}^{\left\{ ig \right\}} \right)}$.
+Elitism is used, where the $n$ fittest individuals of each generation are selected without crossover or mutation for the next generation.  Selection occurs via the roulette wheel selection method.  Every individual $i$ of generation $g$ has a selection probability of $\frac{\text{fitness}\left( \textbf{z}^{\left\{ ig \right\}} \right)}{\sum_{i \in \mathcal{I}} \text{fitness}\left( \textbf{z}^{\left\{ ig \right\}} \right)}$.
 
 When crossover is performed on selected individuals, it is via the uniform crossover method with a mixing ratio of 0.5.  Mutation is bitwise, with each bit mutating (i.e., flipping) with probability $\frac{1}{S}$.  The uniqueness property is then enforced on the resulting children to ensure diversity; if a child chromosome is identical to another child chromosome in the next generation, the child is discarded and a new child generated.
 
 The GA iterates for a number of generations $G$.  If it settles on a single individual for a number of continuous generations, $G_\text{halt}$, it will halt.  The chromosome of the fittest individual of the final generation determines $z_s$.  With this selection, the VNB then determines an adaptive slicing using Problem 3.
 
 \section{Simulation and Evaluation} \label{sec:sim}
+
 In this section, we evaluate the sDEP and GA approaches as approximations of Problem 1.  We will compare approach cost, demand satisfaction, and computation time.
 
 \subsection{Setup} \label{subsec:setup}
@@ -376,20 +263,6 @@ BS capacity ($r_s, \forall s \in \mathcal{S})$ & 1.50 Mbps \\
 BS range ($b_s, \forall s \in \mathcal{S}$) & 500 m \\
 \hline 
 Point Traffic Demand ($d_m, \forall m \in \mathcal{M}$) & 0.178 Mbps \\ 
-\hline 
-Two-Stage Model Weight ($\alpha$) & 20 \\ 
-\hline 
-\hline
-SSLT Approximation Depth ($L$) & 50 \\ 
-\hline
-SSLT Maximum Angular Frequency ($\omega_{\max}$) & $\frac{2 \; \pi}{30}$ \\
-\hline 
-SSLT Location Parameter ($\sigma$) & 0 \\ 
-\hline 
-SSLT Scale Parameter ($\mu$) & 1 \\ 
-\hline
-Pixel Grid Size & 100 x 100, 20 m \\
-\hline 
 \hline
 Maximum Number of Generations ($G$) & 3000 \\ 
 \hline
@@ -402,8 +275,6 @@ Number of Individuals per Generation ($I$) & 80 \\
 Number of Elite Individuals per Generation & 4 \\
 \hline 
 Probability of Crossover ($p_\text{xov}$) & 0.7 \\ 
-\hline
-Probability of Mutation per bit ($p_\text{mut}$) & $\frac{1}{S} = 0.0167$ \\
 \hline 
 Overcoverage Cost ($c_\text{cov}$) & 3 \\
 \hline
@@ -434,18 +305,18 @@ Overcapacity Cost ($c_\text{cap}$) & 1.015 \\
 	\begin{minipage}{0.32\textwidth}
 		\centering
 		\includegraphics[width=0.95\textwidth]{Figures/VOSGA_SpeedupRatio_AbsComp_alpha20}
-		\caption{\small Absolute run time and speedup ratio of the GA and sDEP approaches.}
+		\caption{\small Absolute run time and speedup ratio of the GA and sDEP approaches. $\alpha = 20$}
 		\label{fig:AlgSpeedupRunTime}
 	\end{minipage}
 \end{figure*}
 
 Simulation parameters are shown in \Cref{tab:simval}.  \Cref{fig:NetworkArea} provides a visualization of the simulation network area.  \Cref{fig:BSLocVor} shows the BS locations of $\mathcal{S}$ with the associated Voronoi tessellation showing the coverage areas of the BSs when all are active.  \Cref{fig:SSLTDPReal} shows the SSLT demand density field with one example scenario of demand points.  To compute the integral of the fitness function (\cref{eq:GACost}), $\lambda\left( x,\, y \right)$ is pixellated with the demands of all pixels within a Voronoi cell summed.
 
-We ran our simulations on an Intel Core i7-4790K 4 GHz 4 core/8 thread CPU with 16 GB of DDR3 RAM.  We used CPLEX~\cite{Cplex} to solve Problems 2 and 3.  We used MATLAB to simulate the GA.  During simulations, extraneous processes were culled to allow maximal use of computer resources.  Average values for the performance of the genetic algorithm are provided from 50 independent runs using identical data except for the GA's initial set of individuals.  The sampled DEP solutions were solved across multiple values of $\alpha$.
+We ran our simulations on an Intel Core i7-4790K 4 GHz 4 core/8 thread CPU with 16 GB of DDR3 RAM.  We used CPLEX~\cite{Cplex} to solve Problems 2 and 3, and we used MATLAB to simulate the GA.  During simulations, extraneous processes were culled to allow maximal use of computer resources.  Average values for the performance of the genetic algorithm are provided from 50 independent runs using identical data except for the GA's initial set of individuals.
 
 \subsection{Results} \label{subsec:results}
 
-\Cref{fig:AlgSpeedupRunTime} shows a comparison of the approach run times in terms of the GA speedup ratio and CPU time.  As the number of scenarios sampled increases, the CPU run time of the sDEP increases exponentionally, and fails to converge to a final solution with 50 scenarios within the time limit of 15 minutes.  The GA converges to a solution in less CPU time than the sampled DEP.  The GA has a speedup ratio of 4.4x when the sDEP samples 20 scenarios; this increases to 46.3x with 45 scenarios.  A comparison of ``wall clock'' run times can be estimated by accounting for CPLEX's 8 thread parallel processing.  In terms of the adjusted approximate ``wall clock" time, the genetic algorithm converges in less wall clock time than the sampled DEP for 25 or more sampled scenarios.
+\Cref{fig:AlgSpeedupRunTime} shows a comparison of the approach run times in terms of the GA speedup ratio and CPU time.  As the number of scenarios sampled increases, the CPU run time of the sDEP increases exponentionally, and fails to converge to a final solution with 50 scenarios within the time limit of 15 minutes.  The GA converges to a solution in less CPU time than the sDEP.  The GA has a speedup ratio of 4.4x when the sDEP samples 20 scenarios; this increases to 46.3x with 45 scenarios.  A comparison of ``wall clock'' run times can be estimated by accounting for CPLEX's 8 thread parallel processing.  In terms of the adjusted approximate ``wall clock" time, the genetic algorithm converges in less wall clock time than the sDEP for 25 or more sampled scenarios.
 
 \begin{figure*}[t]
 \centering
@@ -475,9 +346,9 @@ We ran our simulations on an Intel Core i7-4790K 4 GHz 4 core/8 thread CPU with 
 
 The GA's improved run time is at the expense of the accuracy of the solution.  \Cref{fig:VWNCompCost} compares the increasing cost of the sDEP to the GA as $\alpha$ increases.  On average, the GA incurs a 36\% increased cost in selecting the BSs for the VWN; at minimum, 20\%.  It should also be noted that the minimum quanta is 1 BS or 10\% additional cost for $\alpha \geq 30$, implying this increased cost could be overstated.  Increasing the number of BSs that construct the VWN would introduce additional granularity and might decrease this inefficiency.
 
-There is a direct correlation between the number of selected BSs in the VWN and its demand satisfaction.  As the number of BSs selected (i.e., cost) increase, the average demand satisfaction approaches 100\%, as shown in \Cref{fig:VWNCompSatis}.  Because of overallocation, GA solutions average 99.9\% demand satisfaction.  The 10-BS sDEP solutions average 99.2\% when slicing to the scenarios in $\hat{\Omega}$, for which it is optimized.
+There is a direct correlation between the number of selected BSs in the VWN and its demand satisfaction.  As the number of BSs selected (i.e., cost) increases, the average demand satisfaction approaches 100\%, as shown in \Cref{fig:VWNCompSatis}.  Because of overallocation, GA solutions average 99.9\% demand satisfaction.  The 10-BS sDEP solutions average 99.2\% when slicing to the scenarios in $\hat{\Omega}$, for which it is optimized.
 
-When the demand points change to a scenario no longer in $\hat{\Omega}$, the sDEP performs similarly but less effectively.  \Cref{fig:VWNCompSatisEval} shows the demand satisfaction for both the sDEP and GA BS selections when sliced to 50 new scenarios not in $\hat{\Omega}$.  Each scenario contains 200 demand points demanding 66.8 kbps.  The demand satisfaction trend of the sDEP BS selection follows closely to before but hits a maximum of 99.0\% demand satisfaction with 10 BSs.  In comparison, the GA reaches $> 99.99\%$ demand satisfaction for all VWN scenarios.  This is expected as the increased number of points and scenarios more accurately describe the original SSLT demand density field, $\lambda$.
+When the demand points change to a scenario no longer in $\hat{\Omega}$, the sDEP performs similarly but less effectively.  \Cref{fig:VWNCompSatisEval} shows the demand satisfaction for both the sDEP and GA BS selections when sliced to 50 new scenarios not in $\hat{\Omega}$.  Each scenario contains 200 demand points demanding 66.8 kbps.  The demand satisfaction trend of the sDEP BS selection follows closely to before but hits a maximum of 99.0\% demand satisfaction with 10 BSs.  In comparison, the GA reaches $> 99.99\%$ demand satisfaction for all VWN scenarios.  This is expected as the increased number of points and scenarios more accurately describes the original SSLT demand density field, $\lambda$.
 
 \section{Conclusion} \label{sec:conclusion}
 
