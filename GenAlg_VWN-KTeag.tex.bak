@@ -290,7 +290,7 @@ Overcapacity Cost ($c_\text{cap}$) & 1.015 \\
 		\begin{subfigure}{.48\textwidth}
 			\centering
 			\includegraphics[width=0.95\linewidth]{Figures/BSLocationsVoronoi}
-			\caption{Voronoi tesselation of BS locations}
+			\caption{Voronoi tessellation of BS locations}
 			\label{fig:BSLocVor}
 		\end{subfigure} \hfill
 		\begin{subfigure}{.48\textwidth}
@@ -316,7 +316,7 @@ We ran our simulations on an Intel Core i7-4790K 4 GHz 4 core/8 thread CPU with 
 
 \subsection{Results} \label{subsec:results}
 
-\Cref{fig:AlgSpeedupRunTime} shows a comparison of the approach run times in terms of the GA speedup ratio and CPU time.  As the number of scenarios sampled increases, the CPU run time of the sDEP increases exponentionally, and fails to converge to a final solution with 50 scenarios within the time limit of 15 minutes.  The GA converges to a solution in less CPU time than the sDEP.  The GA has a speedup ratio of 4.4x when the sDEP samples 20 scenarios; this increases to 46.3x with 45 scenarios.  A comparison of ``wall clock'' run times can be estimated by accounting for CPLEX's 8 thread parallel processing.  In terms of the adjusted approximate ``wall clock" time, the genetic algorithm converges in less wall clock time than the sDEP for 25 or more sampled scenarios.
+\Cref{fig:AlgSpeedupRunTime} shows a comparison of the approach run times in terms of the GA speedup ratio and CPU time.  As the number of scenarios sampled increases, the CPU run time of the sDEP increases exponentionally, and fails to converge to a final solution with 50 scenarios within the time limit of 15 minutes.  The GA converges to a solution in less CPU time than the sDEP.  The GA has a speedup ratio of 4.4x when the sDEP samples 20 scenarios; this increases to 46.3x with 45 scenarios.  A comparison of wall clock run times can be estimated by accounting for CPLEX's 8 thread parallel processing.  In terms of the adjusted approximate wall clock time, the genetic algorithm converges in less wall clock time than the sDEP for 25 or more sampled scenarios.
 
 \begin{figure*}[t]
 \centering
@@ -348,7 +348,7 @@ The GA's improved run time is at the expense of the accuracy of the solution.  \
 
 There is a direct correlation between the number of selected BSs in the VWN and its demand satisfaction.  As the number of BSs selected (i.e., cost) increases, the average demand satisfaction approaches 100\%, as shown in \Cref{fig:VWNCompSatis}.  Because of overallocation, GA solutions average 99.9\% demand satisfaction.  The 10-BS sDEP solutions average 99.2\% when slicing to the scenarios in $\hat{\Omega}$, for which it is optimized.
 
-When the demand points change to a scenario no longer in $\hat{\Omega}$, the sDEP performs similarly but less effectively.  \Cref{fig:VWNCompSatisEval} shows the demand satisfaction for both the sDEP and GA BS selections when sliced to 50 new scenarios not in $\hat{\Omega}$.  Each scenario contains 200 demand points demanding 66.8 kbps.  The demand satisfaction trend of the sDEP BS selection follows closely to before but hits a maximum of 99.0\% demand satisfaction with 10 BSs.  In comparison, the GA reaches $> 99.99\%$ demand satisfaction for all VWN scenarios.  This is expected as the increased number of points and scenarios more accurately describes the original SSLT demand density field, $\lambda$.
+When the demand points change to a scenario no longer in $\hat{\Omega}$, the sDEP performs similarly but less effectively.  \Cref{fig:VWNCompSatisEval} shows the demand satisfaction for both the sDEP and GA BS selections when sliced to 50 new scenarios not in $\hat{\Omega}$.  Each scenario contains 200 demand points demanding 66.8 kbps.  The demand satisfaction trend of the sDEP BS selection follows closely to before but hits a maximum of 99.0\% demand satisfaction with 10 BSs.  In comparison, the GA reaches $> 99.99\%$ demand satisfaction for all VWN scenarios.  This is expected as the increased number of points and scenarios more accurately describes the original SSLT demand density field, $\lambda\left( x,\, y \right)$.
 
 \section{Conclusion} \label{sec:conclusion}
 
