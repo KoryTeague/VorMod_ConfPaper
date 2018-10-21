@@ -195,7 +195,7 @@ Problem 2 provides an equivalent deterministic form of Problem 1 for the sampled
 
 \subsection{Adaptive Slicing within a Formed VWN} \label{subsec:slice}
 
-After the solution to the sDEP has been found, the VNB has determined the joint BS selection that forms the VWN and a proposed resource slicing of considered possible scenarios, $\hat{\Omega}$, that allocates the resources to the SP's demand points.  After BS selection, any observed scenario is unlikely to be in $\hat{\Omega}$.  The VNB must adapt its resource slicing to the new realization.  The joint BS selection, $z_s$, becomes a constant of the network, simplifying Problem 2.
+After the solution to the sDEP has been found, the VNB has determined the joint BS selection that forms the VWN and a proposed resource slicing of considered possible scenarios, $\hat{\Omega}$, that allocates the resources to the SP's demand points.  After BS selection, any observed scenario is unlikely to be in $\hat{\Omega}$ due to differing numbers of demand points and changing demand point locations.  The VNB must adapt its resource slicing to the new observed realization.  The joint BS selection, $z_s$, becomes a constant of the network, simplifying Problem 2.
 
 \begin{tcolorbox}[floatplacement = !ht, float, title = Problem 3: Adaptive Slicing Model]
 \begin{align}
