@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.9)  21 OCT 2018 15:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.9)  21 OCT 2018 15:59
 entering extended mode
 **./GenAlg_VWN-KTeag.tex
 (GenAlg_VWN-KTeag.tex
@@ -638,22 +638,22 @@ Overfull \hbox (6.36433pt too wide) detected at line 189
 []
  []
 
-[2]
-<Figures/BSLocationsVoronoi.png, id=31, 421.575pt x 315.579pt>
+[2] [3]
+<Figures/BSLocationsVoronoi.png, id=34, 421.575pt x 315.579pt>
 File: Figures/BSLocationsVoronoi.png Graphic file (type png)
 <use Figures/BSLocationsVoronoi.png>
 Package pdftex.def Info: Figures/BSLocationsVoronoi.png  used on input line 292
 . on input line 292.
 Package pdftex.def Info: Requested size: 150.58745pt x 112.72714pt on input lin
 e 292.
-<Figures/SSLTnsPPP_demandpointreal.png, id=32, 421.575pt x 316.0608pt>
+<Figures/SSLTnsPPP_demandpointreal.png, id=35, 421.575pt x 316.0608pt>
 File: Figures/SSLTnsPPP_demandpointreal.png Graphic file (type png)
 <use Figures/SSLTnsPPP_demandpointreal.png>
 Package pdftex.def Info: Figures/SSLTnsPPP_demandpointreal.png  used on input l
 ine 298. on input line 298.
 Package pdftex.def Info: Requested size: 150.58745pt x 112.89925pt on input lin
 e 298.
-<Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png, id=33, 421.575pt x 316.0608pt>
+<Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png, id=36, 421.575pt x 316.0608pt>
 
 File: Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png Graphic file (type png)
 <use Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png>
@@ -661,7 +661,6 @@ Package pdftex.def Info: Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png  used o
 n input line 307. on input line 307.
 Package pdftex.def Info: Requested size: 156.86708pt x 117.60619pt on input lin
 e 307.
- [3]
 <Figures/ComparisonCost.png, id=37, 421.575pt x 316.0608pt>
 File: Figures/ComparisonCost.png Graphic file (type png)
 <use Figures/ComparisonCost.png>
@@ -683,9 +682,10 @@ Package pdftex.def Info: Figures/ComparisonSatisfactionEval.png  used on input
 line 339. on input line 339.
 Package pdftex.def Info: Requested size: 154.80157pt x 116.0581pt on input line
  339.
- [4 <./Figures/BSLocationsVoronoi.png (PNG copy)> <./Figures/SSLTnsPPP_demandpo
-intreal.png (PNG copy)> <./Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png (PNG 
-copy)>] (GenAlg_VWN-KTeag.bbl
+ (GenAlg_VWN-KTeag.bbl
+Underfull \vbox (badness 1194) has occurred while \output is active []
+
+ [4]
 Missing character: There is no Å in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
@@ -706,13 +706,15 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[5 <./Figures/ComparisonCost.png (PNG copy)> <./Figures/ComparisonSatisfaction.
-png (PNG copy)> <./Figures/ComparisonSatisfactionEval.png (PNG copy)>]
+[5 <./Figures/BSLocationsVoronoi.png (PNG copy)> <./Figures/SSLTnsPPP_demandpoi
+ntreal.png (PNG copy)> <./Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png (PNG c
+opy)> <./Figures/ComparisonCost.png (PNG copy)> <./Figures/ComparisonSatisfacti
+on.png (PNG copy)> <./Figures/ComparisonSatisfactionEval.png (PNG copy)>]
 (GenAlg_VWN-KTeag.aux) ) 
 Here is how much of TeX's memory you used:
  15719 strings out of 493312
  312384 string characters out of 3138900
- 376066 words of memory out of 3000000
+ 373066 words of memory out of 3000000
  18982 multiletter control sequences out of 15000+200000
  52925 words of font info for 116 fonts, out of 3000000 for 9000
  1142 hyphenation exceptions out of 8191
@@ -741,7 +743,7 @@ am Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2
 .9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/u
 rw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on GenAlg_VWN-KTeag.pdf (5 pages, 538657 bytes).
+Output written on GenAlg_VWN-KTeag.pdf (5 pages, 538520 bytes).
 PDF statistics:
  129 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
