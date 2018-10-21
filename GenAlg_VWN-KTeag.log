@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.9)  19 AUG 2018 16:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.2.9)  21 OCT 2018 15:53
 entering extended mode
 **./GenAlg_VWN-KTeag.tex
 (GenAlg_VWN-KTeag.tex
@@ -633,7 +633,12 @@ LaTeX Font Info:    Try loading font information for U+bbm on input line 166.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\bbm\ubbm.fd"
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [2]
+)
+Overfull \hbox (6.36433pt too wide) detected at line 189
+[]
+ []
+
+[2]
 <Figures/BSLocationsVoronoi.png, id=31, 421.575pt x 315.579pt>
 File: Figures/BSLocationsVoronoi.png Graphic file (type png)
 <use Figures/BSLocationsVoronoi.png>
@@ -680,8 +685,7 @@ Package pdftex.def Info: Requested size: 154.80157pt x 116.0581pt on input line
  339.
  [4 <./Figures/BSLocationsVoronoi.png (PNG copy)> <./Figures/SSLTnsPPP_demandpo
 intreal.png (PNG copy)> <./Figures/VOSGA_SpeedupRatio_AbsComp_alpha20.png (PNG 
-copy)>]
-(GenAlg_VWN-KTeag.bbl
+copy)>] (GenAlg_VWN-KTeag.bbl
 Missing character: There is no Å in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
@@ -712,7 +716,7 @@ Here is how much of TeX's memory you used:
  18982 multiletter control sequences out of 15000+200000
  52925 words of font info for 116 fonts, out of 3000000 for 9000
  1142 hyphenation exceptions out of 8191
- 54i,17n,73p,1496b,540s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 54i,17n,73p,1489b,540s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\teagu\AppData\Local\MiKTeX\2.9\fonts\pk\ljfo
 ur\public\bbm\dpi600\bbm10.pk>{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base
 /8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb>
@@ -737,7 +741,7 @@ am Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2
 .9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/u
 rw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.
 pfb>
-Output written on GenAlg_VWN-KTeag.pdf (5 pages, 546435 bytes).
+Output written on GenAlg_VWN-KTeag.pdf (5 pages, 538657 bytes).
 PDF statistics:
  129 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
